@@ -150,6 +150,7 @@ SetLibraryVersions()
 SetGlobalCompilerAndLinkerSettings()
 
 add_subdirectory(src)
+add_subdirectory("../" "${CMAKE_BINARY_DIR}/RioD")
 add_subdirectory(data)
 
 BuildAndInstallDesignerPlugin()
