@@ -61,6 +61,7 @@ Branding::Branding()
     filter.push_back("SplashWarningColor");
 
     filter.push_back("StartWorkbench");
+    filter.push_back("HiddenWorkbench");
 
     filter.push_back("ExeName");
     filter.push_back("ExeVendor");
