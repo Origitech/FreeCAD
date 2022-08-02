@@ -53,6 +53,11 @@ if(DOXYGEN_FOUND)
                            ${CMAKE_SOURCE_DIR}/src/Doc
                            ${CMAKE_BINARY_DIR}/src/Doc
     )
+    if(BUILD_RIOD)
+        list(APPEND DOXYGEN_SOURCE_DIR "${CMAKE_SOURCE_DIR}/../src" "${CMAKE_BINARY_DIR}/RioD")
+    endif(BUILD_RIOD)
+
+
     STRING(REGEX REPLACE ";" " " DOXYGEN_INPUT_LIST "${DOXYGEN_SOURCE_DIR}")
 
     # exclude some subdirectories
