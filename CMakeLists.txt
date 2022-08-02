@@ -60,6 +60,9 @@ string(TIMESTAMP PACKAGE_COPYRIGHT_YEAR "%Y")
 set(PACKAGE_VERSION "${PACKAGE_VERSION_MAJOR}.${PACKAGE_VERSION_MINOR}.${PACKAGE_VERSION_PATCH}")
 set(PACKAGE_STRING "${PROJECT_NAME} ${PACKAGE_VERSION}")
 
+# option to build RioD
+option(BUILD_RIOD "use FreeCAD as platform and include RioD in the build" OFF)
+
 # include local modules
 include(CheckCXXCompilerFlag)
 include(AddFileDependencies)
@@ -133,7 +136,9 @@ SetLibraryVersions()
 SetGlobalCompilerAndLinkerSettings()
 
 add_subdirectory(src)
-add_subdirectory("../" "${CMAKE_BINARY_DIR}/RioD")
+if(BUILD_RIOD) # only build RioD if specified, so FCAD can still be built stand-alone
+    add_subdirectory("../" "${CMAKE_BINARY_DIR}/RioD")
+endif(BUILD_RIOD)
 add_subdirectory(data)
 
 BuildAndInstallDesignerPlugin()
