@@ -135,6 +135,8 @@ endif(BUILD_VR)
 SetLibraryVersions()
 SetGlobalCompilerAndLinkerSettings()
 
+enable_testing()
+
 add_subdirectory(src)
 if(BUILD_RIOD) # only build RioD if specified, so FCAD can still be built stand-alone
     add_subdirectory("../" "${CMAKE_BINARY_DIR}/RioD")
