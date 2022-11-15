@@ -540,7 +540,7 @@ class Snapper:
     def getApparentPoint(self, x, y):
         """Return a 3D point, projected on the current working plane."""
         view = Draft.get3DView()
-        pt = view.getPoint(x, y)
+        pt = view.getPoint((x, y))
         if self.mask != "z":
             if view.getCameraType() == "Perspective":
                 camera = view.getCameraNode()
