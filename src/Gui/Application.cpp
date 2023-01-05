@@ -2101,7 +2101,7 @@ QString Application::workbenchToolTip(const QString& wb) const
             Py::Object member = handler.getAttr(std::string("ToolTip"));
             if (member.isString()) {
                 Py::String tip(member);
-                return QString::fromUtf8(tip.as_std_string("utf-8").c_str());
+                return QCoreApplication::translate("Workbench", tip.as_std_string("utf-8").c_str());
             }
         }
         catch (Py::Exception& e) {
@@ -2126,7 +2126,7 @@ QString Application::workbenchMenuText(const QString& wb) const
             Py::Object member = handler.getAttr(std::string("MenuText"));
             if (member.isString()) {
                 Py::String tip(member);
-                return QString::fromUtf8(tip.as_std_string("utf-8").c_str());
+                return QCoreApplication::translate("Workbench", tip.as_std_string("utf-8").c_str());
             }
         }
         catch (Py::Exception& e) {
