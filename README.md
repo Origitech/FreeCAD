@@ -1,22 +1,15 @@
 
-# RioD-next base code
+# RioD-next base
 
-This repository contains the [FreeCAD](https://github.com/FreeCAD/FreeCAD)-derived code we use as a base for RioD. This repository will (eventually) be made public to comply with the [LGPL](https://www.gnu.org/licenses/old-licenses/lgpl-2.0), meaning any code added to this repo will become LGPL-licensed! Develop accordingly.
+This repository contains the [FreeCAD](https://github.com/FreeCAD/FreeCAD)-derived code base we use as a framework for RioD. To comply with the [LGPL](https://www.gnu.org/licenses/old-licenses/lgpl-2.0) this repository is _public_; any code added to this repo is released under the LGPLv2. Develop accordingly!
 
-## Repository organization
+## Organization
 
-We keep the original FreeCAD structure in place, so we can easily pull upstream changes if necessary. The modifications for RioD are handled in branches: 
-
-- the ```riod-stable``` branch is used for release builds of RioD
-
-- the ```riod-dev``` branch is used to integrate, review & test our modifications
-
-- any significant modifications are developed in feature- or task-specific branches before being pulled into ```riod-dev```.
-Small modifications may be pushed directly to ```riod-dev``` to be reviewed
+The original FreeCAD structure is kept, so upstream changes can (hopefully) easily be pulled if necessary. Modifications made specifically for RioD are in the ```RioD-dev``` branch. Any significant modifications should be developed in feature- or task-specific branches before being pulled into ```RioD-dev```
 
 ---
 
-# original FreeCAD README:
+Original FreeCAD README follows below:
 
 ![Logo](https://www.freecadweb.org/images/logo.png)
 
