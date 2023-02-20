@@ -62,7 +62,7 @@ set(PACKAGE_STRING "${PROJECT_NAME} ${PACKAGE_VERSION}")
 
 # option to build RioD
 option(BUILD_RIOD "use FreeCAD as platform and include RioD in the build" OFF)
-option(APP_EXE_NAME "application executable name that can be used as branding" "FreeCAD")
+SET(APP_EXE_NAME "FreeCAD" CACHE STRING "application executable name that can be used as branding")
 
 # include local modules
 include(CheckCXXCompilerFlag)
