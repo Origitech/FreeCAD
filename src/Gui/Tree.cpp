@@ -66,6 +66,7 @@
 #include "ViewProviderDocumentObject.h"
 #include "Widgets.h"
 #include "Workbench.h"
+#include "Action.h"
 
 
 FC_LOG_LEVEL_INIT("Tree", false, true, true)
@@ -1244,8 +1245,15 @@ void TreeWidget::contextMenuEvent(QContextMenuEvent* e)
                 contextMenu.insertSeparator(topact);
             }
         }
-    }
 
+        // Add delete action
+        Gui::Command *p_command =
+        Gui::Application::Instance->commandManager().getCommandByName("Std_Delete");
+        if (p_command && p_command->getAction()){
+            contextMenu.addSeparator();
+            contextMenu.addAction(p_command->getAction()->action());
+        }
+    }
 
     // add a submenu to active a document if two or more exist
     std::vector<App::Document*> docs = App::GetApplication().getDocuments();
