@@ -2608,6 +2608,18 @@ void Application::initConfig(int argc, char ** argv)
         _pConsoleObserverStd->bErr = false;
     }
 
+    LoadParameters();
+
+
+    // Check if the user preferences is set to do file logging
+    bool loggingFile = _pcUserParamMngr->GetGroup("BaseApp/Preferences/General")->GetBool("LoggingFile", true);
+    if (loggingFile && mConfig["LoggingFile"] != "1"){
+        // If user prefs is set to write the log file
+        // and the logging flag has not been set yet, set it and the file name as well
+        mConfig["LoggingFileName"] = mConfig["UserAppData"] + mConfig["ExeName"] + ".log";
+        mConfig["LoggingFile"] = "1";
+    }
+
     // file logging Init ===========================================================
     if (mConfig["LoggingFile"] == "1") {
         _pConsoleObserverFile = new Base::ConsoleObserverFile(mConfig["LoggingFileName"].c_str());
@@ -2646,7 +2658,6 @@ void Application::initConfig(int argc, char ** argv)
                               "addons. Restart the application to exit safe mode.\n\n");
         }
     }
-    LoadParameters();
 
     auto loglevelParam = _pcUserParamMngr->GetGroup("BaseApp/LogLevels");
     const auto &loglevels = loglevelParam->GetIntMap();
