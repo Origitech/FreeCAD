@@ -238,10 +238,8 @@ PyObject* ExtensionContainerPy::addExtension(PyObject* args)
     App::Extension* ext = static_cast<App::Extension*>(extension.createInstance());
     // check if this really is a python extension!
     if (!ext->isPythonExtension()) {
-        delete ext;
-        std::stringstream str;
-        str << "Extension is not a python addable version: '" << typeId << "'" << std::ends;
-        throw Py::TypeError(str.str());
+        getExtensionContainerPtr()->addDynamicExtension(ext);
+        Py_Return;
     }
 
     GetApplication().signalBeforeAddingDynamicExtension(*getExtensionContainerPtr(), typeId);
