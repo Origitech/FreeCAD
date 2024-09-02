@@ -3,13 +3,18 @@
     "version": "1.0.0",
     "dependencies": [
         "urdfdom",
-        "gtest"
+        "gtest",
+        "orocos-kdl"
     ],
     "builtin-baseline": "17030920aa97f2dc17a0bdc314344b5ca2807fdf",
     "overrides": [
         {
             "name": "urdfdom",
             "version": "3.1.1#0"
+        },
+        {
+            "name": "orocos-kdl",
+            "version": "1.5.1#0"
         }
     ]
 }
