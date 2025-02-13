@@ -4,7 +4,9 @@
     "dependencies": [
         "urdfdom",
         "gtest",
-        "orocos-kdl"
+        "orocos-kdl",
+        "fcl",
+        "eigen3"
     ],
     "builtin-baseline": "17030920aa97f2dc17a0bdc314344b5ca2807fdf",
     "overrides": [
