@@ -32,6 +32,8 @@
 # include <SMESH_Version.h>
 #endif
 
+#include <Mod/MeshPart/MeshPartGlobal.h>
+
 class TopoDS_Shape;
 class SMESH_Gen;
 class SMESH_Mesh;
