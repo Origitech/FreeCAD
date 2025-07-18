@@ -42,6 +42,7 @@ Branding::Branding()
     filter.push_back("ProgramIcons");
     filter.push_back("DesktopFileName");
     filter.push_back("StyleSheet");
+    filter.push_back("AboutImage");
 
     filter.push_back("BuildVersionMajor");
     filter.push_back("BuildVersionMinor");
@@ -60,6 +61,8 @@ Branding::Branding()
     filter.push_back("SplashInfoPosition");
     filter.push_back("SplashWarningColor");
 
+    filter.push_back("SplashInfoVersion");
+    
     filter.push_back("StartWorkbench");
     filter.push_back("HiddenWorkbench");
 

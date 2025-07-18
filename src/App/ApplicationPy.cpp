@@ -297,6 +297,9 @@ PyObject* ApplicationPy::sLoadFile(PyObject* /*self*/, PyObject* args)
                 module = modules.front();
             }
         }
+        // Open other projects from python, if extension available on branding
+        const std::map<std::string,std::string>& config = App::Application::Config();
+        std::map<std::string, std::string>::const_iterator BrandFileType = config.find("FileType");
 
         // path could contain characters that need escaping, such as quote signs
         // therefore use its representation in the Python code string
@@ -306,17 +309,18 @@ PyObject* ApplicationPy::sLoadFile(PyObject* /*self*/, PyObject* args)
 
         std::stringstream str;
         str << "import " << module << std::endl;
-        if (fi.hasExtension("FCStd")) {
-            str << module << ".openDocument(" << pathRepr << ")" << std::endl;
-        }
-        else {
-            str << module << ".insert(" << pathRepr << ",'" << doc << "')" << std::endl;
-        }
+        if (fi.hasExtension("FCStd"))
+            str << module << ".openDocument('" << pathRepr << "')" << std::endl;
+        else if (BrandFileType != config.end() && fi.hasExtension(BrandFileType->second.c_str()) )
+            str << module << ".openDocument('" << pathRepr << "')" << std::endl;
+        else
+            str << module << ".insert('" << pathRepr << "','" << doc << "')" << std::endl;
+        Base::Interpreter().runString(str.str().c_str());
 
         Py_DECREF(pathObj);
         Py_DECREF(pathReprObj);
 
-        Base::Interpreter().runString(str.str().c_str());
+
         Py_Return;
     }
     catch (const Base::Exception& e) {
