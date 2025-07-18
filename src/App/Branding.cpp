@@ -53,6 +53,9 @@ Branding::Branding()
     filter.push_back("BuildRevisionDate");
     filter.push_back("BuildVersionSuffix");
     filter.push_back("BuildRepositoryURL");
+    filter.push_back("BrandingRepositoryHash");
+    filter.push_back("BrandingRepositoryTag");
+    filter.push_back("BrandingRepositoryBuildDateTime");    
 
     filter.push_back("AboutImage");
     filter.push_back("SplashScreen");
