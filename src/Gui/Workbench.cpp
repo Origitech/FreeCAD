@@ -1068,8 +1068,7 @@ ToolBarItem* NoneWorkbench::setupCommandBars() const
 
 DockWindowItems* NoneWorkbench::setupDockWindows() const
 {
-    auto root = new DockWindowItems();
-    root->addDockWidget("Std_ReportView", Qt::BottomDockWidgetArea, Gui::DockWindowOption::Visible);
+    DockWindowItems* root = new DockWindowItems();
     return root;
 }
 
