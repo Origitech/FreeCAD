@@ -37,6 +37,7 @@ Branding::Branding()
     filter.push_back("WindowTitle");
     filter.push_back("CopyrightInfo");
     filter.push_back("MaintainerUrl");
+    filter.push_back("FreeCADSourceUrl");
     filter.push_back("WindowIcon");
     filter.push_back("ProgramLogo");
     filter.push_back("ProgramIcons");
@@ -75,7 +76,7 @@ Branding::Branding()
     filter.push_back("ModifiedIconOpacity");
     filter.push_back("FileType");  
     filter.push_back("AppIcon");  
-    
+
 }
 
 bool Branding::readFile(const QString& fn)
