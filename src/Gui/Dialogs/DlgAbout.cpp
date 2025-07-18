@@ -254,7 +254,7 @@ void AboutDialog::setupLabels()
     );
     ui->labelBuildOS->setText(os);
 
-    QString architecture = ui->labelBuildRunArchitecture->text();
+    QString architecture = ui->labelArchitecture->text();
     if (QSysInfo::buildCpuArchitecture() == QSysInfo::currentCpuArchitecture()) {
         architecture.replace(QStringLiteral("Unknown"), QSysInfo::buildCpuArchitecture());
     }
@@ -265,7 +265,7 @@ void AboutDialog::setupLabels()
                 .arg(QSysInfo::buildCpuArchitecture(), QSysInfo::currentCpuArchitecture())
         );
     }
-    ui->labelBuildRunArchitecture->setText(architecture);
+    ui->labelArchitecture->setText(architecture);
 
     // branch name
     it = config.find("BuildRevisionBranch");
