@@ -536,9 +536,36 @@ Application::Application(bool GUIenabled)
         // install the last active language
         ParameterGrp::handle hPGrp = App::GetApplication().GetUserParameter().GetGroup("BaseApp");
         hPGrp = hPGrp->GetGroup("Preferences")->GetGroup("General");
-        QString lang = QLocale::languageToString(QLocale().language());
-        Translator::instance()->activateLanguage(
-            hPGrp->GetASCII("Language", (const char*)lang.toLatin1()).c_str());
+        std::string sPrefLanguage = hPGrp->GetASCII("Language", "");
+        if (!sPrefLanguage.empty())
+            // Language already has a value on preferences
+            Translator::instance()->activateLanguage(sPrefLanguage.c_str());
+        else {
+            // Language has no value on preferences, its probably the first app run
+            // Get the local language name
+            TLanguageList lSupplanguages = Translator::instance()->supportedLanguages();
+            std::string language = (const char *)QLocale::languageToString(QLocale().language()).toLatin1();
+
+            if (std::find(lSupplanguages.begin(), lSupplanguages.end(), language) != lSupplanguages.end())
+                // Language name found in available translators (e.g. English)
+                Translator::instance()->activateLanguage(language.c_str());
+            else {
+                // Language name not found due to having a different script (e.g. Chinese Simplied || Traditional)
+                // Get the local code name and try to find a match on supported locales
+                QString local =
+                    QLocale().system().name().replace(QString::fromLatin1("_"), QString::fromLatin1(""));
+                TStringMap mSupportedLocales = Translator::instance()->supportedLocales();
+                for (auto item : mSupportedLocales) {
+                    QString supLocal = QString::fromLatin1(item.second.c_str());
+                    supLocal.replace(QString::fromLatin1("-"), QString::fromLatin1(""));
+                    if (supLocal == local) {
+                        Translator::instance()->activateLanguage(
+                            hPGrp->GetASCII("Language", item.first.c_str()).c_str());
+                        break;
+                    }
+                }
+            }
+        }
         GetWidgetFactorySupplier();
 
         // Coin3d disables VBO support for some (typically very old) drivers and hardware.
