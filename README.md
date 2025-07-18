@@ -1,4 +1,24 @@
-<a href="https://freecad.org"><img src="/src/Gui/Icons/freecad.svg" height="100px" width="100px"></a>
+
+# RioD-next base code
+
+This repository contains the [FreeCAD](https://github.com/FreeCAD/FreeCAD)-derived code we use as a base for RioD. This repository will (eventually) be made public to comply with the [LGPL](https://www.gnu.org/licenses/old-licenses/lgpl-2.0), meaning any code added to this repo will become LGPL-licensed! Develop accordingly.
+
+## Repository organization
+
+We keep the original FreeCAD structure in place, so we can easily pull upstream changes if necessary. The modifications for RioD are handled in branches: 
+
+- the ```riod-stable``` branch is used for release builds of RioD
+
+- the ```riod-dev``` branch is used to integrate, review & test our modifications
+
+- any significant modifications are developed in feature- or task-specific branches before being pulled into ```riod-dev```.
+Small modifications may be pushed directly to ```riod-dev``` to be reviewed
+
+---
+
+# original FreeCAD README:
+
+![Logo](https://www.freecadweb.org/images/logo.png)
 
 ### Your own 3D Parametric Modeler
 
