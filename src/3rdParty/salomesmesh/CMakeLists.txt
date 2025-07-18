@@ -194,15 +194,15 @@ endif(WIN32)
 
 
 ##########
-# Driver #
+# SalomeshDriver #
 ##########
 FILE(GLOB Driver_source_files src/Driver/*.cpp inc/Driver_*.hxx)
-ADD_LIBRARY(Driver SHARED ${Driver_source_files})
-TARGET_LINK_LIBRARIES(Driver ${SMESH_LIBS})
+ADD_LIBRARY(SalomeshDriver SHARED ${Driver_source_files})
+TARGET_LINK_LIBRARIES(SalomeshDriver ${SMESH_LIBS})
 
-SET_BIN_DIR(Driver Driver)
+SET_BIN_DIR(SalomeshDriver SalomeshDriver)
 if(WIN32)
-    set_target_properties(Driver PROPERTIES COMPILE_FLAGS "-DMESHDRIVER_EXPORTS -DSMESHUtils_EXPORTS")
+    set_target_properties(SalomeshDriver PROPERTIES COMPILE_FLAGS "-DMESHDRIVER_EXPORTS -DSMESHUtils_EXPORTS")
 endif(WIN32)
 
 #############
@@ -210,7 +210,7 @@ endif(WIN32)
 #############
 FILE(GLOB DriverSTL_source_files src/DriverSTL/*.cpp inc/DriverSTL*.h*)
 ADD_LIBRARY(DriverSTL SHARED ${DriverSTL_source_files})
-TARGET_LINK_LIBRARIES(DriverSTL ${SMESH_LIBS} Driver SMDS ${Boost_LIBRARIES})
+TARGET_LINK_LIBRARIES(DriverSTL ${SMESH_LIBS} SalomeshDriver SMDS ${Boost_LIBRARIES})
 
 SET_BIN_DIR(DriverSTL DriverSTL)
 if(WIN32)
@@ -222,7 +222,7 @@ endif(WIN32)
 #############
 FILE(GLOB DriverDAT_source_files src/DriverDAT/*.cpp inc/DriverDAT*.h*)
 ADD_LIBRARY(DriverDAT SHARED ${DriverDAT_source_files})
-TARGET_LINK_LIBRARIES(DriverDAT ${SMESH_LIBS} SMDS Driver)
+TARGET_LINK_LIBRARIES(DriverDAT ${SMESH_LIBS} SMDS SalomeshDriver)
 
 SET_BIN_DIR(DriverDAT DriverDAT)
 if(WIN32)
@@ -234,7 +234,7 @@ endif(WIN32)
 #############
 FILE(GLOB DriverUNV_source_files src/DriverUNV/*.cpp inc/DriverUNV*.h*)
 ADD_LIBRARY(DriverUNV SHARED ${DriverUNV_source_files})
-TARGET_LINK_LIBRARIES(DriverUNV ${SMESH_LIBS} SMESHDS SMDS Driver)
+TARGET_LINK_LIBRARIES(DriverUNV ${SMESH_LIBS} SMESHDS SMDS SalomeshDriver)
 
 SET_BIN_DIR(DriverUNV DriverUNV)
 if(WIN32)
@@ -255,7 +255,7 @@ SET_BIN_DIR(SMESHDS SMESHDS)
 #########
 FILE(GLOB SMESH_source_files src/SMESH/*.c src/SMESH/*.cpp src/Controls/*.cpp inc/SMESH_*.h*)
 ADD_LIBRARY(SMESH SHARED ${SMESH_source_files})
-TARGET_LINK_LIBRARIES(SMESH SMDS SMESHDS  Driver DriverSTL DriverDAT DriverUNV ${SMESH_LIBS} ${OPENCASCADE_LIBRARIES} ${OCC_LIBRARIES} ${OCC_DEBUG_LIBRARIES} ${OCC_OCAF_DEBUG_LIBRARIES} ${OCC_OCAF_LIBRARIES} ${MEDFILE_LIBRARIES} ${VTK_LIBRARIES})
+TARGET_LINK_LIBRARIES(SMESH SMDS SMESHDS  SalomeshDriver DriverSTL DriverDAT DriverUNV ${SMESH_LIBS} ${OPENCASCADE_LIBRARIES} ${OCC_LIBRARIES} ${OCC_DEBUG_LIBRARIES} ${OCC_OCAF_DEBUG_LIBRARIES} ${OCC_OCAF_LIBRARIES} ${MEDFILE_LIBRARIES} ${VTK_LIBRARIES})
  
 SET_BIN_DIR(SMESH SMESH)
 if(WIN32)
@@ -315,12 +315,12 @@ endif(WIN32)
 endif (BUILD_FEM_NETGEN)
 
 if(WIN32)
-    INSTALL(TARGETS SMDS Driver DriverSTL DriverDAT DriverUNV SMESHDS SMESH MEFISTO2 StdMeshers
+    INSTALL(TARGETS SMDS SalomeshDriver DriverSTL DriverDAT DriverUNV SMESHDS SMESH MEFISTO2 StdMeshers
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     )
 else(WIN32)
-    INSTALL(TARGETS SMDS Driver DriverSTL DriverDAT DriverUNV SMESHDS SMESH MEFISTO2 StdMeshers
+    INSTALL(TARGETS SMDS SalomeshDriver DriverSTL DriverDAT DriverUNV SMESHDS SMESH MEFISTO2 StdMeshers
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     )
 endif(WIN32)
