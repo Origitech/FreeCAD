@@ -31,7 +31,7 @@ if(BUILD_GUI)
         target_compile_warn_error(FreeCADMain)
     endif()
 
-    SET_BIN_DIR(FreeCADMain ${APP_NAME})
+    SET_BIN_DIR(FreeCADMain ${APP_EXE_NAME})
 
     if(WIN32)
         INSTALL(TARGETS FreeCADMain
@@ -80,7 +80,7 @@ if (FREECAD_WARN_ERROR)
     target_compile_warn_error(FreeCADMainCmd)
 endif()
 
-SET_BIN_DIR(FreeCADMainCmd ${APP_NAME}Cmd)
+SET_BIN_DIR(FreeCADMainCmd ${APP_EXE_NAME}Cmd)
 
 if(WIN32)
     INSTALL(TARGETS FreeCADMainCmd
