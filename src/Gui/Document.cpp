@@ -3319,6 +3319,10 @@ void Document::slotAddedDynamicExtension(const App::ExtensionContainer& extConta
     if(getDocument()->isPerformingTransaction())
         return;
     
+    // If pDocObj is restoring, do nothing
+    if(pDocObj->isRestoring())
+        return;
+
     // Get all extension derived from DocumentObjectExtension
     auto vectorObjExt = pDocObj->getExtensionsDerivedFromType<App::DocumentObjectExtension>();
     for(auto docObjExt : vectorObjExt){
@@ -3343,14 +3347,8 @@ void Document::slotAddedDynamicExtension(const App::ExtensionContainer& extConta
             if (it != d->_ViewProviderMap.end()) 
                 pViewProvDocObj = d->_ViewProviderMap[pDocObj];
 
-            if (pViewProvDocObj && pViewProvDocObj->addDynamicExtension(type)){
+            if (pViewProvDocObj && pViewProvDocObj->addDynamicExtension(type))
                 setModified(true);
-                // // Attach extension
-                // ViewProviderExtension *pViewProviderExt = static_cast<ViewProviderExtension*>
-                //     (d->_ViewProviderMap[pDocObj]->getExtension(type));
-                // pViewProviderExt->extensionAttach(const_cast<App::DocumentObject*>(pDocObj));
-
-            }
             break;
         }
         

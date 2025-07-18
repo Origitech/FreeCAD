@@ -465,14 +465,14 @@ void ExtensionContainer::restoreExtensions(Base::XMLReader& reader)
                 // register the extension
                 ext = static_cast<App::Extension*>(extension.createInstance());
                 // check if this really is a python extension!
-                if (!ext->isPythonExtension()) {
-                    delete ext;
-                    std::stringstream str;
-                    str << "Extension is not a python addable version: '" << Type << "'";
-                    throw Base::TypeError(str.str());
+                if (ext->isPythonExtension()) {
+                    ext->initExtension(this);
+                }else{
+                    // Handle the the dynamic extensions
+                    // FIXME refactor the python extensions to behave the same way
+                    this->addDynamicExtension(ext);
                 }
 
-                ext->initExtension(this);
             }
             if (ext && ext->getExtensionTypeId().getName() == Type) {
                 ext->extensionRestore(reader);
