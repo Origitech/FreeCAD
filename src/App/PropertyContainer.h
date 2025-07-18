@@ -850,6 +850,15 @@ template<> void _class_::init(void){\
 }
 // clang-format on
 
+// mark string literal to be extracted for translation (similar to QT_TRANSLATE_NOOP())
+// Note: Property names are mangled by GUI (spaces added so 'CamelCase' becomes 'Camel Case')
+// and displayed in the property view. Hence they need to be extraced & mangled similarly
+// by external tooling for translation. Context is assumed as 'App::Property'
+// this macro is particularly useful for dynamic properties
+#define TRANSLATE_CAMELCASE(X) X 
+
+
+
 } // namespace App
 
 #endif // SRC_APP_PROPERTYCONTAINER_H_
