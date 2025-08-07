@@ -336,6 +336,12 @@ struct MainWindowP
 MainWindow::MainWindow(QWidget* parent, Qt::WindowFlags f)
     : QMainWindow(parent, f /*WDestructiveClose*/)
 {
+	// Get the configuration from user
+    auto handle = App::GetApplication().GetParameterGroupByPath("User parameter:BaseApp/Preferences/Mod/RioDcore");
+    auto hideTitleBar = handle->GetBool("HideTitleBar", false);
+    if(hideTitleBar) {
+        this->setWindowFlags(Qt::Window | Qt::CustomizeWindowHint);
+    }
     d = new MainWindowP;
     d->splashscreen = nullptr;
     d->activeView = nullptr;
