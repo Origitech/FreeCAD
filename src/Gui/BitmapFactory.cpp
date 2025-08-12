@@ -85,6 +85,17 @@ BitmapFactoryInst& BitmapFactoryInst::instance()
         );
         _pcSingleton->addPath(QLatin1String(":/icons/"));
         _pcSingleton->addPath(QLatin1String(":/Icons/"));
+        // Get the configuration from user
+        auto handle = App::GetApplication().GetParameterGroupByPath(
+            "User parameter:BaseApp/Preferences"
+        );
+        auto iconsTheme = handle->GetASCII("IconsTheme", "default");
+        _pcSingleton->addPath(
+            QString::fromLatin1(":/icons/%1/").arg(QLatin1String(iconsTheme.c_str()))
+        );
+        _pcSingleton->addPath(
+            QString::fromLatin1(":/Icons/%1/").arg(QLatin1String(iconsTheme.c_str()))
+        );
     }
 
     return *_pcSingleton;
