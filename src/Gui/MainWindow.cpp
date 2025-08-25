@@ -365,6 +365,11 @@ MainWindow::MainWindow(QWidget* parent, Qt::WindowFlags f)
     if(hideTitleBar) {
         this->setWindowFlags(Qt::Window | Qt::CustomizeWindowHint);
     }
+	auto useFramelessEmbedding = handle->GetBool("UseFramelessEmbedding", false);
+	if(useFramelessEmbedding){
+		// For fix the issue when RioD embedded in CRT then show Black frame on the edge
+		this->setWindowFlags(Qt::FramelessWindowHint | Qt::Widget);
+	}
     d = new MainWindowP;
     d->splashscreen = nullptr;
     d->activeView = nullptr;
