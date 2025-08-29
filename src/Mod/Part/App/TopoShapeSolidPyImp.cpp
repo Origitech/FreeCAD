@@ -43,6 +43,9 @@
 #include <Standard_Version.hxx>
 
 
+#include <QCoreApplication>
+
+#include <Base/VectorPy.h>
 #include <Base/GeometryPyCXX.h>
 #include <Base/VectorPy.h>
 
@@ -62,7 +65,10 @@ using namespace Part;
 std::string TopoShapeSolidPy::representation() const
 {
     std::stringstream str;
-    str << "<Solid object at " << getTopoShapePtr() << ">";
+    str << "<"
+        << QCoreApplication::translate( "App::TopoShape", "Solid object at ").toStdString() 
+        << getTopoShapePtr() 
+        << ">";
 
     return str.str();
 }

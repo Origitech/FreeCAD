@@ -29,6 +29,7 @@
 #include "MaterialPy.cpp"
 
 #include <Base/PyWrapParseTupleAndKeywords.h>
+#include <QCoreApplication>
 
 using namespace App;
 
@@ -178,7 +179,9 @@ int MaterialPy::PyInit(PyObject* args, PyObject* kwds)
 // returns a string which represents the object e.g. when printed in python
 std::string MaterialPy::representation() const
 {
-    return {"<Material object>"};
+    return std::string("<")
+        + QCoreApplication::translate("App::Material","Material object").toStdString() 
+        + std::string(">");
 }
 
 PyObject* MaterialPy::set(PyObject* args)
