@@ -40,10 +40,8 @@ public:
     Module()
         : Py::ExtensionModule<Module>("Web")
     {
-        add_varargs_method(
-            "startServer",
-            &Module::startServer,
-            "startServer(address=127.0.0.1,port=0) -- Start a server."
+        add_varargs_method("startServer",&Module::startServer,
+            "startServer(address=127.0.0.1,port=0, persistentConnection=False) -- Start a server."
         );
         add_varargs_method(
             "waitForConnection",
@@ -65,8 +63,9 @@ private:
     Py::Object startServer(const Py::Tuple& args)
     {
         const char* addr = "127.0.0.1";
-        int port = 0;
-        if (!PyArg_ParseTuple(args.ptr(), "|si", &addr, &port)) {
+        int port=0;
+        PyObject *persistentConnection = Py_False;
+        if (!PyArg_ParseTuple(args.ptr(), "|siO",&addr,&port, &persistentConnection)){
             throw Py::Exception();
         }
         if (port > std::numeric_limits<unsigned short>::max()) {
@@ -76,7 +75,7 @@ private:
             throw Py::OverflowError("port number is lower than 0");
         }
 
-        AppServer* server = new AppServer();
+        AppServer* server = new AppServer(PyObject_IsTrue(persistentConnection));
         if (server->listen(QHostAddress(QString::fromLatin1(addr)), port)) {
             QString a = server->serverAddress().toString();
             quint16 p = server->serverPort();

@@ -161,8 +161,10 @@ void AppServer::customEvent(QEvent* e)
     socket->write(str.c_str());
     if (direct) {
         socket->waitForBytesWritten();
+        // Do NOT close the socket here → keep connection alive
+    } else {
+        socket->close();  // short-lived mode
     }
-    socket->close();
 }
 
 std::string AppServer::handleRequest(QByteArray msg)
