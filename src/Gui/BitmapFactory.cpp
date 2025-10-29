@@ -65,7 +65,14 @@ BitmapFactoryInst* BitmapFactoryInst::_pcSingleton = nullptr;
 
 BitmapFactoryInst& BitmapFactoryInst::instance()
 {
-    if (!_pcSingleton) {
+    if (_pcSingleton == nullptr)
+    {
+        // Get the configuration from user
+        auto handle = App::GetApplication().GetParameterGroupByPath(
+            "User parameter:BaseApp/Preferences"
+        );
+        auto iconsTheme = handle->GetASCII("IconsTheme", "default");
+
         _pcSingleton = new BitmapFactoryInst;
         std::map<std::string, std::string>::const_iterator it;
         it = App::GetApplication().Config().find("ProgramIcons");
@@ -76,6 +83,7 @@ BitmapFactoryInst& BitmapFactoryInst::instance()
                 path = QFileInfo(QDir(home), path).absoluteFilePath();
             }
             _pcSingleton->addPath(path);
+            _pcSingleton->addPath(QString::fromLatin1("%1/%2").arg(path).arg(QLatin1String(iconsTheme.c_str())));
         }
         _pcSingleton->addPath(
             QStringLiteral("%1/icons").arg(QString::fromStdString(App::Application::getHomePath()))
@@ -85,11 +93,6 @@ BitmapFactoryInst& BitmapFactoryInst::instance()
         );
         _pcSingleton->addPath(QLatin1String(":/icons/"));
         _pcSingleton->addPath(QLatin1String(":/Icons/"));
-        // Get the configuration from user
-        auto handle = App::GetApplication().GetParameterGroupByPath(
-            "User parameter:BaseApp/Preferences"
-        );
-        auto iconsTheme = handle->GetASCII("IconsTheme", "default");
         _pcSingleton->addPath(
             QString::fromLatin1(":/icons/%1/").arg(QLatin1String(iconsTheme.c_str()))
         );
