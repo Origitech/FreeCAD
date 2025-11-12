@@ -195,7 +195,15 @@ class ViewProviderWire(ViewProviderDraft):
             return [self.Object.Base, self.Object.Tool]
         return []
 
-    def flatten(self):  # Only to be used for Draft_Wires.
+    def setupContextMenu(self, vobj, menu):
+        action1 = QtGui.QAction(QtGui.QIcon(":/icons/Draft_Edit.svg"),
+                                translate("draft", "Edit"),
+                                menu)
+
+        action1.triggered.connect(lambda: self.setEdit(vobj, 0))
+        menu.addAction(action1)
+
+    def flatten(self): # Only to be used for Draft_Wires.
         if not hasattr(self, "Object"):
             return
 
