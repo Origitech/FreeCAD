@@ -140,9 +140,7 @@ class DraftLink(DraftObject):
 
     def getViewProviderName(self, _obj):
         """Override the view provider name."""
-        if self.use_link:
-            return "Gui::ViewProviderLinkPython"
-        return ""
+        return ''
 
     def migrate_attributes(self, obj):
         """Migrate old attribute names to new names if they exist.
