@@ -45,15 +45,15 @@ public:
     SoSFFloat scaleFactor;
 
 protected:
-    ~SoAutoZoomTranslation() override = default;
-    void doAction(SoAction* action) override;
-    void getPrimitiveCount(SoGetPrimitiveCountAction* action) override;
-    void getMatrix(SoGetMatrixAction* action) override;
-    void GLRender(SoGLRenderAction* action) override;
-    void getBoundingBox(SoGetBoundingBoxAction* action) override;
-    void callback(SoCallbackAction* action) override;
-    void pick(SoPickAction* action) override;
-    float getScaleFactor(SoAction*) const;
+    virtual ~SoAutoZoomTranslation() {}
+    virtual void doAction(SoAction * action);
+    virtual void getPrimitiveCount(SoGetPrimitiveCountAction * action);
+    virtual void getMatrix(SoGetMatrixAction * action);
+    virtual void GLRender(SoGLRenderAction *action);
+    virtual void getBoundingBox(SoGetBoundingBoxAction * action);
+    virtual void callback(SoCallbackAction * action);
+    virtual void pick(SoPickAction * action);
+    virtual float getScaleFactor(SoAction*) const;
 
 private:
 };
