@@ -102,6 +102,14 @@ public:
     }
     QDialogButtonBox::ButtonRole roleOnEscape {QDialogButtonBox::ButtonRole::RejectRole};
 
+    /// Defines whether a task dialog can be accepted by pressing Enter
+    void setEnterButtonEnabled(bool on) {
+        enterButton = on;
+    }
+    bool isEnterButtonEnabled() const {
+        return enterButton;
+    }
+
     /// Defines whether a task dialog must be closed if the document changed the
     /// active transaction.
     void setAutoCloseOnTransactionChange(bool on)
@@ -248,6 +256,7 @@ private:
     std::string documentName;
     const Gui::MDIView* associatedView;
     bool escapeButton;
+    bool enterButton;
     bool autoCloseTransaction;
     bool autoCloseResetEdit;
     bool autoCloseDeletedDocument;

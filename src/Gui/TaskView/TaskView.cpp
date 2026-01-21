@@ -355,7 +355,7 @@ void TaskView::keyPressEvent(QKeyEvent* ke)
 {
     std::optional<TaskInfo> active = currentTaskInfo();
     if (active) {
-        if (ke->key() == Qt::Key_Return || ke->key() == Qt::Key_Enter) {
+        if ((ke->key() == Qt::Key_Return || ke->key() == Qt::Key_Enter) && active->ActiveDialog->isEnterButtonEnabled()) {
             // get all buttons of the complete task dialog
             QList<QPushButton*> list = this->findChildren<QPushButton*>();
             for (auto pb : list) {
