@@ -100,8 +100,15 @@ class FeatureBooleanFragments:
         obj.Proxy = self
         self.Type = "FeatureBooleanFragments"
 
-    def execute(self, selfobj):
-        shapes = [obj.Shape for obj in selfobj.Objects]
+    def execute(self,selfobj):
+        # We need to extract shapes from objects considering the relative transformations
+        shapes = []
+        for obj in selfobj.Objects:
+            if not obj.Shape.isNull():
+                obj_w = obj.getGlobalPlacement()
+                obj_plc = obj.Placement
+                obj_local = obj_w * obj_plc.inverse()
+                shapes.append( obj.Shape.transformGeometry(obj_local.Matrix))
         if len(shapes) == 1 and shapes[0].ShapeType == "Compound":
             shapes = shapes[0].childShapes()
         if len(shapes) < 2:
