@@ -83,7 +83,6 @@ void ExtensionContainer::unregisterExtension(Base::Type extension, Extension* ex
         for(auto entry : _extensions) {
             if(entry.first == extension) {
                 _extensions.erase(entry.first);
-                delete entry.second;
                 break;
             }
         }
@@ -549,19 +548,14 @@ App::Extension* ExtensionContainer::addDynamicExtension(Base::Type type) {
         throw Base::RuntimeError("ExtensionContainer::addDynamicExtension: Extension type not derived from App::Extension");
 
     auto *ext = static_cast<App::Extension *>(type.createInstance());
-    GetApplication().signalBeforeAddingDynamicExtension(*this, type.getName());
-    ext->initExtension(this);
-    GetApplication().signalAddedDynamicExtension(*this, type.getName());
-    return this->getExtension(type);
+    return addDynamicExtension(ext);
 }
 App::Extension* ExtensionContainer::addDynamicExtension(App::Extension *ext) {
 
-    Base::Type type = ext->getExtensionClassTypeId();
-    if (type.isBad())
-        throw Base::RuntimeError("ExtensionContainer::addDynamicExtension: Extension type not set");
+    if (ext == nullptr)
+        throw Base::RuntimeError("ExtensionContainer::addDynamicExtension: Extension not available (nullptr)");
 
-    if(!type.isDerivedFrom(App::Extension::getExtensionClassTypeId()))
-        throw Base::RuntimeError("ExtensionContainer::addDynamicExtension: Extension type not derived from App::Extension");
+    Base::Type type = ext->getExtensionTypeId();
 
     GetApplication().signalBeforeAddingDynamicExtension(*this, type.getName());
     ext->initExtension(this);

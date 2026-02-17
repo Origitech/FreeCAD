@@ -313,8 +313,18 @@ void Document::onAddOrRemoveDynamicExtension(TransactionalObject* obj, Extension
         }
     }
     // Include the action to the current transaction
+    // or delete the extension if it doesn't belong to any transaction
+    // Smart pointer be deleted when out of scope
+    std::unique_ptr<Extension> tobeDestroyed;
     if (d->activeUndoTransaction && !d->rollback)
         d->activeUndoTransaction->addOrRemoveDynamicExtension(obj, ext, add);
+    else if (add == false) {
+        // Handle the extentions memory
+        // Associate deleters to the smart pointer
+        // Could still use the ext in scope of this method, but not after it.
+        std::unique_ptr<Extension> delExtension(ext);
+        tobeDestroyed.swap(delExtension);
+    }
 }
 bool Document::isPerformingTransaction() const
 {

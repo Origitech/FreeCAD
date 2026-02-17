@@ -71,7 +71,7 @@ protected:
     void onBeforeChangeProperty(Document* doc, const Property* prop);
     /// @brief Interface to the App::Document
     // DocumentObjects and ViewProviders can notify the transaction system on the App::Document
-    void onAddOrRemoveDynamicExtension(Document *doc, Extension *extension, bool add);
+    void onAddOrRemoveDynamicExtension(Document &doc, Extension *extension, bool add);
 };
 
 }  // namespace App

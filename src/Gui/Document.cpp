@@ -3138,10 +3138,27 @@ std::vector<App::DocumentObject*> Document::getTreeRootObjects() const
 }
 void Document::slotAddedDynamicExtension(const App::ExtensionContainer& extContainer, std::string extension){
 
+    // Check if the extension container is a view provider    
+    const ViewProviderDocumentObject *pViewProviderObj = Base::freecad_dynamic_cast<ViewProviderDocumentObject>(&extContainer);
+    if (pViewProviderObj) {
+        // In case of a view provider we call the attach extension method
+        
+        // Get the extension
+        App::Extension *pExt = pViewProviderObj->getExtension(Base::Type::fromName(extension.c_str()));
+        ViewProviderExtension *pViewProviderExt = dynamic_cast<ViewProviderExtension*>(pExt);
+        if(pViewProviderExt)
+            pViewProviderExt->extensionAttach(pViewProviderObj->pcObject);
+
+        return;  
+    }
+
+
     // Check if the container is a DocObj    
     const App::DocumentObject *pDocObj = Base::freecad_dynamic_cast<App::DocumentObject>(&extContainer);
     if (pDocObj == nullptr) 
-        return;// Container is a ViewProvider   
+        return;
+
+    // In case of DocObj we try to add the view provider extension
 
     // Check for a valid document
     if(getDocument() != pDocObj->getDocument())
@@ -3170,12 +3187,17 @@ void Document::slotAddedDynamicExtension(const App::ExtensionContainer& extConta
                 ViewProviderExtension::getExtensionClassTypeId(), true);
 
             // Add vieProvider dynamic extension
-            if (d->_ViewProviderMap[pDocObj]->addDynamicExtension(type)){
+            ViewProviderDocumentObject *pViewProvDocObj=nullptr;
+            auto it = d->_ViewProviderMap.find(pDocObj);  
+            if (it != d->_ViewProviderMap.end()) 
+                pViewProvDocObj = d->_ViewProviderMap[pDocObj];
+
+            if (pViewProvDocObj && pViewProvDocObj->addDynamicExtension(type)){
                 setModified(true);
-                // Attach extension
-                ViewProviderExtension *pViewProviderExt = static_cast<ViewProviderExtension*>
-                    (d->_ViewProviderMap[pDocObj]->getExtension(type));
-                pViewProviderExt->extensionAttach(const_cast<App::DocumentObject*>(pDocObj));
+                // // Attach extension
+                // ViewProviderExtension *pViewProviderExt = static_cast<ViewProviderExtension*>
+                //     (d->_ViewProviderMap[pDocObj]->getExtension(type));
+                // pViewProviderExt->extensionAttach(const_cast<App::DocumentObject*>(pDocObj));
 
             }
             break;
@@ -3184,10 +3206,24 @@ void Document::slotAddedDynamicExtension(const App::ExtensionContainer& extConta
     }
 }
 void Document::slotBeforeRemovingDynamicExtension(const App::ExtensionContainer& extContainer, std::string extension){  
+    // Check if the extension container is a view provider    
+    const ViewProviderDocumentObject *pViewProviderObj = Base::freecad_dynamic_cast<ViewProviderDocumentObject>(&extContainer);
+    if (pViewProviderObj) {
+        // In case of a view provider we call the dettach extension method
+        
+        // Get the extension
+        App::Extension *pExt = pViewProviderObj->getExtension(Base::Type::fromName(extension.c_str()));
+        ViewProviderExtension *pViewProviderExt = dynamic_cast<ViewProviderExtension*>(pExt);
+        if(pViewProviderExt)
+            pViewProviderExt->extensionDettach(pViewProviderObj->pcObject);
+
+        return;  
+    }
+    
     const App::DocumentObject *pDocObj = Base::freecad_dynamic_cast<App::DocumentObject>(&extContainer);
     // Check if the container is a DocObj
     if (pDocObj == nullptr) 
-        return;// Container is a ViewProvider
+        return;
         
     // Check for a valid document
     if(getDocument() != pDocObj->getDocument())
