@@ -6,7 +6,8 @@
         "gtest",
         "orocos-kdl",
         "fcl",
-        "eigen3"
+        "eigen3",
+        "qtwebsockets"
     ],
     "builtin-baseline": "17030920aa97f2dc17a0bdc314344b5ca2807fdf",
     "overrides": [
@@ -17,6 +18,10 @@
         {
             "name": "orocos-kdl",
             "version": "1.5.1#0"
+        },
+        {
+            "name": "qtwebsockets",
+            "version": "6.7.3#0"
         }
     ]
 }

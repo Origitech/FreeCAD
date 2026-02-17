@@ -34,6 +34,8 @@
 #include <Base/FileInfo.h>
 #include <Base/Stream.h>
 #include <Base/Tools.h>
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/algorithm/string/trim.hpp>
 
 #include "ReaderOBJ.h"
 
@@ -124,11 +126,11 @@ private:
     bool Ignore(const std::string& line) const
     {
         // clang-format off
-        return boost::starts_with(line, "vn ") ||
-               boost::starts_with(line, "vt ") ||
-               boost::starts_with(line, "s ") ||
-               boost::starts_with(line, "o ") ||
-               boost::starts_with(line, "#");
+        return boost::algorithm::starts_with(line, "vn ") ||
+               boost::algorithm::starts_with(line, "vt ") ||
+               boost::algorithm::starts_with(line, "s ") ||
+               boost::algorithm::starts_with(line, "o ") ||
+               boost::algorithm::starts_with(line, "#");
         // clang-format on
     }
 
@@ -368,7 +370,7 @@ bool ReaderOBJ::Load(std::istream& str)
     ReaderOBJImp reader(_material);
     std::string line;
     while (std::getline(str, line)) {
-        boost::trim(line);
+        boost::algorithm::trim(line);
         reader.Load(line);
     }
     reader.SetupMaterial();

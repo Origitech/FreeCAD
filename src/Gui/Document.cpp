@@ -531,9 +531,9 @@ Document::Document(App::Document* pcDocument, Application* app)
     pcDocument->setPreRecomputeHook([this] { callSignalBeforeRecompute(); });
 
     d->connectAddedDynamicExtension = App::GetApplication().signalAddedDynamicExtension.connect
-        (boost::bind(&Gui::Document::slotAddedDynamicExtension, this, bp::_1, bp::_2));
+        (boost::bind(&Gui::Document::slotAddedDynamicExtension, this, sp::_1, sp::_2));
     d->connectBeforeRemovingDynamicExtension = App::GetApplication().signalBeforeRemovingDynamicExtension.connect
-        (boost::bind(&Gui::Document::slotBeforeRemovingDynamicExtension, this, bp::_1, bp::_2));
+        (boost::bind(&Gui::Document::slotBeforeRemovingDynamicExtension, this, sp::_1, sp::_2));
     // pointer to the python class
     // NOTE: As this Python object doesn't get returned to the interpreter we
     // mustn't increment it (Werner Jan-12-2006)
@@ -3139,7 +3139,7 @@ std::vector<App::DocumentObject*> Document::getTreeRootObjects() const
 void Document::slotAddedDynamicExtension(const App::ExtensionContainer& extContainer, std::string extension){
 
     // Check if the extension container is a view provider    
-    const ViewProviderDocumentObject *pViewProviderObj = Base::freecad_dynamic_cast<ViewProviderDocumentObject>(&extContainer);
+    const ViewProviderDocumentObject *pViewProviderObj = Base::freecad_cast<ViewProviderDocumentObject*>(&extContainer);
     if (pViewProviderObj) {
         // In case of a view provider we call the attach extension method
         
@@ -3154,7 +3154,7 @@ void Document::slotAddedDynamicExtension(const App::ExtensionContainer& extConta
 
 
     // Check if the container is a DocObj    
-    const App::DocumentObject *pDocObj = Base::freecad_dynamic_cast<App::DocumentObject>(&extContainer);
+    const App::DocumentObject *pDocObj = Base::freecad_cast<App::DocumentObject*>(&extContainer);
     if (pDocObj == nullptr) 
         return;
 
@@ -3177,7 +3177,7 @@ void Document::slotAddedDynamicExtension(const App::ExtensionContainer& extConta
     for(auto docObjExt : vectorObjExt){
         if (docObjExt->getExtensionTypeId() == Base::Type::fromName(extension.c_str()))
         {
-            Base::Console().Log("Extension found: %s\n", extension.c_str());
+            Base::Console().log("Extension found: %s\n", extension.c_str());
 
             // Get the ViewProvider extension name
             std::string extViewProviderName(docObjExt->getViewProviderExtensionName());
@@ -3205,7 +3205,7 @@ void Document::slotAddedDynamicExtension(const App::ExtensionContainer& extConta
 }
 void Document::slotBeforeRemovingDynamicExtension(const App::ExtensionContainer& extContainer, std::string extension){  
     // Check if the extension container is a view provider    
-    const ViewProviderDocumentObject *pViewProviderObj = Base::freecad_dynamic_cast<ViewProviderDocumentObject>(&extContainer);
+    const ViewProviderDocumentObject *pViewProviderObj = Base::freecad_cast<ViewProviderDocumentObject*>(&extContainer);
     if (pViewProviderObj) {
         // In case of a view provider we call the dettach extension method
         
@@ -3218,7 +3218,7 @@ void Document::slotBeforeRemovingDynamicExtension(const App::ExtensionContainer&
         return;  
     }
     
-    const App::DocumentObject *pDocObj = Base::freecad_dynamic_cast<App::DocumentObject>(&extContainer);
+    const App::DocumentObject *pDocObj = Base::freecad_cast<App::DocumentObject*>(&extContainer);
     // Check if the container is a DocObj
     if (pDocObj == nullptr) 
         return;
@@ -3236,7 +3236,7 @@ void Document::slotBeforeRemovingDynamicExtension(const App::ExtensionContainer&
     for(auto docObjExt : vectorObjExt){
         if (docObjExt->getExtensionTypeId() == Base::Type::fromName(extension.c_str()))
         {
-            Base::Console().Log("Extension found: %s\n", extension.c_str());
+            Base::Console().log("Extension found: %s\n", extension.c_str());
 
             // Get the ViewProvider extension name
             std::string extViewProviderName(docObjExt->getViewProviderExtensionName());

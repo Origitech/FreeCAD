@@ -573,7 +573,7 @@ bool ExtensionContainer::removeDynamicExtension(Base::Type type) {
 
 
     if (!this->hasExtension(type)) {
-        Base::Console().Warning("Object does not have extension %s to remove \n", type.getName());
+        Base::Console().warning("Object does not have extension %s to remove \n", type.getName());
         return false;
     }else{
         auto ext = this->getExtension(type);
