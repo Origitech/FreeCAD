@@ -42,6 +42,7 @@
 #include <Base/Console.h>
 #include <Base/ConsoleObserver.h>
 
+
 #include "BitmapFactory.h"
 
 using namespace Gui;
@@ -272,8 +273,33 @@ QIcon BitmapFactoryInst::iconFromTheme(const char* name, const QIcon& fallback)
     QIcon icon = QIcon::fromTheme(iconName, fallback);
     if (icon.isNull()) {
         const QPixmap px = pixmap(name);
-        if (!px.isNull()) {
-            icon.addPixmap(px);
+        if (!px.isNull()){
+            //Add Pixmap - NORMAL ON
+            icon.addPixmap(px, QIcon::Normal, QIcon::On);
+
+            // check for extra opacity settting
+            std::map<std::string, std::string>::iterator op = App::Application::Config().find("ModifiedIconOpacity");
+            if(op != App::Application::Config().end())
+            {
+                // get default QT rendering to disabled state
+                QPixmap grayed = icon.pixmap(px.size(), QIcon::Disabled, QIcon::On);
+
+                // change opacty based on the already grayed pixmap
+                QImage image(grayed.size(), QImage::Format_ARGB32_Premultiplied); // Image with given size and format.
+                image.fill(Qt::transparent); //fills with transparent
+                // get extra opacity value
+                QString val = QString::fromLatin1(op->second.c_str());
+                
+                QPainter p(&image);
+                p.setOpacity(val.toDouble()); // set opacity from 0.0 to 1.0, where 0.0 is fully   transparent and 1.0 is fully opaque.
+                p.drawPixmap(0, 0, grayed); // given pixmap into the paint device.
+                p.end();
+
+                QPixmap grayed_output = QPixmap::fromImage(image);
+                //Add the pixmap -- MODE && STATE
+                icon.addPixmap(grayed_output, QIcon::Disabled, QIcon::On);
+            }
+            // icon.addPixmap(px);
         }
     }
 
