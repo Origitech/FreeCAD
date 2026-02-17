@@ -167,6 +167,7 @@ class Snapper:
                 ("special", ":/icons/Draft_Snap_Special.svg"),
             ]
         )
+        # self.succeed = False TODO need it?
 
     def _get_wp(self):
         # update=False is required, without it WorkingPlane.get_working_plane()
@@ -255,7 +256,7 @@ class Snapper:
         self.running = True
 
         self.spoint = None
-
+        self.succeed = False
         if params.get_param("SnapBarShowOnlyDuringCommands"):
             toolbar = self.get_snap_toolbar()
             if toolbar:
@@ -326,6 +327,7 @@ class Snapper:
             osnap = self.snapToObject(lastpoint, active, constrain, eline, point)
             if osnap:
                 self.running = False
+                self.succeed = True
                 return osnap
 
         # Nothing has been snapped.
@@ -334,8 +336,9 @@ class Snapper:
             epoint = self.snapToCrossExtensions(point)
             if epoint:
                 point = epoint
+                self.succeed = True
             else:
-                point = self.snapToGrid(point)
+                point = self.snapToGrid(point, self.succeed)
         fp = self.cstr(lastpoint, constrain, point)
         if self.trackLine and lastpoint and (not noTracker):
             self.trackLine.p2(fp)
@@ -472,7 +475,7 @@ class Snapper:
             self.lastObj = self.lastObj[-8:]
             self.lastObjSubelements = self.lastObjSubelements[-8:]
 
-        if not snaps:
+        if not snaps or not snaps[0]:
             return None
 
         # calculating the nearest snap point
@@ -748,7 +751,8 @@ class Snapper:
                             return np, de
         return point, None
 
-    def snapToGrid(self, point):
+
+    def snapToGrid(self, point, succeed):
         """Return a grid snap point if available."""
         if self.grid:
             if self.grid.Visible:
@@ -761,7 +765,8 @@ class Snapper:
                                 self.tracker.setCoords(np)
                                 self.tracker.setMarker(self.mk["grid"])
                                 self.tracker.on()
-                            self.setCursor("grid")
+                            self.setCursor('grid')
+                            succeed = True
                             return np
         return point
 
