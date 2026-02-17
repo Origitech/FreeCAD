@@ -457,9 +457,9 @@ public:
     // clang-format off
     // NOLINTEND
     /// signal before removing the extension
-    boost::signals2::signal<void (const App::ExtensionContainer&, std::string extension)> signalBeforeRemovingDynamicExtension;
+    fastsignals::signal<void (const App::ExtensionContainer&, std::string extension)> signalBeforeRemovingDynamicExtension;
     /// signal after the extension was removed
-    boost::signals2::signal<void (const App::ExtensionContainer&, std::string extension)> signalRemovedDynamicExtension;
+    fastsignals::signal<void (const App::ExtensionContainer&, std::string extension)> signalRemovedDynamicExtension;
      //@}
 
 

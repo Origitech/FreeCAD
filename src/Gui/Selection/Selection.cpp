@@ -1079,6 +1079,7 @@ void SelectionSingleton::addSelectionGate(Gui::SelectionGate *gate, ResolveMode 
 {
     if (ActiveGate) {
         rmvSelectionGate();
+    }
     _hasFilterOwnership = takeOwnership;
     ActiveGate = gate;
     gateResolve = resolve;
