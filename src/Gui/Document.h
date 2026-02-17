@@ -368,6 +368,8 @@ private:
     struct DocumentP* d;
     static int _iDocCount;
 
+    /// Project file type
+    QString _fileType;
     mutable std::string cameraSettings;
 
     /** @name attributes for the UNDO REDO facility

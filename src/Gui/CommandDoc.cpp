@@ -153,9 +153,24 @@ void StdCmdOpen::activated(int iMsg)
     // fill the list of registered endings
     FileDialog::FilterList formatList;
 
+    // Identify if there is a specific format in the branding, to be the first on the list
+    const std::map<std::string,std::string>& config = App::Application::Config();
+    std::map<std::string, std::string>::const_iterator BrandFileType = config.find("FileType");
+    std::string firstFileType;
+    if (BrandFileType != config.end()){
+        firstFileType = BrandFileType->second;
+    }else{
+        firstFileType = "FCStd";
+    }
+
     FileDialog::Filter allSupportedFormats {QObject::tr("Supported formats"), {}};
     // Cram all formats FreeCAD can import under one label
-    const auto filetypes = App::GetApplication().getImportTypes();
+    auto filetypes = App::GetApplication().getImportTypes();
+    // Make sure branded file type is the very first fileformat
+    if (auto it = std::ranges::find(filetypes, firstFileType); it != filetypes.end()) {
+        filetypes.erase(it);
+        filetypes.insert(filetypes.begin(), firstFileType);
+    }
     for (const auto& type : filetypes) {
         allSupportedFormats.patterns.append(QStringLiteral("*.") + QString::fromStdString(type));
     }
@@ -163,10 +178,11 @@ void StdCmdOpen::activated(int iMsg)
     formatList.append(allSupportedFormats);
 
     const auto importFilters = App::GetApplication().getImportFilters();
-    // Make sure FCStd is the second entry in the format list
+    // Make sure the branded file type is the second entry in the format list
+    const std::string firstFilePattern = "*." + firstFileType;
     auto fcstdIt = importFilters.cend();
     for (auto it = importFilters.cbegin(); it != importFilters.cend(); ++it) {
-        if (const auto fc = it->first.find("*.FCStd"); fc != std::string::npos) {
+        if (const auto fc = it->first.find(firstFilePattern); fc != std::string::npos) {
             fcstdIt = it;
             QString fcstdFilter = QString::fromStdString(it->first);
             if (!fcstdFilter.contains(QStringLiteral("*.FCBak"), Qt::CaseInsensitive)) {

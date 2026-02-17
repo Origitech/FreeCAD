@@ -1863,6 +1863,16 @@ unsigned int Document::getMemSize() const
 static std::string checkFileName(const char* file)
 {
     std::string fn(file);
+    
+    // Identify if there is a specific format in the branding
+    const std::map<std::string,std::string>& config = App::Application::Config();
+    std::map<std::string, std::string>::const_iterator BrandFileType = config.find("FileType");
+    std::string fileType;
+    if (BrandFileType != config.end()){
+        fileType = BrandFileType->second;
+    }else{
+        fileType = "FCStd";
+    }
 
     // Append extension if missing. This option is added for security reason, so
     // that the user won't accidentally overwrite other file that may be critical.
@@ -1870,25 +1880,25 @@ static std::string checkFileName(const char* file)
             .GetParameterGroupByPath("User parameter:BaseApp/Preferences/Document")
             ->GetBool("CheckExtension", true)) {
         constexpr std::size_t backupExtLen = sizeof(".fcbak") - 1;
-        constexpr std::size_t backupAndDocExtLen = sizeof(".fcbak.fcstd") - 1;
-        if (boost::iends_with(fn, ".fcbak.fcstd")) {
-            fn.erase(fn.size() - backupAndDocExtLen);
-            fn += ".FCStd";
+        const std::string backupAndDocExt = ".fcbak." + fileType;
+        if (boost::iends_with(fn, backupAndDocExt)) {
+            fn.erase(fn.size() - backupAndDocExt.size());
+            fn += "." + fileType;
             return fn;
         }
         if (boost::iends_with(fn, ".fcbak")) {
             fn.erase(fn.size() - backupExtLen);
-            fn += ".FCStd";
+            fn += "." + fileType;
             return fn;
         }
 
         const char* ext = strrchr(fn.c_str(), '.');
-        if ((ext == nullptr) || !boost::iequals(ext + 1, "fcstd")) {
+        if ((ext == nullptr) || !boost::iequals(ext + 1, fileType)) {
             if (ext && ext[1] == 0) {
-                fn += "FCStd";
+                fn += fileType;
             }
             else {
-                fn += ".FCStd";
+                fn += "." + fileType;
             }
         }
     }

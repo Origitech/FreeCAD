@@ -571,6 +571,15 @@ Document::Document(App::Document* pcDocument, Application* app)
 
     d->_pcDocument->setMaxUndoStackSize(hGrp->GetInt("MaxUndoSize", 20));
     d->_changeViewTouchDocument = hGrp->GetBool("ChangeViewProviderTouchDocument", true);
+
+    // Get the file type from branding
+    const std::map<std::string,std::string>& config = App::Application::Config();
+    std::map<std::string, std::string>::const_iterator BrandFileType = config.find("FileType");
+    if (BrandFileType != config.end()){
+        _fileType = QString::fromStdString(BrandFileType->second);
+    }else{
+        _fileType = QString::fromLatin1("FCStd");
+    }
 }
 
 Document::~Document()
@@ -1627,8 +1636,29 @@ bool Document::warnIfOlderVersion()
 }
 
 /// Save the document
-bool Document::save()
-{
+bool Document::save(void)
+{   
+
+    // Do not allow saving the project if its extension does not belong to (branded) FreeCAD
+    QString fileName = QString::fromUtf8(getDocument()->FileName.getValue());
+    if (!fileName.isEmpty()){
+        QString currentFileType = fileName.split(QString::fromLatin1(".")).last();
+        if (QString::compare(currentFileType, _fileType, Qt::CaseInsensitive)!=0){
+            // Show dialog - inform the user that we must convert the project first
+            int ret = QMessageBox::warning(getMainWindow(),
+                QObject::tr("Save issue"), 
+                QObject::tr("Current extension can not be saved, convert the project first!\n\nDo you want to proceed?"), 
+                QMessageBox::Yes, QMessageBox::No);
+            if (ret==QMessageBox::Yes){
+                //@TODO convert _pcDocument data before saving
+                return saveAs();
+            }else{
+                return false;
+            }
+            
+        }
+    }
+
     if (d->_pcDocument->isSaved()) {
         // Warn if this document was created with an older FreeCAD version
         if (!warnIfOlderVersion()) {
@@ -1732,23 +1762,27 @@ bool Document::saveAs()
     getMainWindow()->showMessage(QObject::tr("Save document under new filename…"));
 
     QString exe = qApp->applicationName();
-    QString name = QString::fromUtf8(getDocument()->FileName.getValue());
-    if (name.isEmpty()) {
-        name = QString::fromUtf8(getDocument()->Label.getValue());
+
+    // Do not allow saving the project if its extension does not belong to (branded) FreeCAD
+    QString fileName = QString::fromUtf8(getDocument()->FileName.getValue());
+    if (fileName.isEmpty()) {
+        fileName = QString::fromUtf8(getDocument()->Label.getValue());
     }
-    if (name.endsWith(QStringLiteral(".FCBak"), Qt::CaseInsensitive)) {
-        name.chop(QStringLiteral(".FCBak").size());
-        if (!name.endsWith(QStringLiteral(".FCStd"), Qt::CaseInsensitive)) {
-            name += QStringLiteral(".FCStd");
+    else {
+        // Get the name project type name from the path
+        QString currentFileType = fileName.split(QString::fromLatin1(".")).last();
+        if (QString::compare(currentFileType, _fileType, Qt::CaseInsensitive)!=0){
+            // Remove the project-type-name and the dot from the path
+            fileName.remove(currentFileType.insert(0,QString::fromLatin1(".")));
         }
     }
+
     QString fn = FileDialog::getSaveFileName(
         getMainWindow(),
         QObject::tr("Save %1 Document").arg(exe),
-        name,
-        FileDialog::FilterList {{QObject::tr("%1 document").arg(exe), {"*.FCStd"}}}
+        fileName,
+        FileDialog::FilterList {{QObject::tr("%1 document").arg(exe), {QStringLiteral("*.") + _fileType}}}
     );
-
     if (!fn.isEmpty()) {
         QFileInfo fi;
         fi.setFile(fn);
