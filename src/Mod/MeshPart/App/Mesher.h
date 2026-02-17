@@ -43,7 +43,7 @@ class MeshObject;
 namespace MeshPart
 {
 
-class Mesher
+class MeshPartExport Mesher
 {
 public:
     enum Method

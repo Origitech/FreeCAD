@@ -22,6 +22,11 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "PreCompiled.h"
+
+#include <Mod/MeshPart/MeshpartGlobal.h>
+
+
 #include <algorithm>
 
 #include <BRepMesh_IncrementalMesh.hxx>
