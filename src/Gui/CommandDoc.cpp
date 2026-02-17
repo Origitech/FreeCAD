@@ -103,11 +103,22 @@ void StdCmdOpen::activated(int iMsg)
     formatList += QLatin1String(" (");
 
     std::vector<std::string> filetypes = App::GetApplication().getImportTypes();
-    // Make sure FCStd is the very first fileformat
-    auto it = std::ranges::find(filetypes, "FCStd");
+    std::vector<std::string>::iterator it;
+    // Make sure branded file type is the very first fileformat
+    // Identify if there is a specific format in the branding, to be the first on the list
+    const std::map<std::string,std::string>& config = App::Application::Config();
+    std::map<std::string, std::string>::const_iterator BrandFileType = config.find("FileType");
+    std::string firstFileType;
+    if (BrandFileType != config.end()){
+        firstFileType = BrandFileType->second;
+    }else{
+        firstFileType = "FCStd";
+    }
+
+    it = std::find(filetypes.begin(), filetypes.end(), firstFileType);
     if (it != filetypes.end()) {
         filetypes.erase(it);
-        filetypes.insert(filetypes.begin(), "FCStd");
+        filetypes.insert(filetypes.begin(), firstFileType);
     }
     for (it = filetypes.begin(); it != filetypes.end(); ++it) {
         formatList += QLatin1String(" *.");
@@ -118,9 +129,9 @@ void StdCmdOpen::activated(int iMsg)
 
     std::map<std::string, std::string> FilterList = App::GetApplication().getImportFilters();
     std::map<std::string, std::string>::iterator jt;
-    // Make sure the format name for FCStd is the very first in the list
-    for (jt = FilterList.begin(); jt != FilterList.end(); ++jt) {
-        if (jt->first.find("*.FCStd") != std::string::npos) {
+    // Make sure the format name for branded filetype is the very first in the list
+    for (jt=FilterList.begin();jt != FilterList.end();++jt) {
+        if (jt->first.find(firstFileType) != std::string::npos) {
             formatList += QLatin1String(jt->first.c_str());
             formatList += QLatin1String(";;");
             FilterList.erase(jt);
