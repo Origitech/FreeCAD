@@ -69,6 +69,7 @@ Branding::Branding()
     filter.push_back("AppDataSkipVendor");
     filter.push_back("NavigationStyle");
     filter.push_back("UserParameterTemplate");
+    filter.push_back("ModifiedIconOpacity");
 }
 
 bool Branding::readFile(const QString& fn)
