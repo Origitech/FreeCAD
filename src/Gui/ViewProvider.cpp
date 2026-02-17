@@ -175,22 +175,42 @@ void ViewProvider::finishEditing()
 
 bool ViewProvider::setEdit(int ModNum)
 {
-    Q_UNUSED(ModNum);
+    // Set edit on available extensions
+    auto vector = getExtensionsDerivedFromType<Gui::ViewProviderExtension>();
+    for (Gui::ViewProviderExtension *ext : vector) {
+        if (ext->extensionSetEdit(ModNum)) {
+            return true;
+        }
+    }
     return true;
 }
 
 void ViewProvider::unsetEdit(int ModNum)
 {
-    Q_UNUSED(ModNum);
+    // Unset edit on available extensions
+    auto vector = getExtensionsDerivedFromType<Gui::ViewProviderExtension>();
+    for (Gui::ViewProviderExtension *ext : vector) {
+        ext->extensionUnsetEdit(ModNum);
+    }
 }
 
-void ViewProvider::setEditViewer(View3DInventorViewer*, int ModNum)
+void ViewProvider::setEditViewer(View3DInventorViewer *viewer, int ModNum)
 {
-    Q_UNUSED(ModNum);
+    // Set edit viewer on available extensions
+    auto vector = getExtensionsDerivedFromType<Gui::ViewProviderExtension>();
+    for (Gui::ViewProviderExtension *ext : vector) {
+        ext->extensionSetEditViewer(viewer, ModNum);
+    }
 }
 
-void ViewProvider::unsetEditViewer(View3DInventorViewer*)
-{}
+void ViewProvider::unsetEditViewer(View3DInventorViewer *viewer)
+{
+    // Unset edit viewer on available extensions
+    auto vector = getExtensionsDerivedFromType<Gui::ViewProviderExtension>();
+    for (Gui::ViewProviderExtension *ext : vector) {
+        ext->extensionUnsetEditViewer(viewer);
+    }
+}
 
 bool ViewProvider::isUpdatesEnabled() const
 {
