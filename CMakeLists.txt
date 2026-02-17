@@ -68,6 +68,7 @@ SET(APP_EXE_NAME "FreeCAD" CACHE STRING "application executable name that can be
 include(CheckCXXCompilerFlag)
 include(AddFileDependencies)
 include(cMake/FreeCadMacros.cmake)
+
 # include helper functions/macros
 add_subdirectory(cMake/FreeCAD_Helpers)
 
@@ -91,12 +92,14 @@ if(NOT FREECAD_LIBPACK_USE OR FREECAD_LIBPACK_CHECKFILE_CLBUNDLER OR FREECAD_LIB
     find_package(ZLIB REQUIRED)
     find_package(PyCXX REQUIRED)
     SetupOpenCasCade()
+
     if(BUILD_GUI)
         # Do this before the check for SMESH because it depends on vtk
         # that may have its own OpenGL check but possibly fails and leaves
         # OPENGL_gl_LIBRARY empty that results into linker errors
         SetupOpenGL()
     endif(BUILD_GUI)
+
     SetupSalomeSMESH()
     if (BUILD_FEM_NETGEN)
         set(NETGEN_DEFINITIONS -DNO_PARALLEL_THREADS -DOCCGEOMETRY)
@@ -105,9 +108,10 @@ if(NOT FREECAD_LIBPACK_USE OR FREECAD_LIBPACK_CHECKFILE_CLBUNDLER OR FREECAD_LIB
         endif()
     endif()
     # not needed at the moment
-    #find_package(OpenCV REQUIRED)
+    # find_package(OpenCV REQUIRED)
     SetupSwig()
     SetupEigen()
+
     # This file is included directly due to some cMake macros that are defined within.
     # If these macro definitions are embedded within another macro, it causes problems.
     include(cMake/FreeCAD_Helpers/SetupQt.cmake)
@@ -139,9 +143,11 @@ SetGlobalCompilerAndLinkerSettings()
 enable_testing()
 
 add_subdirectory(src)
+
 if(BUILD_RIOD) # only build RioD if specified, so FCAD can still be built stand-alone
-    add_subdirectory("../" "${CMAKE_BINARY_DIR}/RioD")
+    add_subdirectory("../RioD" "${CMAKE_BINARY_DIR}/RioD")
 endif(BUILD_RIOD)
+
 add_subdirectory(data)
 
 BuildAndInstallDesignerPlugin()
