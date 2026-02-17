@@ -74,3 +74,6 @@ tsupdate_stdout.log
 # pixi environments
 *.egg-info
 .pixi
+
+# cmake preset
+CMakeUserPresets.json
