@@ -1350,6 +1350,8 @@ protected:
      */
     int countObjectsOfType(const Base::Type& typeId) const;
 
+    /// @brief include the 'add' or 'remove' dynamic extensions to the transactions
+    void onAddOrRemoveDynamicExtension(TransactionalObject*, Extension *ext, bool add);
     void onBeforeChange(const Property* prop) override;
     void onChanged(const Property* prop) override;
 

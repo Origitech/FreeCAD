@@ -29,6 +29,7 @@
 #include <App/Document.h>
 #include <App/DocumentObject.h>
 #include <Base/Console.h>
+#include <App/Extension.h>
 #include <Base/Parameter.h>
 #include <Base/Tools.h>
 
@@ -144,6 +145,9 @@ PropertyView::PropertyView(QWidget* parent)
     this->connectChangedDocument = App::GetApplication().signalChangedDocument.connect(
         std::bind(&PropertyView::slotChangePropertyData, this, sp::_2)
     );
+    // TODO create connection
+    //  App::GetApplication().signalRemovedDynamicExtension.connect(boost::bind
+    //     (&PropertyView::slotRemoveDynamicExtension, this, sp::_1, sp::_2));
     // NOLINTEND
 }
 
@@ -274,6 +278,18 @@ void PropertyView::slotRemoveDynamicProperty(const App::Property& prop)
     else {
         return;
     }
+    timer->start(ViewParams::instance()->getPropertyViewTimer());
+}
+void PropertyView::slotRemoveDynamicExtension(const App::ExtensionContainer& extContainer, std::string extension)
+{   
+    // If the container has properties being shown in data (App)
+    if(propertyEditorData->propOwners.count(&extContainer))
+        propertyEditorData->buildUp();
+    // If the container has properties being shown in view (Gui)
+    else if(propertyEditorView->propOwners.count(&extContainer))
+        propertyEditorView->buildUp();
+    else
+        return;
     timer->start(ViewParams::instance()->getPropertyViewTimer());
 }
 

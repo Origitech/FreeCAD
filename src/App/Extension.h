@@ -148,6 +148,13 @@ public:
     /// Destruct an extension object.
     virtual ~Extension();
 
+
+    /**
+     * @brief Returns a new copy of the Extension (mainly for Undo/Redo and transactions)
+     *
+     * @return The  extension.
+     */
+    virtual Extension *Copy(void) const { return nullptr;}
     /**
      * @brief Initialize the extension.
      *
@@ -160,6 +167,17 @@ public:
      * @throw Base::RuntimeError If the extension type is not set.
      */
     virtual void initExtension(App::ExtensionContainer* obj);
+    
+    /**
+     * @brief Deinitialize the extension.
+     *
+     * This function is called by the ExtensionContainer to deinitialize the extension
+     *
+     * @param[in,out] obj The ExtensionContainer object to which this extension
+     *                    is attached.
+     *
+     */
+    virtual void deinitExtension(App::ExtensionContainer* obj);
 
     /**
      * @brief Get the container of the extension.

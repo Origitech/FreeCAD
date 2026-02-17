@@ -28,6 +28,7 @@
 #include <string>
 #include <fastsignals/signal.h>
 #include <QString>
+#include <App/ExtensionContainer.h>
 
 #include <Base/Persistence.h>
 #include <Gui/TreeItemMode.h>
@@ -104,6 +105,14 @@ protected:
     void slotTouchedObject(const App::DocumentObject&);
     void slotChangePropertyEditor(const App::Document&, const App::Property&);
     void callSignalBeforeRecompute();
+    /// @brief Reacts when an extension is added.
+    /// Tries to add a dynamic view provider extension to the view provider
+    //  if the DocumentObjectExtension requires one
+    void slotAddedDynamicExtension(const App::ExtensionContainer&, std::string extension);
+    /// @brief Reacts to an extension being removed.
+    /// Tries to remove a dynamic view provider extension from the view provider
+    //  if the DocumentObjectExtension requires one
+    void slotBeforeRemovingDynamicExtension(const App::ExtensionContainer&, std::string extension);
     //@}
 
 public:

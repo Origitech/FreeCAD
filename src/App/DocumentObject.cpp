@@ -754,6 +754,35 @@ App::Property* DocumentObject::addDynamicProperty(const char* type,
     return prop;
 }
 
+bool DocumentObject::removeDynamicExtension(Base::Type type)
+{
+    if(!this->hasExtension(type))
+        return false;
+    
+    App::Extension *extension = this->getExtension(type);
+    if (_pDoc)
+        this->onAddOrRemoveDynamicExtension(_pDoc, extension, false);
+
+    return ExtensionContainer::removeDynamicExtension(type);
+}
+
+App::Extension* DocumentObject::addDynamicExtension(Base::Type type)
+{
+    App::Extension *extension = ExtensionContainer::addDynamicExtension(type);
+    if(extension && _pDoc) 
+        this->onAddOrRemoveDynamicExtension(_pDoc, extension, true);
+    
+    return extension;
+}
+App::Extension* DocumentObject::addDynamicExtension(App::Extension* ext)
+{
+    App::Extension *extension = ExtensionContainer::addDynamicExtension(ext);
+    if(extension && _pDoc) 
+        this->onAddOrRemoveDynamicExtension(_pDoc, extension, true);
+    
+    return extension;
+}
+
 void DocumentObject::onBeforeChange(const Property* prop)
 {
     if (isFreezed() && prop != &Visibility) {

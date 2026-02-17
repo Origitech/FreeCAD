@@ -6335,7 +6335,7 @@ void DocumentObjectItem::displayStatusInfo()
 {
     App::DocumentObject* Obj = object()->getObject();
 
-    QString info = QApplication::translate(Obj->getTypeId().getName(), Obj->getStatusString());
+    QString info = QApplication::translate("ObjectStatusString", Obj->getStatusString());
 
     if (Obj->mustExecute() == 1 && !Obj->isError()) {
         info += TreeWidget::tr(" (but must be executed)");

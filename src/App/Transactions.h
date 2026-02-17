@@ -31,6 +31,7 @@
 #include <Base/Factory.h>
 #include <Base/Persistence.h>
 #include <App/PropertyContainer.h>
+#include <App/Extension.h>
 
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/hashed_index.hpp>
@@ -128,6 +129,7 @@ public:
      * @param[in] add If true, add the property; otherwise, remove it.
      */
     void addOrRemoveProperty(TransactionalObject* Obj, const Property* pcProp, bool add);
+    void addOrRemoveDynamicExtension(TransactionalObject *Obj, const Extension *pExt, bool add);
 
     /**
      * @brief Record adding a new object to the transaction.
@@ -233,6 +235,9 @@ public:
 
     unsigned int getMemSize() const override;
     void Save(Base::Writer& writer) const override;
+    void addOrRemoveDynamicExtension(const Extension *pExt, bool add);
+    
+    /// This method is used to restore properties from an XML document.
     void Restore(Base::XMLReader& reader) override;
 
     friend class Transaction;
@@ -256,7 +261,12 @@ protected:
     };
 
     /// A map to maintain the properties of the object.
+    struct ExtensionData {
+        Base::Type extensionType;
+        const Extension *extensionOrig = nullptr;
+    };
     std::unordered_map<int64_t, PropData> _PropChangeMap;
+    std::unordered_map<const Extension *, ExtensionData> _ExtensionMap;
 
     /// The name of the object in the document.
     std::string _NameInDocument;
