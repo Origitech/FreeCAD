@@ -160,10 +160,16 @@ void Thumbnail::SaveDocFile(Base::Writer& writer) const
         return;
     }
 
-    // Get app icon and resize to half size to insert in topbottom position over the current view
-    // snapshot
-    QPixmap appIcon = Gui::BitmapFactory().pixmap(App::Application::Config()["AppIcon"].c_str());
-    QPixmap px = appIcon;
+    // Get the App icon path
+    // concatenate to home(install) path if is relative
+    QString appIconPath = QString::fromUtf8(App::Application::Config()["AppIcon"].c_str());
+    if (QDir(appIconPath).isRelative()) {
+        QString home = QString::fromStdString(App::Application::getHomePath());
+        appIconPath = QFileInfo(QDir(home), appIconPath).absoluteFilePath();
+    }
+    // Get app icon and resize to half size to insert in topbottom position over the current view snapshot
+    QPixmap appIcon = Gui::BitmapFactory().pixmap(appIconPath.toStdString().c_str());
+    QPixmap px =  appIcon;
     if (!img.isNull()) {
         // Create a small "Fc" Application icon in the bottom right of the thumbnail
         if (App::GetApplication()
