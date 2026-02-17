@@ -3215,7 +3215,7 @@ void Document::slotBeforeRemovingDynamicExtension(const App::ExtensionContainer&
         App::Extension *pExt = pViewProviderObj->getExtension(Base::Type::fromName(extension.c_str()));
         ViewProviderExtension *pViewProviderExt = dynamic_cast<ViewProviderExtension*>(pExt);
         if(pViewProviderExt)
-            pViewProviderExt->extensionDettach(pViewProviderObj->pcObject);
+            pViewProviderExt->extensionDetach(pViewProviderObj->pcObject);
 
         return;  
     }
