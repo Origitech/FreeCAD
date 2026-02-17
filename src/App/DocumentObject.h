@@ -1184,6 +1184,13 @@ public:
         bool hidden = false
     ) override;
 
+
+    /// @brief Add the dynamic extension to this container using type
+    virtual App::Extension* addDynamicExtension(Base::Type type) override;
+    /// @brief Add the dynamic extension to this container using the already instantiated extension 
+    virtual App::Extension* addDynamicExtension(App::Extension*) override;
+    /// @brief Remove the dynamic extension fron this container using type
+    virtual bool removeDynamicExtension(Base::Type type) override;
     /**
      * @brief Resolve the last document object referenced in the subname.
      *

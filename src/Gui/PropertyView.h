@@ -86,6 +86,7 @@ private:
     void slotAppendDynamicProperty(const App::Property&);
     void slotRemoveDynamicProperty(const App::Property&);
     void slotRenameDynamicProperty(const App::Property&, const char* oldName);
+    void slotRemoveDynamicExtension(const App::ExtensionContainer&, std::string extension);
     void slotChangePropertyEditor(const App::Document&, const App::Property&);
     void slotRollback();
     void slotActiveDocument(const Gui::Document&);

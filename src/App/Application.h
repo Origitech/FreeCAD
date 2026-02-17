@@ -535,6 +535,11 @@ public:
     /// @}
     // clang-format off
     // NOLINTEND
+    /// signal before removing the extension
+    fastsignals::signal<void (const App::ExtensionContainer&, std::string extension)> signalBeforeRemovingDynamicExtension;
+    /// signal after the extension was removed
+    fastsignals::signal<void (const App::ExtensionContainer&, std::string extension)> signalRemovedDynamicExtension;
+     //@}
 
 
     /**

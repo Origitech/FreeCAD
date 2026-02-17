@@ -77,6 +77,11 @@ public:
         return "";
     }
 
+    /// @brief returns a user friendly name to short describe the extension
+    virtual const char* getUserFriendlyName() const {return "";}
+    /// @brief returns the class name of the associated extension editor
+    virtual const char* getEditorName() const {return "";}
+
     /** Get the sub object by name
      * @sa DocumentObject::getSubObject()
      *

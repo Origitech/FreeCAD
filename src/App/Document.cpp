@@ -328,6 +328,24 @@ void Document::addOrRemovePropertyOfObject(TransactionalObject* obj,
     });
 }
 
+void Document::onAddOrRemoveDynamicExtension(TransactionalObject* obj, Extension *ext, bool add)
+{
+    if (!ext || !obj || !obj->isAttachedToDocument())
+        return;
+    // If no transaction is open, open one!
+    if (!isPerformingTransaction() && !d->activeUndoTransaction) {
+        if (!testStatus(Restoring) || testStatus(Importing)) {
+            if (d->bookedTransaction == NullTransaction) {
+                d->bookedTransaction = GetApplication().getGlobalTransaction();
+            } else {
+                _openTransaction(GetApplication().getTransactionName(d->bookedTransaction), d->bookedTransaction);
+            }
+        }
+    }
+    // Include the action to the current transaction
+    if (d->activeUndoTransaction && !d->rollback)
+        d->activeUndoTransaction->addOrRemoveDynamicExtension(obj, ext, add);
+}
 bool Document::isPerformingTransaction() const
 {
     return d->undoing || d->rollback;

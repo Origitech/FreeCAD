@@ -214,6 +214,48 @@ App::Property* ViewProviderDocumentObject::addDynamicProperty(
     return prop;
 }
 
+bool ViewProviderDocumentObject::removeDynamicExtension(Base::Type type)
+{
+    if(!this->hasExtension(type))
+        return false;
+    
+    App::Extension *extension = this->getExtension(type);
+
+    // transactions of view providers are also managed in App::Document.
+    App::DocumentObject* docobject = getObject();
+    App::Document* document = docobject ? docobject->getDocument() : nullptr;
+    if (document)
+        this->onAddOrRemoveDynamicExtension(document, extension, false);
+
+    return ExtensionContainer::removeDynamicExtension(type);
+}
+
+App::Extension* ViewProviderDocumentObject::addDynamicExtension(Base::Type type)
+{
+    App::Extension *extension = ExtensionContainer::addDynamicExtension(type);
+    if(extension) {
+        // transactions of view providers are also managed in App::Document.
+        App::DocumentObject* docobject = getObject();
+        App::Document* document = docobject ? docobject->getDocument() : nullptr;
+        if (document)
+            this->onAddOrRemoveDynamicExtension(document, extension, true);
+    }
+    return extension;
+}
+App::Extension* ViewProviderDocumentObject::addDynamicExtension(App::Extension* ext)
+{
+    App::Extension *extension = ExtensionContainer::addDynamicExtension(ext);
+    if(extension) {
+        // transactions of view providers are also managed in App::Document.
+        App::DocumentObject* docobject = getObject();
+        App::Document* document = docobject ? docobject->getDocument() : nullptr;
+        if (document)
+            this->onAddOrRemoveDynamicExtension(document, extension, true);
+    }
+    return extension;
+}
+
+
 void ViewProviderDocumentObject::onBeforeChange(const App::Property* prop)
 {
     if (isAttachedToDocument()) {

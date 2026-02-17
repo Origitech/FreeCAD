@@ -104,6 +104,23 @@ void Extension::initExtension(ExtensionContainer* obj)
     m_base->registerExtension(m_extensionType, this);
 }
 
+void Extension::deinitExtension(ExtensionContainer *obj) {
+
+    if (m_extensionType.isBad())
+        throw Base::RuntimeError("Extension: Extension type not set");
+
+    // All properties already have a PropertyContainer father
+    // since we are going to delete the extention, we detach from the container first
+    std::vector<Property *> list;
+    extensionGetPropertyData().getPropertyList(this, list);
+    for (Property *prop : list) {
+        prop->setContainer(0);
+    }
+
+    m_base->unregisterExtension(m_extensionType, this);
+    m_base = nullptr;
+
+}
 
 PyObject* Extension::getExtensionPyObject()
 {

@@ -67,6 +67,15 @@ public:
      */
     void registerExtension(Base::Type extension, App::Extension* ext);
 
+
+    /**
+     * @brief Unregister an extension.
+     *
+     * @param[in] extension The type of the extension to unregister.
+     * @param[in] ext The extension to unregister.
+     */
+    void unregisterExtension(Base::Type extension, App::Extension* ext);
+
     /**
      * @brief Whether this container has an extension of the given type.
      *
@@ -292,6 +301,40 @@ public:
      * @param[in,out] reader The reader to restore the extensions from.
      */
     void restoreExtensions(Base::XMLReader& reader);
+
+
+    /**
+     * @brief Add a dynamic extension of the given type.
+     *
+     * This method adds a dynamic extension of the given type to the container.
+     *
+     * @param[in] type The type of the extension to add.
+     * @return The added extension.
+     */
+    virtual App::Extension* addDynamicExtension(Base::Type type);
+
+    /**
+     * @brief Add a dynamic extension.
+     *
+     * This method adds a dynamic extension to the container.  It is used to
+     * add extensions that are not known at compile time.
+     *
+     * @param[in] ext The extension to add.
+     * @return The added extension.
+     */
+    virtual App::Extension* addDynamicExtension(App::Extension*);
+
+    /**
+     * @brief Remove a dynamic extension of the given type.
+     *
+     * This method removes a dynamic extension of the given type from the
+     * container.
+     *
+     * @param[in] type The type of the extension to remove.
+     * @return True if the extension was removed, false otherwise.
+     */
+    virtual bool removeDynamicExtension(Base::Type type);
+
 
     /**
      * @brief Handle a changed property name during restore.

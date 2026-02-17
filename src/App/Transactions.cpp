@@ -179,7 +179,22 @@ void Transaction::addOrRemoveProperty(TransactionalObject* Obj, const Property* 
         to->addOrRemoveProperty(pcProp, add);
     });
 }
+void Transaction::addOrRemoveDynamicExtension(TransactionalObject *Obj, const Extension* pExt, bool add) {
+    auto &index = _Objects.get<1>();
+    auto pos = index.find(Obj);
 
+    TransactionObject *To;
+
+    if (pos != index.end()) {
+        To = pos->second;
+    } else {
+        To = TransactionFactory::instance().createTransaction(Obj->getTypeId());
+        To->status = TransactionObject::Chn;
+        index.emplace(Obj, To);
+    }
+
+    To->addOrRemoveDynamicExtension(pExt, add);
+}
 //**************************************************************************
 // separator for other implementation aspects
 
@@ -415,6 +430,21 @@ void TransactionObject::applyChn(Document& /*Doc*/, TransactionalObject* pcObj, 
             catch (...) {
             }
         }
+        for(auto &v : _ExtensionMap) {
+            // Handle extension data change
+            auto &data = v.second;
+            if(!data.extensionOrig) {
+                // Here means we are undoing/redoing a remove dynamicExtension
+                pcObj->removeDynamicExtension(data.extensionType);
+                continue;
+            }else{
+                // Here means we are undoing/redoing an add dynamicExtension
+                App::Extension *ext = const_cast<App::Extension *>(data.extensionOrig);
+                assert(ext);
+                pcObj->addDynamicExtension(ext);
+                continue;
+            }
+        }
     }
 }
 
@@ -503,6 +533,37 @@ void TransactionObject::addOrRemoveProperty(const Property* pcProp, bool add)
         data.property->setStatusValue(pcProp->getStatus());
     }
 }
+
+void TransactionObject::addOrRemoveDynamicExtension(const Extension* pExt, bool add)
+{
+    // FIXME suppress compiler warnings?
+    (void)add;
+
+    if(!pExt)
+        return;
+
+
+    //FIXME TODO hElP-mE ...... it's not possible to undo/redo prop changes on the extension =(
+    // Use the extension pointer as key
+    // Copy it, cause after remove extension it will get deleted
+    const App::Extension *pCopiedExtension = pExt->Copy();
+    assert(pCopiedExtension);
+    auto &data = _ExtensionMap[pCopiedExtension];
+    
+    // Store the extension type
+    data.extensionType = pCopiedExtension->getExtensionTypeId();
+    if(add){
+        // If the action is add, we store nullptr
+        // Cause on undo/redo, the action will be "remove extension"
+        data.extensionOrig = nullptr;
+    }
+    else {
+        // If the action is remove, we store the extension
+        // Cause on undo/redo, the action will be "add extension"
+        data.extensionOrig = pCopiedExtension;
+    }
+
+ }
 
 unsigned int TransactionObject::getMemSize() const
 {

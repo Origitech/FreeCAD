@@ -44,6 +44,7 @@
 #include <App/Document.h>
 #include <App/DocumentObject.h>
 #include <App/DocumentObjectGroup.h>
+#include <App/DocumentObjectExtension.h>
 #include <App/Transactions.h>
 #include <App/ElementNamingUtils.h>
 #include <Base/Console.h>
@@ -145,6 +146,8 @@ struct DocumentP
     Connection connectTouchedObject;
     Connection connectChangePropertyEditor;
     AdvancedConnection connectChangeDocument;
+    Connection connectAddedDynamicExtension;
+    Connection connectBeforeRemovingDynamicExtension;
 
     using ConnectionBlock = fastsignals::shared_connection_block;
     ConnectionBlock connectActObjectBlocker;
@@ -559,6 +562,10 @@ Document::Document(App::Document* pcDocument, Application* app)
     );
     // NOLINTEND
 
+    d->connectAddedDynamicExtension = App::GetApplication().signalAddedDynamicExtension.connect
+        (std::bind(&Gui::Document::slotAddedDynamicExtension, this, sp::_1, sp::_2));
+    d->connectBeforeRemovingDynamicExtension = App::GetApplication().signalBeforeRemovingDynamicExtension.connect
+        (std::bind(&Gui::Document::slotBeforeRemovingDynamicExtension, this, sp::_1, sp::_2));
     // pointer to the python class
     // NOTE: As this Python object doesn't get returned to the interpreter we
     // mustn't increment it (Werner Jan-12-2006)
@@ -609,6 +616,8 @@ Document::~Document()
     d->connectTouchedObject.disconnect();
     d->connectChangePropertyEditor.disconnect();
     d->connectChangeDocument.disconnect();
+    d->connectAddedDynamicExtension.disconnect();
+    d->connectBeforeRemovingDynamicExtension.disconnect();
 
     // e.g. if document gets closed from within a Python command
     d->_isClosing = true;
@@ -3277,4 +3286,90 @@ std::vector<App::DocumentObject*> Document::getTreeRootObjects() const
         }
     }
     return rootObjs;
+}
+void Document::slotAddedDynamicExtension(const App::ExtensionContainer& extContainer, std::string extension){
+
+    // Check if the container is a DocObj    
+    const App::DocumentObject *pDocObj = Base::freecad_cast<App::DocumentObject*>(&extContainer);
+    if (pDocObj == nullptr) 
+        return;// Container is a ViewProvider   
+
+    // Check for a valid document
+    if(getDocument() != pDocObj->getDocument())
+        return;
+
+    // If performing transaction, do nothing
+    if(getDocument()->isPerformingTransaction())
+        return;
+    
+    // Get all extension derived from DocumentObjectExtension
+    auto vectorObjExt = pDocObj->getExtensionsDerivedFromType<App::DocumentObjectExtension>();
+    for(auto docObjExt : vectorObjExt){
+        if (docObjExt->getExtensionTypeId() == Base::Type::fromName(extension.c_str()))
+        {
+            Base::Console().log("Extension found: {}\n", extension.c_str());
+
+            // Get the ViewProvider extension name
+            std::string extViewProviderName(docObjExt->getViewProviderExtensionName());
+
+            // No view provider, nothing to do
+            if (extViewProviderName.empty())
+                return;
+                
+            // Get ViewProvider extension type
+            Base::Type type = Base::Type::getTypeIfDerivedFrom(extViewProviderName.c_str(), 
+                ViewProviderExtension::getExtensionClassTypeId(), true);
+
+            // Add vieProvider dynamic extension
+            if (d->_ViewProviderMap[pDocObj]->addDynamicExtension(type)){
+                setModified(true);
+                // Attach extension
+                ViewProviderExtension *pViewProviderExt = static_cast<ViewProviderExtension*>
+                    (d->_ViewProviderMap[pDocObj]->getExtension(type));
+                pViewProviderExt->extensionAttach(const_cast<App::DocumentObject*>(pDocObj));
+
+            }
+            break;
+        }
+        
+    }
+}
+void Document::slotBeforeRemovingDynamicExtension(const App::ExtensionContainer& extContainer, std::string extension){  
+    const App::DocumentObject *pDocObj = Base::freecad_cast<App::DocumentObject*>(&extContainer);
+    // Check if the container is a DocObj
+    if (pDocObj == nullptr) 
+        return;// Container is a ViewProvider
+        
+    // Check for a valid document
+    if(getDocument() != pDocObj->getDocument())
+        return;
+
+    // If performing transaction, do nothing
+    if(getDocument()->isPerformingTransaction())
+        return;
+
+    // Get all extension derived from DocumentObjectExtension
+    auto vectorObjExt = pDocObj->getExtensionsDerivedFromType<App::DocumentObjectExtension>();
+    for(auto docObjExt : vectorObjExt){
+        if (docObjExt->getExtensionTypeId() == Base::Type::fromName(extension.c_str()))
+        {
+            Base::Console().log("Extension found: {}\n", extension.c_str());
+
+            // Get the ViewProvider extension name
+            std::string extViewProviderName(docObjExt->getViewProviderExtensionName());
+
+            // No view provider, nothing to do
+            if (extViewProviderName.empty())
+                return;
+
+            // Get ViewProvider extension type
+            Base::Type type = Base::Type::getTypeIfDerivedFrom(extViewProviderName.c_str(), 
+                ViewProviderExtension::getExtensionClassTypeId(), true);
+
+            setModified(true);
+            d->_ViewProviderMap[pDocObj]->removeDynamicExtension(type);
+            break;
+        }
+        
+    }
 }

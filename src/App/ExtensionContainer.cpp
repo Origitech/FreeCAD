@@ -30,6 +30,7 @@
 #include <Base/Exception.h>
 #include <Base/Reader.h>
 #include <Base/Writer.h>
+#include <App/Application.h>
 
 #include "Extension.h"
 #include "ExtensionContainer.h"
@@ -70,6 +71,23 @@ void ExtensionContainer::registerExtension(Base::Type extension, Extension* ext)
     }
 
     _extensions[extension] = ext;
+}
+
+void ExtensionContainer::unregisterExtension(Base::Type extension, Extension* ext) {
+
+    if(ext->getExtendedContainer() != this)
+        throw Base::ValueError("ExtensionContainer::unregisterExtension: Extension has not this as base object");
+
+    // remove extension from the map and delete it
+    if(hasExtension(extension)) {
+        for(auto entry : _extensions) {
+            if(entry.first == extension) {
+                _extensions.erase(entry.first);
+                delete entry.second;
+                break;
+            }
+        }
+    }
 }
 
 bool ExtensionContainer::hasExtension(Base::Type type, bool derived) const
@@ -516,4 +534,57 @@ void ExtensionContainer::handleChangedPropertyType(Base::XMLReader& reader,
     }
 
     PropertyContainer::handleChangedPropertyType(reader, TypeName, prop);
+}
+
+
+
+App::Extension* ExtensionContainer::addDynamicExtension(Base::Type type) {
+
+    if (type.isBad())
+        throw Base::RuntimeError("ExtensionContainer::addDynamicExtension: Extension type not set");
+
+    if(!type.isDerivedFrom(App::Extension::getExtensionClassTypeId()))
+        throw Base::RuntimeError("ExtensionContainer::addDynamicExtension: Extension type not derived from App::Extension");
+
+    auto *ext = static_cast<App::Extension *>(type.createInstance());
+    GetApplication().signalBeforeAddingDynamicExtension(*this, type.getName());
+    ext->initExtension(this);
+    GetApplication().signalAddedDynamicExtension(*this, type.getName());
+    return this->getExtension(type);
+}
+App::Extension* ExtensionContainer::addDynamicExtension(App::Extension *ext) {
+
+    Base::Type type = ext->getExtensionClassTypeId();
+    if (type.isBad())
+        throw Base::RuntimeError("ExtensionContainer::addDynamicExtension: Extension type not set");
+
+    if(!type.isDerivedFrom(App::Extension::getExtensionClassTypeId()))
+        throw Base::RuntimeError("ExtensionContainer::addDynamicExtension: Extension type not derived from App::Extension");
+
+    GetApplication().signalBeforeAddingDynamicExtension(*this, std::string(type.getName()));
+    ext->initExtension(this);
+    GetApplication().signalAddedDynamicExtension(*this, std::string(type.getName()));
+    return this->getExtension(type);
+}
+
+
+bool ExtensionContainer::removeDynamicExtension(Base::Type type) {
+    if (type.isBad())
+        throw Base::RuntimeError("ExtensionContainer::removeDynamicExtension: Extension type not set");
+
+    if(!type.isDerivedFrom(App::Extension::getExtensionClassTypeId()))
+        throw Base::RuntimeError("ExtensionContainer::removeDynamicExtension: Extension type not derived from App::Extension");
+
+
+    if (!this->hasExtension(type)) {
+        Base::Console().warning("Object does not have extension {} to remove \n", type.getName());
+        return false;
+    }else{
+        auto ext = this->getExtension(type);
+        GetApplication().signalBeforeRemovingDynamicExtension(*this, std::string(type.getName()));
+        ext->deinitExtension(this);
+        GetApplication().signalRemovedDynamicExtension(*this, std::string(type.getName()));
+        return true;
+    }
+
 }
