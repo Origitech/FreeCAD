@@ -224,10 +224,13 @@ bool ViewProviderDocumentObject::removeDynamicExtension(Base::Type type)
     // transactions of view providers are also managed in App::Document.
     App::DocumentObject* docobject = getObject();
     App::Document* document = docobject ? docobject->getDocument() : nullptr;
-    if (document)
-        this->onAddOrRemoveDynamicExtension(document, extension, false);
+    // Remove the extension first and then report the action to the transaction system
+    bool extensionIsRemoved = ExtensionContainer::removeDynamicExtension(type);
 
-    return ExtensionContainer::removeDynamicExtension(type);
+    if (document && extensionIsRemoved)
+        this->onAddOrRemoveDynamicExtension(*document, extension, false);
+
+    return extensionIsRemoved;
 }
 
 App::Extension* ViewProviderDocumentObject::addDynamicExtension(Base::Type type)
@@ -238,7 +241,7 @@ App::Extension* ViewProviderDocumentObject::addDynamicExtension(Base::Type type)
         App::DocumentObject* docobject = getObject();
         App::Document* document = docobject ? docobject->getDocument() : nullptr;
         if (document)
-            this->onAddOrRemoveDynamicExtension(document, extension, true);
+            this->onAddOrRemoveDynamicExtension(*document, extension, true);
     }
     return extension;
 }
@@ -250,7 +253,7 @@ App::Extension* ViewProviderDocumentObject::addDynamicExtension(App::Extension* 
         App::DocumentObject* docobject = getObject();
         App::Document* document = docobject ? docobject->getDocument() : nullptr;
         if (document)
-            this->onAddOrRemoveDynamicExtension(document, extension, true);
+            this->onAddOrRemoveDynamicExtension(*document, extension, true);
     }
     return extension;
 }

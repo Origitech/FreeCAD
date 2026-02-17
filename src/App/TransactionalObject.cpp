@@ -52,8 +52,8 @@ void TransactionalObject::onBeforeChangeProperty(Document* doc, const Property* 
     doc->onBeforeChangeProperty(this, prop);
 }
 
-void TransactionalObject::onAddOrRemoveDynamicExtension(Document *doc, Extension *extension, bool add)
+void TransactionalObject::onAddOrRemoveDynamicExtension(Document &doc, Extension *extension, bool add)
 {
-    doc->onAddOrRemoveDynamicExtension(this, extension, add);
+    doc.onAddOrRemoveDynamicExtension(this, extension, add);
 }
 

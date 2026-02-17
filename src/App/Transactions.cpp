@@ -536,22 +536,15 @@ void TransactionObject::addOrRemoveProperty(const Property* pcProp, bool add)
 
 void TransactionObject::addOrRemoveDynamicExtension(const Extension* pExt, bool add)
 {
-    // FIXME suppress compiler warnings?
-    (void)add;
 
     if(!pExt)
         return;
 
-
-    //FIXME TODO hElP-mE ...... it's not possible to undo/redo prop changes on the extension =(
     // Use the extension pointer as key
-    // Copy it, cause after remove extension it will get deleted
-    const App::Extension *pCopiedExtension = pExt->Copy();
-    assert(pCopiedExtension);
-    auto &data = _ExtensionMap[pCopiedExtension];
+    auto &data = _ExtensionMap[pExt];
     
     // Store the extension type
-    data.extensionType = pCopiedExtension->getExtensionTypeId();
+    data.extensionType = pExt->getExtensionTypeId();
     if(add){
         // If the action is add, we store nullptr
         // Cause on undo/redo, the action will be "remove extension"
@@ -560,7 +553,7 @@ void TransactionObject::addOrRemoveDynamicExtension(const Extension* pExt, bool 
     else {
         // If the action is remove, we store the extension
         // Cause on undo/redo, the action will be "add extension"
-        data.extensionOrig = pCopiedExtension;
+        data.extensionOrig = pExt;
     }
 
  }
