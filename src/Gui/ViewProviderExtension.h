@@ -33,6 +33,7 @@ class SoFullPath;
 class SoGroup;
 class SoPickedPoint;
 class SoSeparator;
+class SoNode;
 
 class QMenu;
 class QObject;
@@ -137,30 +138,16 @@ public:
     virtual void extensionModeSwitchChange()
     {}
 
-    virtual SoSeparator* extensionGetFrontRoot() const
-    {
-        return nullptr;
-    }
-    virtual SoGroup* extensionGetChildRoot() const
-    {
-        return nullptr;
-    }
-    virtual SoSeparator* extensionGetBackRoot() const
-    {
-        return nullptr;
-    }
-    virtual void extensionAttach(App::DocumentObject*)
-    {}
-    virtual void extensionReattach(App::DocumentObject*)
-    {}
-    virtual void extensionSetDisplayMode(const char*)
-    {}
-    virtual std::vector<std::string> extensionGetDisplayModes() const
-    {
-        return {};
-    }
-    virtual void extensionSetupContextMenu(QMenu*, QObject*, const char*)
-    {}
+    virtual SoSeparator* extensionGetFrontRoot() const {return nullptr;}
+    virtual SoGroup*     extensionGetChildRoot() const {return nullptr;}
+    virtual SoSeparator* extensionGetBackRoot() const {return nullptr;}
+    virtual void extensionAttach(App::DocumentObject* ) { }
+    virtual void extensionReattach(App::DocumentObject* ) { }
+    virtual void extensionDetach(App::DocumentObject* ) { }
+    virtual void extensionSetDisplayMode(const char* ) { }
+    virtual std::vector<std::string> extensionGetDisplayModes() const {return {};}
+    virtual void extensionSetupContextMenu(QMenu*, QObject*, const char*) {}
+    virtual void extensionAddDisplayMaskMode( SoNode *node, const char* type ){}
 
     // update data of extended object
     virtual void extensionUpdateData(const App::Property*);

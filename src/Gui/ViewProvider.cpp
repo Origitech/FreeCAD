@@ -426,6 +426,12 @@ void ViewProvider::addDisplayMaskMode(SoNode* node, const char* type)
 {
     _sDisplayMaskModes[type] = pcModeSwitch->getNumChildren();
     pcModeSwitch->addChild(node);
+
+    // notify extensions about new DisplayMaskMode
+    auto vector = getExtensionsDerivedFromType<Gui::ViewProviderExtension>();
+    for (Gui::ViewProviderExtension* ext : vector)
+        ext->extensionAddDisplayMaskMode(node, type);
+    
 }
 
 void ViewProvider::setDisplayMaskMode(const char* type)
