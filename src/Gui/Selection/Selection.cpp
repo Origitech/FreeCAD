@@ -1075,12 +1075,11 @@ const SelectionChanges& SelectionSingleton::getPreselection() const
 }
 
 // add a SelectionGate to control what is selectable
-void SelectionSingleton::addSelectionGate(Gui::SelectionGate* gate, ResolveMode resolve)
+void SelectionSingleton::addSelectionGate(Gui::SelectionGate *gate, ResolveMode resolve, bool takeOwnership)
 {
     if (ActiveGate) {
         rmvSelectionGate();
-    }
-
+    _hasFilterOwnership = takeOwnership;
     ActiveGate = gate;
     gateResolve = resolve;
 }
@@ -1089,7 +1088,13 @@ void SelectionSingleton::addSelectionGate(Gui::SelectionGate* gate, ResolveMode 
 void SelectionSingleton::rmvSelectionGate()
 {
     if (ActiveGate) {
-        delete ActiveGate;
+        //@FIXME any better solution to be able to reuse the filter?
+        //when creating a filter and adding it to the selectionGate, 
+        //the desired selection effect is obtained, however, when deactivating the selection, 
+        //the rmvSelectionGate function is called, deleting the filter. This way it is not possible to reuse 
+        //the same filter if you reactivate the selection (class has to be instantiated again)
+        if(_hasFilterOwnership)
+            delete ActiveGate;
         ActiveGate = nullptr;
 
         Gui::Document* doc = Gui::Application::Instance->activeDocument();

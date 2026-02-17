@@ -417,9 +417,11 @@ public:
     /// returns the present preselection
     const SelectionChanges& getPreselection() const;
     /// add a SelectionGate to control what is selectable
-    void addSelectionGate(Gui::SelectionGate* gate, ResolveMode resolve = ResolveMode::OldStyleElement);
+    void addSelectionGate(Gui::SelectionGate *gate, ResolveMode resolve = ResolveMode::OldStyleElement, bool takeOwnership = true);
     /// remove the active SelectionGate
     void rmvSelectionGate();
+    /// get the active gate
+    Gui::SelectionGate* getCurrentSelectionGate(){return _hasFilterOwnership ? nullptr : ActiveGate;}
 
     int disableCommandLog();
     int enableCommandLog(bool silent = false);
@@ -847,6 +849,7 @@ protected:
     bool clarifySelectionActive = false;
 
     SelectionStyle selectionStyle;
+    bool _hasFilterOwnership = true;
 };
 
 /**
