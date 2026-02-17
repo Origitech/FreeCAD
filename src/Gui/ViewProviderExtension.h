@@ -41,6 +41,7 @@ namespace Gui
 
 class ViewProvider;
 class ViewProviderDocumentObject;
+class View3DInventorViewer;
 
 /**
  * @brief Extension with special viewprovider calls
@@ -194,6 +195,15 @@ public:
     {
         return false;
     }
+
+    /// Called by the document when the provider goes in edit mode
+    virtual bool extensionSetEdit(int ModNum){return false;}
+    /// Called when you lose the edit mode
+    virtual void extensionUnsetEdit(int ModNum){}
+    /// Adjust viewer settings when editing a view provider
+    virtual void extensionSetEditViewer(View3DInventorViewer*, int ModNum){}
+    /// Restores viewer settings when leaving editing mode
+    virtual void extensionUnsetEditViewer(View3DInventorViewer*){}
 
 private:
     bool m_ignoreOverlayIcon = false;
