@@ -451,9 +451,11 @@ public:
     const SelectionChanges& getPreselection() const;
 
     /// add a SelectionGate to control what is selectable
-    void addSelectionGate(Gui::SelectionGate* gate, ResolveMode resolve = ResolveMode::OldStyleElement);
+    void addSelectionGate(Gui::SelectionGate *gate, ResolveMode resolve = ResolveMode::OldStyleElement, bool takeOwnership = true);
     /// remove the active SelectionGate
     void rmvSelectionGate();
+    /// get the active gate
+    Gui::SelectionGate* getCurrentSelectionGate(){return _hasFilterOwnership ? nullptr : ActiveGate;}
 
     /** @brief get the pointer to the selection gate
      * It will be nullptr when no selection filter active
@@ -912,6 +914,7 @@ protected:
     SelectionStyle selectionStyle;
     std::deque<SelectionChanges> NotificationQueue;
     bool Notifying {false};
+    bool _hasFilterOwnership = true;
 };
 
 /**
