@@ -628,7 +628,7 @@ private:
 protected:
     virtual bool ReadEntitiesSection();
 
-private:
+public:
     bool ReadIgnoredSection();
 
     // The Header section consists of multipel variables, only a few of which we give special
@@ -652,13 +652,13 @@ private:
     bool ReadLine();
     bool ReadText();
     bool ReadSolid();
-    bool ReadArc();
+    virtual bool ReadArc();
     bool ReadCircle();
     bool ReadEllipse();
     bool ReadPoint();
     bool ReadSpline();
     bool ReadLwPolyLine();
-    bool ReadPolyLine();
+    virtual bool ReadPolyLine();
 
     void OnReadArc(
         double start_angle,
