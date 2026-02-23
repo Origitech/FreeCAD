@@ -136,11 +136,18 @@ AboutDialog::AboutDialog(QWidget* parent)
     ui->tabWidget->setCurrentIndex(0);  // always start on the About tab
 
     setupLabels();
-    showCredits();
+    std::map<std::string, std::string>& config = App::Application::Config();
+    QString hideCreditTab = QString::fromStdString(config["HideCreditsTab"]);
+    if (hideCreditTab != QStringLiteral("true")) {
+        showCredits();
+    }
     showLicenseInformation();
     showLibraryInformation();
     showCollectionInformation();
-    showPrivacyPolicy();
+    QString hidePrivacyPolicy = QString::fromStdString(config["HidePrivacyPolicy"]);
+    if (hidePrivacyPolicy != QStringLiteral("true")) {
+        showPrivacyPolicy();
+    }
     showOrHideImage(rect);
 }
 
@@ -249,7 +256,7 @@ void AboutDialog::setupLabels()
     os.replace(QStringLiteral("Unknown"), App::Application::prettyProductInfoWrapper());
     ui->labelBuildOS->setText(os);
 
-    QString architecture = ui->labelArchitecture->text();
+    QString architecture = ui->labelBuildRunArchitecture->text();
     if (QSysInfo::buildCpuArchitecture() == QSysInfo::currentCpuArchitecture()) {
         architecture.replace(QStringLiteral("Unknown"), QSysInfo::buildCpuArchitecture());
     }
@@ -260,7 +267,7 @@ void AboutDialog::setupLabels()
                 .arg(QSysInfo::buildCpuArchitecture(), QSysInfo::currentCpuArchitecture())
         );
     }
-    ui->labelArchitecture->setText(architecture);
+    ui->labelBuildRunArchitecture->setText(architecture);
 
     // branch name
     it = config.find("BuildRevisionBranch");
@@ -362,7 +369,16 @@ void AboutDialog::showLicenseInformation()
     QFile licenseFile(licenseFileURL);
 
     if (licenseFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QString licenseHTML = QString::fromUtf8(licenseFile.readAll());
+        QString licenseHTML;
+        std::map<std::string, std::string>& config = App::Application::Config();
+        std::map<std::string, std::string>::iterator it;
+        it = config.find("BrandingLicenseHTML");
+        if (it != config.end()) {
+            licenseHTML += QString::fromUtf8(it->second.c_str());
+        }
+        else {
+            licenseHTML += QString::fromUtf8(licenseFile.readAll());
+        }
         const auto placeholder = QStringLiteral(
             "<!--PLACEHOLDER_FOR_ADDITIONAL_LICENSE_INFORMATION-->"
         );
