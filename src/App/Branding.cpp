@@ -44,7 +44,8 @@ Branding::Branding()
     filter.push_back("DesktopFileName");
     filter.push_back("StyleSheet");
     filter.push_back("AboutImage");
-    filter.push_back("HideCreditTab");
+    filter.push_back("HideCreditsTab");
+    filter.push_back("HidePrivacyPolicy");
 
     filter.push_back("BuildVersionMajor");
     filter.push_back("BuildVersionMinor");
