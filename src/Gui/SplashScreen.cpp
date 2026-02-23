@@ -498,7 +498,7 @@ QPixmap SplashScreen::splashImage()
                 painter.drawText(x, y, title);
             }
             painter.setFont(fontVer);
-            painter.drawText(x + (l + 235), y - 7, versionText);
+            painter.drawText(x + l, y - 7, versionText);
             if (suffix == developmentSuffix && warningColor.isValid()) {
                 fontVer.setPointSizeF(14.0);
                 fontVer.setHintingPreference(QFont::PreferVerticalHinting);
