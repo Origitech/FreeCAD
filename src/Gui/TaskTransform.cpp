@@ -294,7 +294,7 @@ void TaskTransform::setupGui()
     updateInputLabels();
     updateDraggerLabels();
     updateIncrements();
-    updatePositionAndRotationUi();
+    updatePositionAndRotationUi();    
 }
 
 void TaskTransform::loadPreferences()
@@ -305,6 +305,9 @@ void TaskTransform::loadPreferences()
     ui->translationIncrementSpinBox->setValue(lastTranslationIncrement);
     ui->rotationIncrementSpinBox->setValue(lastRotationIncrement);
     ui->moveOptionsButton->setIcon(Gui::BitmapFactory().pixmap("Std_DlgParameter"));
+    // Set global as default position mode
+    ui->positionModeComboBox->setCurrentIndex(ui->positionModeComboBox->findData(QVariant::fromValue(PositionMode::Global)));
+    ui->alignRotationCheckBox->setChecked(true);
 }
 
 void TaskTransform::savePreferences()
@@ -458,8 +461,14 @@ TaskTransform::CoordinateSystem TaskTransform::globalCoordinateSystem() const
 
 TaskTransform::CoordinateSystem TaskTransform::currentCoordinateSystem() const
 {
-    return ui->positionModeComboBox->currentIndex() == 0 ? localCoordinateSystem()
-                                                         : globalCoordinateSystem();
+    switch (ui->positionModeComboBox->currentData().value<PositionMode>()) {
+        case PositionMode::Local:
+            return localCoordinateSystem();
+        case PositionMode::Global:
+            return globalCoordinateSystem();
+        default:
+            return localCoordinateSystem();
+    }
 }
 
 Base::Rotation::EulerSequence TaskTransform::eulerSequence() const
