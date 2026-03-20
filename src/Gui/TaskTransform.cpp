@@ -330,7 +330,7 @@ void TaskTransform::setupGui()
     updateInputLabels();
     updateDraggerLabels();
     updateIncrements();
-    updatePositionAndRotationUi();
+    updatePositionAndRotationUi();    
 }
 
 void TaskTransform::loadPreferences()
@@ -341,6 +341,9 @@ void TaskTransform::loadPreferences()
     ui->translationIncrementSpinBox->setValue(lastTranslationIncrement);
     ui->rotationIncrementSpinBox->setValue(lastRotationIncrement);
     ui->moveOptionsButton->setIcon(Gui::BitmapFactory().pixmap("Std_DlgParameter"));
+    // Set global as default position mode
+    ui->positionModeComboBox->setCurrentIndex(ui->positionModeComboBox->findData(QVariant::fromValue(PositionMode::Global)));
+    ui->alignRotationCheckBox->setChecked(true);
 }
 
 void TaskTransform::savePreferences()
