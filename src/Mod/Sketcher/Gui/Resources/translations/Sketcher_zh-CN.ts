@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh-CN" sourcelanguage="en">
+<TS version="2.1" language="zh_CN" sourcelanguage="en_US">
 <context>
     <name>CmdRenderingOrder</name>
     <message>
@@ -516,7 +516,7 @@
     <message>
         <location filename="../../CommandConstraints.cpp" line="5732"/>
         <source>Constrains the vertical distance between two points, or from a point to the origin if only one is selected</source>
-        <translation type="unfinished"></translation>
+        <translation>约束两点之间的垂直距离，或若仅选择一个点，则约束该点到原点的垂直距离</translation>
     </message>
     <message>
         <source>Constrains the vertical distance between the selected elements</source>
@@ -2516,13 +2516,13 @@ invalid constraints, and degenerate geometry</source>
         <location filename="../../../App/SketchObject.cpp" line="6857"/>
         <location filename="../../../App/SketchObject.cpp" line="7035"/>
         <source>B-spline Geometry Index (GeoID) is out of bounds.</source>
-        <translation>贝赛尔样条几何图形索引(GeoID) 越界</translation>
+        <translation>贝赛尔样条几何图形索引(GeoID) 越界.</translation>
     </message>
     <message>
         <location filename="../../../App/SketchObject.cpp" line="6874"/>
         <location filename="../../../App/SketchObject.cpp" line="7051"/>
         <source>The Geometry Index (GeoId) provided is not a B-spline.</source>
-        <translation>提供的几何图形索引 (GeoId) 不是贝赛尔样条</translation>
+        <translation>提供的几何图形索引 (GeoId) 不是贝赛尔样条.</translation>
     </message>
     <message>
         <location filename="../../../App/SketchObject.cpp" line="6886"/>
@@ -2635,7 +2635,7 @@ invalid constraints, and degenerate geometry</source>
     <message>
         <location filename="../../../App/SketchObject.cpp" line="610"/>
         <source>&quot;%1&quot; has partially redundant constraint(s).</source>
-        <translation type="unfinished"></translation>
+        <translation>“%1”存在部分冗余约束。</translation>
     </message>
     <message>
         <location filename="../../../App/SketchObject.cpp" line="10550"/>
@@ -3285,31 +3285,31 @@ invalid constraints, and degenerate geometry</source>
         <location filename="../../CommandConstraints.cpp" line="9967"/>
         <location filename="../../CommandConstraints.cpp" line="10078"/>
         <source>Select two points and a symmetry line, two points and a symmetry point, an element and a symmetry line or an element and a symmetry point from the sketch.</source>
-        <translation type="unfinished"></translation>
+        <translation>从草图中选择两点与一条对称线、两点与一个对称点、一个元素与一条对称线，或一个元素与一个对称点。</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="9834"/>
         <location filename="../../CommandConstraints.cpp" line="10013"/>
         <location filename="../../CommandConstraints.cpp" line="10153"/>
         <source>Cannot add a symmetry constraint because the first selected element has no endpoints. Select a line or an open curve instead.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法添加对称约束，因为第一个选定元素没有端点。请选择一条直线或开放曲线。</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="9845"/>
         <location filename="../../CommandConstraints.cpp" line="10163"/>
         <source>Cannot add a symmetry constraint because the second selected element is not a line. Select a line or an axis instead.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法添加对称约束，因为第二个选定元素不是直线。请选择一条直线或轴线。</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="9858"/>
         <location filename="../../CommandConstraints.cpp" line="9998"/>
         <source>Cannot add a symmetry constraint between an element and its end points!</source>
-        <translation type="unfinished"></translation>
+        <translation>无法在元素与其端点之间添加对称约束！</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="10143"/>
         <source>Cannot add a symmetry constraint between an element and itself.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法在元素与其自身之间添加对称约束。</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="10223"/>
@@ -3410,7 +3410,7 @@ invalid constraints, and degenerate geometry</source>
     <message>
         <location filename="../../CommandConstraints.cpp" line="4297"/>
         <source>Select either one point and several curves, or one curve and several points</source>
-        <translation>选择一个点和若干曲线，或者一条曲线和若干点。</translation>
+        <translation>选择一个点和若干曲线，或者一条曲线和若干点</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="4300"/>
@@ -3500,13 +3500,13 @@ Accepted combinations: two curves; an endpoint and a curve; two endpoints; two c
         <location filename="../../CommandConstraints.cpp" line="6240"/>
         <source>Select some geometry from the sketch.</source>
         <comment>perpendicular constraint</comment>
-        <translation>从草图中选取一些几何属性</translation>
+        <translation>从草图中选取一些几何属性.</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="6378"/>
         <location filename="../../CommandConstraints.cpp" line="6419"/>
         <source>Cannot add a perpendicularity constraint at an unconnected point!</source>
-        <translation>不能对没有连接点的两条线段添加&quot;垂直&quot;约束</translation>
+        <translation>不能对没有连接点的两条线段添加&quot;垂直&quot;约束!</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="6459"/>
@@ -3538,14 +3538,14 @@ Accepted combinations: two curves; an endpoint and a curve; two endpoints; two c
         <location filename="../../CommandConstraints.cpp" line="7076"/>
         <source>Select some geometry from the sketch.</source>
         <comment>tangent constraint</comment>
-        <translation>从草图中选取一些几何属性</translation>
+        <translation>从草图中选取一些几何属性.</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="7228"/>
         <location filename="../../CommandConstraints.cpp" line="7266"/>
         <location filename="../../CommandConstraints.cpp" line="7691"/>
         <source>Cannot add a tangency constraint at an unconnected point!</source>
-        <translation>不能对没有连接点的两条线段添加&quot;相切&quot;约束</translation>
+        <translation>不能对没有连接点的两条线段添加&quot;相切&quot;约束!</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="7219"/>
@@ -3707,7 +3707,7 @@ Accepted combinations: two curves; an endpoint and a curve; two endpoints; two c
     <message>
         <location filename="../../CommandConstraints.cpp" line="10274"/>
         <source>Cannot create constraint with external geometry only.</source>
-        <translation>无法仅通过外部几何图形创建约束</translation>
+        <translation>无法仅通过外部几何图形创建约束.</translation>
     </message>
     <message>
         <location filename="../../CommandConstraints.cpp" line="10284"/>
@@ -3758,7 +3758,7 @@ Accepted combinations: two curves; an endpoint and a curve; two endpoints; two c
         <location filename="../../CommandSketcherBSpline.cpp" line="1002"/>
         <location filename="../../CommandSketcherBSpline.cpp" line="1081"/>
         <source>Selection is empty</source>
-        <translation>没有选择对象。</translation>
+        <translation>没有选择对象</translation>
     </message>
     <message>
         <location filename="../../CommandSketcherBSpline.cpp" line="245"/>
@@ -3811,7 +3811,7 @@ Accepted combinations: two curves; an endpoint and a curve; two endpoints; two c
     <message>
         <location filename="../../CommandSketcherTools.cpp" line="88"/>
         <source>Wrong Selection</source>
-        <translation>错误选择。</translation>
+        <translation>错误选择</translation>
     </message>
     <message>
         <location filename="../../CommandSketcherTools.cpp" line="89"/>
@@ -3841,7 +3841,7 @@ Accepted combinations: two curves; an endpoint and a curve; two endpoints; two c
         <location filename="../../CommandSketcherTools.cpp" line="1415"/>
         <location filename="../../CommandSketcherTools.cpp" line="2021"/>
         <source>A copy requires at least one selected non-external geometric element</source>
-        <translation>复制操作需要至少一个被选定的非外部几何元素。</translation>
+        <translation>复制操作需要至少一个被选定的非外部几何元素</translation>
     </message>
     <message>
         <location filename="../../CommandSketcherTools.cpp" line="2094"/>
@@ -3878,7 +3878,7 @@ Accepted combinations: two curves; an endpoint and a curve; two endpoints; two c
         <location filename="../../TaskSketcherElements.cpp" line="636"/>
         <location filename="../../TaskSketcherElements.cpp" line="686"/>
         <source>It is currently unsupported to move external geometry to another visual layer. External geometry will be omitted</source>
-        <translation>当前不支持将外部几何图形移动到另一个视图层。外部几何将被省略。</translation>
+        <translation>当前不支持将外部几何图形移动到另一个视图层。外部几何将被省略</translation>
     </message>
 </context>
 <context>
@@ -4067,102 +4067,102 @@ Accepted combinations: two curves; an endpoint and a curve; two endpoints; two c
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="122"/>
         <source>Horizontal</source>
-        <translation type="unfinished">水平</translation>
+        <translation>水平</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="125"/>
         <source>Vertical</source>
-        <translation type="unfinished">垂直</translation>
+        <translation>垂直</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="128"/>
         <source>Coincident</source>
-        <translation type="unfinished">重合</translation>
+        <translation>重合</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="131"/>
         <source>PointOnObject</source>
-        <translation type="unfinished"></translation>
+        <translation>点在物体上</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="134"/>
         <source>Parallel</source>
-        <translation type="unfinished">平行</translation>
+        <translation>平行</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="137"/>
         <source>Perpendicular</source>
-        <translation type="unfinished">垂直</translation>
+        <translation>垂直</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="140"/>
         <source>Tangent</source>
-        <translation type="unfinished">相切</translation>
+        <translation>相切</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="143"/>
         <source>Equal</source>
-        <translation type="unfinished"></translation>
+        <translation>相等</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="146"/>
         <source>Symmetric</source>
-        <translation type="unfinished">对称</translation>
+        <translation>对称</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="149"/>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>锁定</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="152"/>
         <source>Distance</source>
-        <translation type="unfinished">距离</translation>
+        <translation>距离</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="155"/>
         <source>DistanceX</source>
-        <translation type="unfinished"></translation>
+        <translation>X 向距离</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="158"/>
         <source>DistanceY</source>
-        <translation type="unfinished"></translation>
+        <translation>Y 向距离</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="161"/>
         <source>Radius</source>
-        <translation type="unfinished">半径</translation>
+        <translation>半径</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="164"/>
         <source>Diameter</source>
-        <translation type="unfinished">直径</translation>
+        <translation>直径</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="167"/>
         <source>Angle</source>
-        <translation type="unfinished">角度</translation>
+        <translation>角度</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="170"/>
         <source>Weight</source>
-        <translation type="unfinished">重量</translation>
+        <translation>重量</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="173"/>
         <source>Snell</source>
-        <translation type="unfinished"></translation>
+        <translation>斯涅尔定律</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="176"/>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>对齐</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="185"/>
         <source>Constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>约束</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherConstraints.cpp" line="645"/>
@@ -4920,12 +4920,12 @@ Accepted combinations: two curves; an endpoint and a curve; two endpoints; two c
     <message>
         <location filename="../../EditDatumDialog.cpp" line="241"/>
         <source>Radius</source>
-        <translation type="unfinished">半径</translation>
+        <translation>半径</translation>
     </message>
     <message>
         <location filename="../../EditDatumDialog.cpp" line="247"/>
         <source>Diameter</source>
-        <translation type="unfinished">直径</translation>
+        <translation>直径</translation>
     </message>
     <message>
         <location filename="../../EditDatumDialog.cpp" line="142"/>
@@ -5273,12 +5273,12 @@ Points must be set closer than a fifth of the grid spacing to a grid line to sna
     <message>
         <location filename="../../InsertDatum.ui" line="72"/>
         <source>Radius</source>
-        <translation type="unfinished">半径</translation>
+        <translation>半径</translation>
     </message>
     <message>
         <location filename="../../InsertDatum.ui" line="79"/>
         <source>Diameter</source>
-        <translation type="unfinished">直径</translation>
+        <translation>直径</translation>
     </message>
     <message>
         <location filename="../../InsertDatum.ui" line="94"/>
@@ -5420,7 +5420,7 @@ Points must be set closer than a fifth of the grid spacing to a grid line to sna
     <message>
         <location filename="../../SketchRectangularArrayDialog.ui" line="77"/>
         <source>Makes the inter-row and inter-col spacing the same if clicked</source>
-        <translation>点击后行间距和列间距将会变得一致。</translation>
+        <translation>点击后行间距和列间距将会变得一致</translation>
     </message>
     <message>
         <location filename="../../SketchRectangularArrayDialog.ui" line="80"/>
@@ -5619,7 +5619,10 @@ Requires to re-enter edit mode to take effect.</source>
 &apos;Disabled&apos;: On-View-Parameters are completely disabled.
 &apos;Dimensional only&apos;: Only dimensional On-View-Parameters are visible. They are the most useful. For example, the radius of a circle.
 &apos;All&apos;: Both dimensional and positional On-View-Parameters. Positionals are the (x,y) position of the cursor. For example for the center of a circle.</source>
-        <translation type="unfinished"></translation>
+        <translation>选择视图参数的可见性模式：
+“禁用”：完全禁用视图参数。
+“仅尺寸”：仅显示尺寸类视图参数。这类参数最为常用，例如圆的半径。
+“全部”：显示尺寸类与位置类视图参数。位置类参数指光标所在位置的 (x, y) 坐标，例如圆的中心点。</translation>
     </message>
     <message>
         <location filename="../../SketcherSettings.ui" line="145"/>
@@ -6247,7 +6250,7 @@ Defaults to: %N = %V
     <message>
         <location filename="../../SketcherSettingsDisplay.ui" line="447"/>
         <source>Force orthographic camera when entering edit</source>
-        <translation>进入编辑时强制使用正交视角。</translation>
+        <translation>进入编辑时强制使用正交视角</translation>
     </message>
     <message>
         <location filename="../../SketcherSettingsDisplay.ui" line="488"/>
@@ -6551,7 +6554,7 @@ Click &quot;Swap endpoints in constraints&quot; button to reassign endpoints. Do
 
 %2个约束链接到这些端点。约束已列在报告视图中（菜单 视图 -&gt; 面板 -&gt; 报告视图）。
 
-点击&quot;在约束中交换端点&quot;按钮重新分配端点。仅对在FreeCAD v0.15之前版本创建的草图执行此操作一次。</translation>
+点击&quot;在约束中交换端点&quot;按钮重新分配端点。仅对在FreeCAD v0.15之前版本创建的草图执行此操作一次</translation>
     </message>
     <message>
         <location filename="../../TaskSketcherValidation.cpp" line="306"/>
@@ -7502,7 +7505,7 @@ Select the method to attach this sketch to selected objects.</source>
     <message>
         <location filename="../../Command.cpp" line="734"/>
         <source>Select the method to attach this sketch to selected objects.</source>
-        <translation>选要如何将此草图附加到所选物件</translation>
+        <translation>选要如何将此草图附加到所选物件。</translation>
     </message>
     <message>
         <location filename="../../Command.cpp" line="778"/>
@@ -7962,7 +7965,7 @@ Instead equal constraints are applied between the original objects and their cop
     <message>
         <location filename="../../DrawSketchHandlerSymmetry.h" line="285"/>
         <source>Removes the original geometry and keeps only the mirrored result.</source>
-        <translation type="unfinished"></translation>
+        <translation>移除原始几何，仅保留镜像结果。</translation>
     </message>
 </context>
 <context>
@@ -8011,7 +8014,7 @@ Instead equal constraints are applied between the original objects and their cop
     <message>
         <location filename="../../DrawSketchHandlerSymmetry.h" line="297"/>
         <source>Create symmetry constraints between the original and mirrored geometries</source>
-        <translation type="unfinished"></translation>
+        <translation>在原始几何与镜像几何之间创建对称约束</translation>
     </message>
 </context>
 <context>
