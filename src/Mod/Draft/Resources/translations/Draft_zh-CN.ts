@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN" sourcelanguage="en">
+<TS version="2.1" language="zh_CN" sourcelanguage="en_US">
 <context>
     <name>Dialog</name>
     <message>
@@ -38,12 +38,12 @@
     <message>
         <location filename="../ui/dialogLayers.ui" line="14"/>
         <source>Layers Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>图层管理器</translation>
     </message>
     <message>
         <location filename="../ui/dialogLayers.ui" line="29"/>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>新建</translation>
     </message>
     <message>
         <location filename="../ui/dialogLayers.ui" line="36"/>
@@ -54,27 +54,27 @@
     <message>
         <location filename="../ui/dialogLayers.ui" line="43"/>
         <source>Select All</source>
-        <translation type="unfinished"></translation>
+        <translation>全选</translation>
     </message>
     <message>
         <location filename="../ui/dialogLayers.ui" line="50"/>
         <source>Toggle Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>切换可见性</translation>
     </message>
     <message>
         <location filename="../ui/dialogLayers.ui" line="57"/>
         <source>Isolate</source>
-        <translation type="unfinished"></translation>
+        <translation>分离</translation>
     </message>
     <message>
         <location filename="../ui/dialogLayers.ui" line="77"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../ui/dialogLayers.ui" line="84"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="120"/>
@@ -132,22 +132,22 @@
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="20"/>
         <source>Style Name</source>
-        <translation type="unfinished"></translation>
+        <translation>样式名称</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="38"/>
         <source>The name of the style. Existing style names can be edited.</source>
-        <translation type="unfinished"></translation>
+        <translation>样式名称。可编辑现有样式名称。</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="50"/>
         <source>Add new…</source>
-        <translation type="unfinished"></translation>
+        <translation>新建...</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="164"/>
         <source>Annotations</source>
-        <translation type="unfinished">注释</translation>
+        <translation>注释</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="173"/>
@@ -157,123 +157,123 @@
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="208"/>
         <source>Texts</source>
-        <translation type="unfinished"></translation>
+        <translation>文本</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="243"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="253"/>
         <source>The font size in system units</source>
-        <translation type="unfinished"></translation>
+        <translation>系统单位字体大小</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="263"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="273"/>
         <source>The line spacing for multi-line texts and labels (relative to the font size)</source>
-        <translation type="unfinished"></translation>
+        <translation>多行文字和标签的行距（相对于字体大小）</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="266"/>
         <source>Line spacing factor</source>
-        <translation type="unfinished"></translation>
+        <translation>行距系数</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="280"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="290"/>
         <source>The color of texts, dimension texts and label texts</source>
-        <translation type="unfinished"></translation>
+        <translation>文本、尺寸文字和标签文字的颜色</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="283"/>
         <source>Text color</source>
-        <translation type="unfinished">文本颜色</translation>
+        <translation>文本颜色</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="300"/>
         <source>Lines and Arrows</source>
-        <translation type="unfinished"></translation>
+        <translation>线条和箭头</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="306"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="316"/>
         <source>Displays the dimension line</source>
-        <translation type="unfinished"></translation>
+        <translation>显示尺寸线</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="309"/>
         <source>Show dimension line</source>
-        <translation type="unfinished"></translation>
+        <translation>显示尺寸线</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="332"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="342"/>
         <source>The width of the lines</source>
-        <translation type="unfinished"></translation>
+        <translation>线宽</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="345"/>
         <source> px</source>
-        <translation type="unfinished"> 像素</translation>
+        <translation> 像素</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="352"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="374"/>
         <source>The type of the starting arrows or markers to use for dimensions and labels</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸和标签的起始箭头或标记类型</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="355"/>
         <source>Start arrow type</source>
-        <translation type="unfinished"></translation>
+        <translation>起始箭头类型</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="403"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="482"/>
         <source>None</source>
-        <translation type="unfinished">无</translation>
+        <translation>无</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="411"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="421"/>
         <source>The size of the starting arrows or markers in system units</source>
-        <translation type="unfinished"></translation>
+        <translation>系统单位起始箭头或标记的大小</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="414"/>
         <source>Start arrow size</source>
-        <translation type="unfinished"></translation>
+        <translation>起始箭头大小</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="431"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="453"/>
         <source>The type of the ending arrows or markers to use for dimensions and labels</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸和标签的结束箭头或标记类型</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="434"/>
         <source>End arrow type</source>
-        <translation type="unfinished"></translation>
+        <translation>结束箭头类型</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="490"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="500"/>
         <source>The size of the ending arrows or markers in system units</source>
-        <translation type="unfinished"></translation>
+        <translation>系统单位结束箭头或标记的大小</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="493"/>
         <source>End arrow size</source>
-        <translation type="unfinished"></translation>
+        <translation>结束箭头大小</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="510"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="520"/>
         <source>The color of lines and arrows</source>
-        <translation type="unfinished"></translation>
+        <translation>线条和箭头颜色</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="513"/>
         <source>Line and arrow color</source>
-        <translation type="unfinished"></translation>
+        <translation>线条和箭头颜色</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="536"/>
@@ -288,13 +288,13 @@
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="546"/>
         <source>Shows the unit next to the dimension value</source>
-        <translation type="unfinished"></translation>
+        <translation>在尺寸值旁显示单位</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="559"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="569"/>
         <source>Specify a valid length unit like mm, m, in, ft, to force displaying the dimension value in this unit</source>
-        <translation>指定有效的长度单位</translation>
+        <translation>指定有效的长度单位（如 mm、m、in、ft），以该单位显示尺寸值</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="562"/>
@@ -305,55 +305,55 @@
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="576"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="586"/>
         <source>The number of decimals to show for dimension values</source>
-        <translation>尺寸值显示的小数点数</translation>
+        <translation>尺寸值显示的小数位数</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="579"/>
         <source>Number of decimals</source>
-        <translation type="unfinished">小数位数</translation>
+        <translation>小数位数</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="596"/>
         <source>Dimension Details</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸详细信息</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="602"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="612"/>
         <source>The distance the dimension line is additionally extended</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸线的额外延伸距离</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="605"/>
         <source>Dimension line overshoot</source>
-        <translation type="unfinished">尺寸线过度</translation>
+        <translation>尺寸线延伸量</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="625"/>
         <source>Extension line length</source>
-        <translation type="unfinished"></translation>
+        <translation>延伸线长度</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="642"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="652"/>
         <source>The distance the extension lines are additionally extended beyond the dimension line</source>
-        <translation type="unfinished"></translation>
+        <translation>延伸线超出尺寸线的额外延伸距离</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="645"/>
         <source>Extension line overshoot</source>
-        <translation type="unfinished">延长线过度</translation>
+        <translation>延长线过度</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="662"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="672"/>
         <source>The distance between the dimension text and the dimension line</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸文字与尺寸线之间的距离</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="665"/>
         <source>Text spacing</source>
-        <translation type="unfinished">文字间距</translation>
+        <translation>文字间距</translation>
     </message>
     <message>
         <source>Decimals</source>
@@ -422,13 +422,13 @@
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="393"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="472"/>
         <source>Tick</source>
-        <translation>刻度</translation>
+        <translation>斜线</translation>
     </message>
     <message>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="398"/>
         <location filename="../ui/dialog_AnnotationStyleEditor.ui" line="477"/>
         <source>Tick-2</source>
-        <translation>刻度-2</translation>
+        <translation>双斜线</translation>
     </message>
     <message>
         <source>The size of the dimension arrows or markers in system units</source>
@@ -553,46 +553,47 @@ Change the direction of the axis itself in the property editor.</source>
     <message>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="26"/>
         <source>Circular Array</source>
-        <translation type="unfinished"></translation>
+        <translation>环形数组</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="34"/>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="44"/>
         <source>Distance from one layer of objects to the next layer of objects</source>
-        <translation type="unfinished"></translation>
+        <translation>从一层对象到下一层对象的距离</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="82"/>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="93"/>
         <source>Number of concentric circles to create, including a copy of the original object.
 It must be at least 2.</source>
-        <translation type="unfinished"></translation>
+        <translation>创建的同心圆数量，包括原始对象副本。
+必须至少为 2。</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="86"/>
         <source>Number of concentric circles</source>
-        <translation type="unfinished"></translation>
+        <translation>同心圆数量</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="110"/>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="120"/>
         <source>The number of symmetry lines in the circular array</source>
-        <translation type="unfinished"></translation>
+        <translation>环形数组内的对称线数量</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="139"/>
         <source>Center of Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>旋转中心</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="209"/>
         <source>Resets the coordinates of the center of rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>重置旋转中心的坐标</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="212"/>
         <source>Reset Point</source>
-        <translation type="unfinished">重置点</translation>
+        <translation>重置点</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_CircularArray.ui" line="224"/>
@@ -718,78 +719,82 @@ Negative values will result in copies produced in the negative direction.</sourc
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="26"/>
         <source>Orthogonal Array</source>
-        <translation type="unfinished"></translation>
+        <translation>正交阵列</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="32"/>
         <source>Toggles between orthogonal and linear mode</source>
-        <translation type="unfinished"></translation>
+        <translation>在正交模式和线性模式之间切换</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="35"/>
         <source>Switch to Linear Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>切换到线性模式</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="47"/>
         <source>X axis</source>
-        <translation type="unfinished"></translation>
+        <translation>X轴</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="57"/>
         <source>Y axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y轴</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="67"/>
         <source>Z axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Z轴</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="83"/>
         <source>Number of Elements</source>
-        <translation type="unfinished"></translation>
+        <translation>元素数量</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="156"/>
         <source>Currently selected axis</source>
-        <translation type="unfinished"></translation>
+        <translation>当前选中的轴</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="168"/>
         <source>Distance between the elements in the X-direction.
 Normally, only the X value is necessary; the other two values can give an additional shift in their respective directions.
 Negative values will result in copies produced in the negative direction.</source>
-        <translation type="unfinished"></translation>
+        <translation>X 方向上的元素间距。
+通常只需 X 值即可；其他两个值可在各自方向上添加额外偏移。
+负值将在负方向生成副本。</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="173"/>
         <source>X Intervals</source>
-        <translation type="unfinished"></translation>
+        <translation>X间距</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="246"/>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="337"/>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="428"/>
         <source>Resets the distances</source>
-        <translation type="unfinished"></translation>
+        <translation>重置距离</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="259"/>
         <source>Distance between the elements in the Y-direction.
 Normally, only the Y value is necessary; the other two values can give an additional shift in their respective directions.
 Negative values will result in copies produced in the negative direction.</source>
-        <translation type="unfinished"></translation>
+        <translation>Y 方向上的元素间距。
+通常只需 Y 值即可；其他两个值可在各自方向上添加额外偏移。
+负值将在负方向生成副本。</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="264"/>
         <source>Y Intervals</source>
-        <translation type="unfinished"></translation>
+        <translation>Y间距</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="355"/>
         <source>Z Intervals</source>
-        <translation type="unfinished"></translation>
+        <translation>Z间距</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_OrthoArray.ui" line="431"/>
@@ -834,7 +839,7 @@ A Link array is more efficient when creating multiple copies, but it cannot be f
     <message>
         <location filename="../ui/TaskPanel_PolarArray.ui" line="26"/>
         <source>Polar Array</source>
-        <translation type="unfinished"></translation>
+        <translation>极坐标阵列</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_PolarArray.ui" line="34"/>
@@ -849,7 +854,7 @@ The maximum absolute value is 360 degrees.</source>
     <message>
         <location filename="../ui/TaskPanel_PolarArray.ui" line="39"/>
         <source>Polar angle</source>
-        <translation>扫掠角</translation>
+        <translation>极角</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_PolarArray.ui" line="67"/>
@@ -874,17 +879,17 @@ Change the direction of the axis itself in the property editor.</source>
     <message>
         <location filename="../ui/TaskPanel_PolarArray.ui" line="101"/>
         <source>Center of Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>旋转中心</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_PolarArray.ui" line="171"/>
         <source>Resets the coordinates of the center of rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>重置旋转中心的坐标</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_PolarArray.ui" line="174"/>
         <source>Reset Point</source>
-        <translation type="unfinished">重置点</translation>
+        <translation>重置点</translation>
     </message>
     <message>
         <source>Center of rotation</source>
@@ -943,7 +948,7 @@ A Link array is more efficient when creating multiple copies, but it cannot be f
     <message>
         <location filename="../ui/TaskShapeString.ui" line="26"/>
         <source>ShapeString</source>
-        <translation>字串造型产生器</translation>
+        <translation>形状字符串</translation>
     </message>
     <message>
         <location filename="../ui/TaskShapeString.ui" line="34"/>
@@ -980,7 +985,7 @@ A Link array is more efficient when creating multiple copies, but it cannot be f
     <message>
         <location filename="../ui/TaskShapeString.ui" line="143"/>
         <source>Text to be made into ShapeString</source>
-        <translation>要制作成形状的文本</translation>
+        <translation>要转换为形状字符串的文本</translation>
     </message>
     <message>
         <location filename="../ui/TaskShapeString.ui" line="109"/>
@@ -992,23 +997,24 @@ A Link array is more efficient when creating multiple copies, but it cannot be f
         <location filename="../ui/TaskShapeString.ui" line="58"/>
         <location filename="../ui/TaskShapeString.ui" line="75"/>
         <source>Enter coordinates or pick a point with the mouse</source>
-        <translation type="unfinished"></translation>
+        <translation>输入坐标或使用鼠标拾取点</translation>
     </message>
     <message>
         <location filename="../ui/TaskShapeString.ui" line="85"/>
         <source>Coordinates relative to global coordinate system.
 Uncheck to use working plane coordinate system</source>
-        <translation type="unfinished"></translation>
+        <translation>相对于全局坐标系的坐标。
+取消选中以使用工作平面坐标系</translation>
     </message>
     <message>
         <location filename="../ui/TaskShapeString.ui" line="89"/>
         <source>Global</source>
-        <translation type="unfinished">全局</translation>
+        <translation>全局</translation>
     </message>
     <message>
         <location filename="../ui/TaskShapeString.ui" line="96"/>
         <source>Resets the picked point</source>
-        <translation type="unfinished"></translation>
+        <translation>重置拾取的点</translation>
     </message>
     <message>
         <location filename="../ui/TaskShapeString.ui" line="116"/>
@@ -1018,7 +1024,7 @@ Uncheck to use working plane coordinate system</source>
     <message>
         <location filename="../ui/TaskShapeString.ui" line="136"/>
         <source>Text</source>
-        <translation type="unfinished">文本</translation>
+        <translation>文本</translation>
     </message>
     <message>
         <location filename="../ui/TaskShapeString.ui" line="150"/>
@@ -1028,7 +1034,7 @@ Uncheck to use working plane coordinate system</source>
     <message>
         <location filename="../ui/TaskShapeString.ui" line="157"/>
         <source>Font files (*.ttc *.ttf *.otf *.pfb *.TTC *.TTF *.OTF *.PFB)</source>
-        <translation type="unfinished"></translation>
+        <translation>字体文件 (*.ttc *.ttf *.otf *.pfb *.TTC *.TTF .OTF .PFB)</translation>
     </message>
 </context>
 <context>
@@ -1036,12 +1042,12 @@ Uncheck to use working plane coordinate system</source>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="14"/>
         <source>DXF Import</source>
-        <translation type="unfinished"></translation>
+        <translation>DXF导入</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="20"/>
         <source>Import As</source>
-        <translation type="unfinished"></translation>
+        <translation>导入为</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="26"/>
@@ -1049,12 +1055,14 @@ Uncheck to use working plane coordinate system</source>
 reusable objects (Part Compounds) and instances become `App::Link` objects,
 maintaining the block structure. Best for full integration with the Draft
 workbench.</source>
-        <translation type="unfinished"></translation>
+        <translation>创建完全参数化的草图对象。
+块定义作为可重用对象（部件组合）导入，实例成为 App::Link 对象，保留块结构。
+最适合与草图工作台完全集成。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="32"/>
         <source>Editable Draft objects</source>
-        <translation type="unfinished"></translation>
+        <translation>可编辑的草图对象</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="39"/>
@@ -1062,51 +1070,57 @@ workbench.</source>
 definitions are imported as reusable objects (Part Compounds) and instances
 become `App::Link` objects, maintaining the block structure. Best for
 script-based post-processing.</source>
-        <translation type="unfinished"></translation>
+        <translation>创建参数化的部件对象（如 Part::Line、Part::Circle）
+块定义作为可重用对象（部件组合）导入，实例成为 App::Link 对象，保留块结构。
+最适合基于脚本的后处理。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="45"/>
         <source>Editable Part primitives</source>
-        <translation type="unfinished"></translation>
+        <translation>可编辑的部件基本体</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="52"/>
         <source>Creates a non-parametric shape for each DXF entity. Block definitions are
 imported as reusable objects (Part Compounds) and instances become `App::Link`
 objects, maintaining the block structure. Good for referencing and measuring.</source>
-        <translation type="unfinished"></translation>
+        <translation>为每个 DXF 实体创建非参数化形状。
+块定义作为可重用对象（部件组合）导入，实例成为 App::Link 对象，保留块结构。
+适合参考和测量。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="57"/>
         <source>Individual Part shapes (recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>单个部件形状（推荐）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="64"/>
         <source>Merges all geometry per layer into a single, non-editable shape. Block
 structures are not preserved; their geometry becomes part of the layer&apos;s
 shape. Best for viewing very large files with maximum performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>将每层的所有几何合并为一个不可编辑的形状。
+不保留块结构，其几何成为图层形状的一部分。
+最适合以最高性能查看超大文件。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="69"/>
         <source>Fused Part shapes (fastest)</source>
-        <translation type="unfinished"></translation>
+        <translation>结合的部件形状（最快）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="100"/>
         <source>File summary</source>
-        <translation type="unfinished"></translation>
+        <translation>文件摘要</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="110"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf-import.ui" line="136"/>
         <source>Do not show this dialog again</source>
-        <translation type="unfinished"></translation>
+        <translation>不再显示此对话框</translation>
     </message>
 </context>
 <context>
@@ -1114,44 +1128,46 @@ shape. Best for viewing very large files with maximum performance.</source>
     <message>
         <location filename="../ui/dialogHatch.ui" line="14"/>
         <source>Hatch</source>
-        <translation>剖面线</translation>
+        <translation>填充</translation>
     </message>
     <message>
         <location filename="../ui/dialogHatch.ui" line="20"/>
         <source>PAT file</source>
-        <translation type="unfinished"></translation>
+        <translation>PAT文件</translation>
     </message>
     <message>
         <location filename="../ui/dialogHatch.ui" line="27"/>
         <source>Pattern files (*.pat *.PAT)</source>
-        <translation type="unfinished"></translation>
+        <translation>图案文件 (*.pat *.PAT)</translation>
     </message>
     <message>
         <location filename="../ui/dialogHatch.ui" line="34"/>
         <source>Pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>图案</translation>
     </message>
     <message>
         <location filename="../ui/dialogHatch.ui" line="44"/>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>比例</translation>
     </message>
     <message>
         <location filename="../ui/dialogHatch.ui" line="64"/>
         <source>Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>旋转</translation>
     </message>
     <message>
         <location filename="../ui/dialogHatch.ui" line="81"/>
         <source>Align to face</source>
-        <translation type="unfinished"></translation>
+        <translation>对齐到面</translation>
     </message>
     <message>
         <location filename="../ui/dialogHatch.ui" line="88"/>
         <source>Aligns the pattern with the base object.
 Otherwise, the pattern aligns with the global coordinate system.
 This setting modifies the Translate property.</source>
-        <translation type="unfinished"></translation>
+        <translation>使图案与基准对象对齐。
+否则，图案将与全局坐标系对齐。
+此设置会修改平移属性。</translation>
     </message>
     <message>
         <source>PAT file:</source>
@@ -1243,7 +1259,7 @@ This setting modifies the Translate property.</source>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="224"/>
         <source>Dotted</source>
-        <translation>虚线</translation>
+        <translation>点线</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="229"/>
@@ -1277,67 +1293,67 @@ This setting modifies the Translate property.</source>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="14"/>
         <source>Style Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>样式设置</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="22"/>
         <source>Fill the values below from a stored style preset</source>
-        <translation type="unfinished"></translation>
+        <translation>从储存的样式预设值填充以下值</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="40"/>
         <source>Saves the current style as a preset</source>
-        <translation type="unfinished"></translation>
+        <translation>将当前样式存为预设</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="57"/>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>形状</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="63"/>
         <source>Shape Appearance</source>
-        <translation type="unfinished"></translation>
+        <translation>形状外观</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="80"/>
         <source>Ambient shape color</source>
-        <translation type="unfinished"></translation>
+        <translation>环境光颜色</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="91"/>
         <source>Emissive shape color</source>
-        <translation type="unfinished"></translation>
+        <translation>自发光颜色</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="102"/>
         <source>Specular shape color</source>
-        <translation type="unfinished"></translation>
+        <translation>高光颜色</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="113"/>
         <source>Shape transparency</source>
-        <translation type="unfinished"></translation>
+        <translation>形状透明度</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="130"/>
         <source>Shape shininess</source>
-        <translation type="unfinished"></translation>
+        <translation>形状光泽度</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="150"/>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>其他</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="181"/>
         <source>Point color</source>
-        <translation type="unfinished"></translation>
+        <translation>点颜色</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="192"/>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>点大小</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="260"/>
@@ -1347,124 +1363,125 @@ This setting modifies the Translate property.</source>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="279"/>
         <source>Annotation</source>
-        <translation type="unfinished"></translation>
+        <translation>标注</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="291"/>
         <source>Scale multiplier</source>
-        <translation type="unfinished">缩放因子</translation>
+        <translation>缩放倍数</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="298"/>
         <source>The annotation scale multiplier is the inverse of the scale set in the
 Annotation scale widget. If the scale is 1:100 the multiplier is 100.</source>
-        <translation type="unfinished"></translation>
+        <translation>标注比例倍数是标注比例控件中所设比例的倒数。
+例如比例为 1:100 时，倍数为 100。</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="315"/>
         <source>Texts</source>
-        <translation type="unfinished"></translation>
+        <translation>文本</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="321"/>
         <source>Font name</source>
-        <translation type="unfinished">字体名称</translation>
+        <translation>字体名称</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="334"/>
         <source>The font for texts, dimensions and labels</source>
-        <translation type="unfinished"></translation>
+        <translation>文字、尺寸和标签的字体</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="341"/>
         <source>Font size</source>
-        <translation type="unfinished">字体大小</translation>
+        <translation>字体大小</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="348"/>
         <source>The height for texts, dimension texts and label texts</source>
-        <translation type="unfinished"></translation>
+        <translation>文字、尺寸文字和标签文字的高度</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="358"/>
         <source>Line spacing factor</source>
-        <translation type="unfinished"></translation>
+        <translation>行距系数</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="365"/>
         <source>The line spacing for multi-line texts and labels (relative to the font size)</source>
-        <translation type="unfinished"></translation>
+        <translation>多行文字和标签的行距（相对于字体大小）</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="379"/>
         <source>The color for texts, dimension texts and label texts</source>
-        <translation type="unfinished"></translation>
+        <translation>文字、尺寸文字和标签文字的颜色</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="389"/>
         <source>Lines and Arrows</source>
-        <translation type="unfinished"></translation>
+        <translation>线条和箭头</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="409"/>
         <source>Start arrow type</source>
-        <translation type="unfinished"></translation>
+        <translation>起始箭头类型</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="442"/>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="497"/>
         <source>None</source>
-        <translation type="unfinished">无</translation>
+        <translation>无</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="450"/>
         <source>Start arrow size</source>
-        <translation type="unfinished"></translation>
+        <translation>起始箭头大小</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="464"/>
         <source>End arrow type</source>
-        <translation type="unfinished"></translation>
+        <translation>结束箭头类型</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="505"/>
         <source>End arrow size</source>
-        <translation type="unfinished"></translation>
+        <translation>结束箭头大小</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="519"/>
         <source>Line and arrow color</source>
-        <translation type="unfinished"></translation>
+        <translation>线条和箭头颜色</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="533"/>
         <source>Dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="546"/>
         <source>Adds a unit symbol to dimension texts</source>
-        <translation type="unfinished"></translation>
+        <translation>为尺寸文字添加单位符号</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="563"/>
         <source>The unit override for dimensions. Leave blank to use the current FreeCAD unit.</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸的单位覆盖。留空则使用当前 FreeCAD 单位。</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="570"/>
         <source>Dimension line overshoot</source>
-        <translation type="unfinished">尺寸线过度</translation>
+        <translation>尺寸线延伸量</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="577"/>
         <source>The distance the dimension line is extended past the extension lines</source>
-        <translation type="unfinished"></translation>
+        <translation>线条之间的距离延伸至超出延伸线</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="587"/>
         <source>Extension line length</source>
-        <translation type="unfinished"></translation>
+        <translation>延伸线长度</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="594"/>
@@ -1472,32 +1489,35 @@ Annotation scale widget. If the scale is 1:100 the multiplier is 100.</source>
 defines the gap between the ends of the extension lines and the measured points.
 A positive value defines the maximum length of the extension lines. Only used
 for linear dimensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>延伸线长度。
+输入 0 为完整延伸线。
+负值定义延伸线端点与测量点之间的间隙。正值定义延伸线的最大长度。
+仅用于线性。</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="607"/>
         <source>Extension line overshoot</source>
-        <translation type="unfinished">延长线过度</translation>
+        <translation>延长线过度</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="614"/>
         <source>The length of extension lines above the dimension line</source>
-        <translation type="unfinished"></translation>
+        <translation>延伸线超出尺寸线的长度</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="631"/>
         <source>The space between the dimension line and the dimension text</source>
-        <translation type="unfinished">尺寸线和尺寸文本之间的距离</translation>
+        <translation>尺寸线和尺寸文本之间的距离</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="650"/>
         <source>Apply the above style to selected object(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>将上述样式应用于选定的对象</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="664"/>
         <source>Apply the above style to all annotations (texts, dimensions and labels)</source>
-        <translation type="unfinished"></translation>
+        <translation>将上述样式应用于所有标注（文字、尺寸和标签）</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="69"/>
@@ -1598,13 +1618,13 @@ for linear dimensions.</source>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="432"/>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="487"/>
         <source>Tick</source>
-        <translation>刻度</translation>
+        <translation>斜线</translation>
     </message>
     <message>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="437"/>
         <location filename="../ui/TaskPanel_SetStyle.ui" line="492"/>
         <source>Tick-2</source>
-        <translation>刻度-2</translation>
+        <translation>双斜线</translation>
     </message>
     <message>
         <source>Arrow size</source>
@@ -1662,7 +1682,7 @@ Or choose one of the options below</source>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="33"/>
         <source>Top (XY)</source>
-        <translation>上 (XY)</translation>
+        <translation>俯视图（XY）</translation>
     </message>
     <message>
         <source>Sets the working plane to the XZ plane (front plane)</source>
@@ -1671,7 +1691,7 @@ Or choose one of the options below</source>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="43"/>
         <source>Front (XZ)</source>
-        <translation>前 (XZ)</translation>
+        <translation>主视图（XZ）</translation>
     </message>
     <message>
         <source>Sets the working plane to the YZ plane (side plane)</source>
@@ -1680,7 +1700,7 @@ Or choose one of the options below</source>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="53"/>
         <source>Side (YZ)</source>
-        <translation>侧面 (YZ)</translation>
+        <translation>侧视图（YZ）</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="60"/>
@@ -1694,32 +1714,33 @@ Or choose one of the options below</source>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="14"/>
         <source>Working Plane Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>工作平面设置</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="20"/>
         <source>Choose an option below. Or define a working plane by selecting 3 vertices, 1 or more shapes, or a working plane proxy, and then confirm with a click in the 3D view.</source>
-        <translation type="unfinished"></translation>
+        <translation>选择下方选项。或通过选择 3 个顶点、1 个或多个形状、或一个工作平面代理来定义工作平面
+然后在 3D 视图中点击确认。</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="30"/>
         <source>Sets the working plane to the XY-plane (ground plane)</source>
-        <translation type="unfinished"></translation>
+        <translation>将工作平面设置为 XY 平面（地平面）</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="40"/>
         <source>Sets the working plane to the XZ-plane (front plane)</source>
-        <translation type="unfinished"></translation>
+        <translation>将工作平面设置为 XZ 平面（前平面）</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="50"/>
         <source>Sets the working plane to the YZ-plane (side plane)</source>
-        <translation type="unfinished"></translation>
+        <translation>将工作平面设置为 YZ 平面（侧平面）</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="63"/>
         <source>Align to View</source>
-        <translation type="unfinished"></translation>
+        <translation>对齐到视图</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="70"/>
@@ -1742,14 +1763,17 @@ view each time a command is started</source>
         <source>An optional offset to give to the working plane
 above its base position. Use this together with one
 of the buttons above</source>
-        <translation>可选偏移量，用于将工作平面置于其基准位置之上。将其与上面的按钮之一一起使用</translation>
+        <translation>可选偏移量，
+用于将工作平面置于其基准位置之上
+将其与上面的按钮之一一起使用</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="105"/>
         <source>If this is selected, the working plane will be
 centered on the current view when pressing one
 of the buttons above</source>
-        <translation>如果选择此选项，则按下上述按钮之时，工作平面将位于当前视图的中心</translation>
+        <translation>如果选择此选项，则按下上述按钮之时
+工作平面将位于当前视图的中心</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="110"/>
@@ -1760,90 +1784,92 @@ of the buttons above</source>
         <location filename="../ui/TaskSelectPlane.ui" line="117"/>
         <source>Centers the working plane on the current view when pressing one
 of the buttons above</source>
-        <translation type="unfinished"></translation>
+        <translation>按下上方按钮时，将工作平面以当前视图为中心放置</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="133"/>
         <source>Or select a single vertex to move the current working plane without changing its orientation. Then press the button below.</source>
-        <translation type="unfinished"></translation>
+        <translation>或选择单个顶点以移动当前工作平面，但不改变其方向。然后按下下方按钮。</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="143"/>
         <source>Moves the working plane without changing its
 orientation. If no point is selected, the plane
 will be moved to the center of the view.</source>
-        <translation type="unfinished"></translation>
+        <translation>移动工作平面但不改变其方向。
+如果未选择点
+平面将移动到视图中心。</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="148"/>
         <source>Move Working Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>移动工作平面</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="157"/>
         <location filename="../ui/TaskSelectPlane.ui" line="167"/>
         <source>The color of the grid</source>
-        <translation type="unfinished">网格的颜色</translation>
+        <translation>网格颜色</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="160"/>
         <source>Grid color</source>
-        <translation type="unfinished"></translation>
+        <translation>网格颜色</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="174"/>
         <location filename="../ui/TaskSelectPlane.ui" line="184"/>
         <source>The distance between grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>网格线间距</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="194"/>
         <location filename="../ui/TaskSelectPlane.ui" line="204"/>
         <source>The number of squares between major grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>主网格线之间的方格数量</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="197"/>
         <source>Major lines every</source>
-        <translation type="unfinished"></translation>
+        <translation>主网格线间隔</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="207"/>
         <location filename="../ui/TaskSelectPlane.ui" line="227"/>
         <source> squares</source>
-        <translation type="unfinished"></translation>
+        <translation> 方块</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="214"/>
         <location filename="../ui/TaskSelectPlane.ui" line="224"/>
         <source>The number of squares in the X- and Y-direction of the grid</source>
-        <translation type="unfinished"></translation>
+        <translation>网格在 X 和 Y 方向上的方格数量</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="217"/>
         <source>Grid size</source>
-        <translation type="unfinished">网格大小</translation>
+        <translation>网格大小</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="240"/>
         <location filename="../ui/TaskSelectPlane.ui" line="250"/>
         <source>The distance at which a point can be snapped to</source>
-        <translation type="unfinished"></translation>
+        <translation>点的吸附距离</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="265"/>
         <source>Center View</source>
-        <translation type="unfinished"></translation>
+        <translation>视图居中</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="287"/>
         <source>Resets the working plane to its next position</source>
-        <translation type="unfinished"></translation>
+        <translation>将工作平面重置到下一个位置</translation>
     </message>
     <message>
         <location filename="../ui/TaskSelectPlane.ui" line="290"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>下一个</translation>
     </message>
     <message>
         <source>Or select a single vertex to move the current
@@ -1943,13 +1969,14 @@ value by using the [ and ] keys while drawing</source>
         <location filename="../ui/preferences-draft.ui" line="20"/>
         <location filename="../ui/preferences-dxf.ui" line="20"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>常规</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="39"/>
         <source>The number of decimals used in internal coordinate operations (for example 3 = 0.001).
 Values between 6 and 8 are usually considered the best trade-off.</source>
-        <translation type="unfinished"></translation>
+        <translation>内部坐标运算中使用的小数位数（例如 3 = 0.001）。
+通常认为 6 到 8 之间的数值是最佳平衡。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="73"/>
@@ -1957,7 +1984,9 @@ Values between 6 and 8 are usually considered the best trade-off.</source>
 will automatically align with the current view whenever a command is started.
 Additionally it will align to preselected planar faces, or when points on planar
 faces are picked during commands.</source>
-        <translation type="unfinished"></translation>
+        <translation>新视图的默认工作平面。
+如果设为“自动”，每次启动命令时工作平面将自动对齐到当前视图。
+此外，它还会对齐到预选的平面，或在命令执行过程中拾取平面上的点时对齐。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="94"/>
@@ -1978,88 +2007,94 @@ faces are picked during commands.</source>
         <location filename="../ui/preferences-draft.ui" line="112"/>
         <source>If checked, a widget indicating the current working
 plane orientation appears when picking points</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，
+拾取点时将显示指示当前工作平面方向的控件</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="116"/>
         <source>Show working plane orientation</source>
-        <translation type="unfinished"></translation>
+        <translation>显示工作平面方向</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="129"/>
         <source>If checked, the layers drop-down list also includes groups.
 Objects can then automatically be added to groups as well.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，图层下拉列表也将包含组。
+对象随后也可自动添加到组中。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="133"/>
         <source>Include groups in layer list</source>
-        <translation type="unfinished"></translation>
+        <translation>在图层列表中包含组</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="149"/>
         <source>Command Options</source>
-        <translation type="unfinished"></translation>
+        <translation>命令选项</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="155"/>
         <source>If checked, instructions are displayed in the Report View when using Draft commands</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，使用草图命令时将在报告视图中显示操作提示</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="158"/>
         <source>Show prompts in the Report View</source>
-        <translation type="unfinished"></translation>
+        <translation>在报告视图中显示提示</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="171"/>
         <source>If checked, Length input, instead of the X coordinate, will have the initial focus.
 This allows indicating a direction and then type a distance.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，初始焦点将为长度输入框而非 X 坐标。
+可以先指定方向，再输入距离。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="188"/>
         <source>If checked, base objects, instead of created copies, are selected after copying</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，复制后选中的是基准对象而非创建的副本</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="204"/>
         <source>If checked, Draft commands will create Part primitives instead of Draft objects.
 Note that this is not fully supported, and many objects will not be editable with
 Draft modification commands.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，草图命令将创建部件基本体而非草图对象。
+注意：此功能尚未完全支持，许多对象将无法使用草图修改命令进行编辑。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="209"/>
         <source>Create Part primitives if possible</source>
-        <translation type="unfinished"></translation>
+        <translation>尽可能创建部件基本体</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="222"/>
         <source>If checked, Draft Downgrade and Draft Upgrade will keep face colors.
 Only for the splitFaces and makeShell options.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，草图降级和草图升级将保留面颜色。
+仅适用于分割面和生成壳选项。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="226"/>
         <source>Keep face colors during downgrade/upgrade</source>
-        <translation type="unfinished"></translation>
+        <translation>降级/升级时保留面颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="239"/>
         <source>If checked, Draft Downgrade and Draft Upgrade will keep face names.
 Only for the splitFaces and makeShell options.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，草图降级和草图升级将保留面名称。
+仅适用于分割面和生成壳选项。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="243"/>
         <source>Keep face names during downgrade/upgrade</source>
-        <translation type="unfinished"></translation>
+        <translation>降级/升级时保留面名称</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="256"/>
         <source>Mouse delay</source>
-        <translation type="unfinished"></translation>
+        <translation>鼠标延迟</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="263"/>
@@ -2068,63 +2103,66 @@ manually in any of the coordinate fields. Setting this to 0 disables the delay.
 If a delay of 1 is set, after entering a numeric value, the mouse will not
 update the field anymore during one second, to avoid moving the mouse
 accidentally and modifying the entered value.</source>
-        <translation type="unfinished"></translation>
+        <translation>在任意坐标字段中手动输入数字后，鼠标在一段延迟时间内处于非活动状态。
+设为 0 可禁用延迟。
+如果延迟设为 1 秒，输入数值后，鼠标在一秒钟内不会再更新该字段，
+以避免意外移动鼠标而修改已输入的值。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="270"/>
         <source> seconds</source>
-        <translation type="unfinished"></translation>
+        <translation> 秒</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="296"/>
         <source>Maximum number of editable objects</source>
-        <translation type="unfinished"></translation>
+        <translation>可编辑对象的最大数量</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="303"/>
         <source>The maximum number of objects Draft Edit is allowed to process at the same time</source>
-        <translation type="unfinished"></translation>
+        <translation>草图编辑允许同时处理的最大对象数量</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="328"/>
         <source>Edit node pick radius</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑节点拾取半径</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="335"/>
         <source>The pick radius of edit nodes</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑节点拾取的半径</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="338"/>
         <location filename="../ui/preferences-drafttexts.ui" line="240"/>
         <source> px</source>
-        <translation type="unfinished"> 像素</translation>
+        <translation> 像素</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="357"/>
         <source>Label prefix for clones</source>
-        <translation type="unfinished"></translation>
+        <translation>克隆对象的标签前缀</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="370"/>
         <source>The default prefix added to the label of new clones</source>
-        <translation type="unfinished"></translation>
+        <translation>添加到新克隆对象标签的默认前缀</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="386"/>
         <source>Construction group label</source>
-        <translation type="unfinished"></translation>
+        <translation>构造组标签</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="399"/>
         <source>The default label for the construction geometry group</source>
-        <translation type="unfinished"></translation>
+        <translation>构造几何组的默认标签</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="422"/>
         <source>The default color for Draft objects in construction mode</source>
-        <translation type="unfinished"></translation>
+        <translation>构造模式下草图对象的默认颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="26"/>
@@ -2243,7 +2281,7 @@ Note that this is not fully supported, and many object will be not editable with
     <message>
         <location filename="../ui/preferences-draft.ui" line="415"/>
         <source>Construction geometry color</source>
-        <translation>辅助用几何颜色</translation>
+        <translation>构造几何颜色</translation>
     </message>
     <message>
         <source>This is the default color for objects being drawn while in construction mode.</source>
@@ -2426,67 +2464,67 @@ Note that this is not fully supported, and many object will be not editable with
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="14"/>
         <source>Interface</source>
-        <translation type="unfinished"></translation>
+        <translation>界面</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="170"/>
         <source>Make face</source>
-        <translation type="unfinished"></translation>
+        <translation>生成面</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="183"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="202"/>
         <source>Select edge</source>
-        <translation type="unfinished"></translation>
+        <translation>选择边</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="234"/>
         <source>Subelement mode</source>
-        <translation type="unfinished"></translation>
+        <translation>子元素模式</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="247"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="279"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="439"/>
         <source>N</source>
-        <translation type="unfinished"></translation>
+        <translation>N</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="458"/>
         <source>Cycle snap</source>
-        <translation type="unfinished"></translation>
+        <translation>循环切换吸附</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="490"/>
         <source>Add hold</source>
-        <translation type="unfinished"></translation>
+        <translation>添加保持点</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="522"/>
         <source>Set working plane</source>
-        <translation type="unfinished"></translation>
+        <translation>设置工作平面</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="586"/>
         <source>Increase radius</source>
-        <translation type="unfinished"></translation>
+        <translation>增大半径</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="618"/>
         <source>Decrease radius</source>
-        <translation type="unfinished"></translation>
+        <translation>减小半径</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="650"/>
@@ -2521,42 +2559,42 @@ Note that this is not fully supported, and many object will be not editable with
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="746"/>
         <source>Recenter</source>
-        <translation type="unfinished"></translation>
+        <translation>重新居中</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="781"/>
         <source>UI Options</source>
-        <translation type="unfinished"></translation>
+        <translation>界面选项</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="787"/>
         <source>If checked, the Draft Snap toolbar will only be visible during commands</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，草图吸附工具栏仅在命令执行期间可见</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="790"/>
         <source>Only show the Draft Snap toolbar during commands</source>
-        <translation type="unfinished"></translation>
+        <translation>仅在命令执行期间显示草图吸附工具栏</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="806"/>
         <source>If checked, the Draft Snap Widget is displayed in the Draft Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，草图吸附控件将显示在草图状态栏中</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="809"/>
         <source>Show the Draft Snap Widget in the Draft Workbench</source>
-        <translation type="unfinished"></translation>
+        <translation>在草图工作台中显示草图吸附控件</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="825"/>
         <source>If checked, the Draft Scale Widget is displayed in the Draft Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，草图比例控件将显示在草图状态栏中</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftinterface.ui" line="828"/>
         <source>Show the Draft Scale Widget in the Draft Workbench</source>
-        <translation type="unfinished"></translation>
+        <translation>在草图工作台中显示草图比例控件</translation>
     </message>
     <message>
         <source>Draft Statusbar</source>
@@ -2605,129 +2643,135 @@ Note that this is not fully supported, and many object will be not editable with
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="14"/>
         <source>Grid and Snapping</source>
-        <translation type="unfinished"></translation>
+        <translation>网格和吸附</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="26"/>
         <source>If checked, the grid will always be visible in new views.
 Use Draft ToggleGrid to change this for the active view.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，网格将在新视图中始终可见。
+使用“草图切换网格”可更改当前活动视图的此项设置。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="49"/>
         <source>If checked, the grid will be visible during commands in new views.
 Use Draft ToggleGrid to change this for the active view.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，网格将在新视图的命令执行期间可见。
+使用“草图切换网格”可更改当前活动视图的此项设置。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="53"/>
         <source>Show the grid during commands</source>
-        <translation type="unfinished"></translation>
+        <translation>命令执行期间显示网格</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="69"/>
         <source>If checked, an additional border is displayed around the grid,
 showing the main square size in the bottom left corner</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，网格周围将显示一个附加边框，
+并在左下角显示主方格大小</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="92"/>
         <source>If checked, the outline of a human figure is displayed at the bottom left
 corner of the grid. Only effective if &quot;Show grid border&quot; is enabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，网格左下角将显示人物剪影轮廓。
+仅当“显示网格边框”启用时有效。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="112"/>
         <source>If checked, the two main axes of the grid are colored red, green or blue
 if they match the X, Y or Z axis of the global coordinate system</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，网格的两个主轴在匹配全局坐标系的 X、Y、Z 轴时，
+将分别显示为红色、绿色或蓝色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="132"/>
         <source>Major lines every</source>
-        <translation type="unfinished"></translation>
+        <translation>主网格线间隔</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="145"/>
         <source>The number of squares between major grid lines.
 Major grid lines are thicker than minor grid lines.</source>
-        <translation type="unfinished"></translation>
+        <translation>主网格线之间的方格数量。
+主网格线比次网格线更粗。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="149"/>
         <location filename="../ui/preferences-draftsnap.ui" line="223"/>
         <source> squares</source>
-        <translation type="unfinished"></translation>
+        <translation> 方格</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="188"/>
         <source>The distance between grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>网格线间距</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="220"/>
         <source>The number of squares in the X- and Y-direction of the grid</source>
-        <translation type="unfinished"></translation>
+        <translation>网格在 X 和 Y 方向上的方格数量</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="242"/>
         <source>Grid transparency</source>
-        <translation type="unfinished"></translation>
+        <translation>网格透明度</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="252"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="268"/>
         <source>Grid color</source>
-        <translation type="unfinished"></translation>
+        <translation>网格颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="298"/>
         <source>Snapping and Modifier Keys</source>
-        <translation type="unfinished"></translation>
+        <translation>吸附和修饰键</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="304"/>
         <source>Snap symbol style</source>
-        <translation type="unfinished"></translation>
+        <translation>吸附符号样式</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="311"/>
         <source>The style for snap symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>吸附符号的样式</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="347"/>
         <source>Snap symbol color</source>
-        <translation type="unfinished"></translation>
+        <translation>吸附符号颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="354"/>
         <source>The color for snap symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>吸附符号的颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="374"/>
         <source>If checked, snapping is activated without the need to press the Snap modifier key</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，无需按下吸附修饰键即可激活吸附</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="377"/>
         <source>Always snap</source>
-        <translation type="unfinished"></translation>
+        <translation>始终吸附</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="396"/>
         <source>Snap modifier</source>
-        <translation type="unfinished"></translation>
+        <translation>吸附修饰</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="412"/>
         <source>The Snap modifier key</source>
-        <translation type="unfinished"></translation>
+        <translation>吸附修饰键</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="425"/>
@@ -2753,22 +2797,22 @@ Major grid lines are thicker than minor grid lines.</source>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="443"/>
         <source>Constrain modifier</source>
-        <translation type="unfinished"></translation>
+        <translation>约束修饰</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="450"/>
         <source>The constrain modifier key</source>
-        <translation type="unfinished"></translation>
+        <translation>约束修饰键</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="478"/>
         <source>Alt modifier</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt 修饰键</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="485"/>
         <source>The Alt modifier key. The function of this key depends on the command.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt 修饰键。此键的功能取决于当前命令。</translation>
     </message>
     <message>
         <source>Snap mod</source>
@@ -2884,7 +2928,7 @@ Major grid lines are thicker than minor grid lines.</source>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="275"/>
         <source>The color of the grid</source>
-        <translation>网格的颜色</translation>
+        <translation>网格颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftsnap.ui" line="249"/>
@@ -3015,98 +3059,99 @@ such as &quot;Arial:Bold&quot;</source>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="14"/>
         <source>Texts and Dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>文字和尺寸</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="20"/>
         <source>Annotations</source>
-        <translation type="unfinished">注释</translation>
+        <translation>注释</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="26"/>
         <source>Scale multiplier</source>
-        <translation type="unfinished">缩放因子</translation>
+        <translation>缩放倍数</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="39"/>
         <source>The default annotation scale multiplier. This is the inverse of the scale set
 in the Draft Scale Widget. If the scale is 1:100 the multiplier is 100.</source>
-        <translation type="unfinished"></translation>
+        <translation>默认标注比例倍数。
+这是草图比例控件中所设比例的倒数。例如比例为 1:100 时，倍数为 100。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="72"/>
         <source>Texts</source>
-        <translation type="unfinished"></translation>
+        <translation>文本</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="78"/>
         <source>Font name</source>
-        <translation type="unfinished">字体名称</translation>
+        <translation>字体名称</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="91"/>
         <source>The default font for texts, dimensions and labels</source>
-        <translation type="unfinished"></translation>
+        <translation>文字、尺寸和标签的默认字体</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="124"/>
         <source>The default height for texts, dimension texts and label texts</source>
-        <translation type="unfinished"></translation>
+        <translation>文字、尺寸文字和标签文字的默认高度</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="149"/>
         <source>Line spacing factor</source>
-        <translation type="unfinished"></translation>
+        <translation>行距系数</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="156"/>
         <source>The default line spacing for multi-line texts and labels (relative to the font size)</source>
-        <translation type="unfinished"></translation>
+        <translation>多行文字和标签的默认行距（相对于字体大小）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="175"/>
         <source>Text color</source>
-        <translation type="unfinished">文本颜色</translation>
+        <translation>文本颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="182"/>
         <source>The default color for texts, dimension texts and label texts</source>
-        <translation type="unfinished"></translation>
+        <translation>文字、尺寸文字和标签文字的默认颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="205"/>
         <source>Lines and Arrows</source>
-        <translation type="unfinished"></translation>
+        <translation>线条和箭头</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="211"/>
         <source>If checked, the dimension line is displayed by default</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，默认显示尺寸线</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="214"/>
         <source>Show dimension line</source>
-        <translation type="unfinished"></translation>
+        <translation>显示尺寸线</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="230"/>
         <source>Line width</source>
-        <translation type="unfinished">线宽</translation>
+        <translation>线宽</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="237"/>
         <source>The default line width</source>
-        <translation type="unfinished"></translation>
+        <translation>默认线宽</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="266"/>
         <source>Start arrow type</source>
-        <translation type="unfinished"></translation>
+        <translation>起始箭头类型</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="279"/>
         <source>The default symbol displayed at the start of dimension lines</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸线起始处默认显示的符号</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="289"/>
@@ -3130,109 +3175,110 @@ in the Draft Scale Widget. If the scale is 1:100 the multiplier is 100.</source>
         <location filename="../ui/preferences-drafttexts.ui" line="304"/>
         <location filename="../ui/preferences-drafttexts.ui" line="392"/>
         <source>Tick</source>
-        <translation>刻度</translation>
+        <translation>斜线</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="309"/>
         <location filename="../ui/preferences-drafttexts.ui" line="397"/>
         <source>Tick-2</source>
-        <translation>刻度-2</translation>
+        <translation>双斜线</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="322"/>
         <source>Start arrow size</source>
-        <translation type="unfinished"></translation>
+        <translation>起始箭头大小</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="329"/>
         <source>The default starting arrow size</source>
-        <translation type="unfinished"></translation>
+        <translation>默认起始箭头大小</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="354"/>
         <source>End arrow type</source>
-        <translation type="unfinished"></translation>
+        <translation>结束箭头类型</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="367"/>
         <source>The default symbol displayed at the end of dimension lines</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸线结束处默认显示的符号</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="410"/>
         <source>End arrow size</source>
-        <translation type="unfinished"></translation>
+        <translation>结束箭头大小</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="417"/>
         <source>The default ending arrow size</source>
-        <translation type="unfinished"></translation>
+        <translation>默认结束箭头大小</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="442"/>
         <source>Line and arrow color</source>
-        <translation type="unfinished"></translation>
+        <translation>线条和箭头颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="449"/>
         <source>The default color for lines and arrows</source>
-        <translation type="unfinished"></translation>
+        <translation>线条和箭头的默认颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="472"/>
         <source>Units</source>
-        <translation type="unfinished">单位</translation>
+        <translation>单位</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="478"/>
         <source>If checked, a unit symbol is added to dimension texts by default</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，默认在尺寸文字中添加单位符号</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="481"/>
         <source>Show unit</source>
-        <translation type="unfinished">显示单位</translation>
+        <translation>显示单位</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="497"/>
         <source>Unit override</source>
-        <translation type="unfinished">覆盖单位</translation>
+        <translation>覆盖单位</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="510"/>
         <source>The default unit override for dimensions. Enter a unit such as m
 or cm, leave blank to use the current unit defined in FreeCAD.</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸的默认单位覆盖。
+输入单位如 m 或 cm，留空则使用 FreeCAD 中定义的当前单位。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="538"/>
         <source>The default number of decimal places for dimension texts</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸文字的默认小数位数</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="560"/>
         <source>Feet separator</source>
-        <translation type="unfinished"></translation>
+        <translation>英尺分隔符</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="573"/>
         <source>The optional string inserted between the feet and inches values in dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸中英尺和英寸值之间可选插入的字符串</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="589"/>
         <source>Dimension Details</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸详细信息</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="608"/>
         <source>The default distance the dimension line is extended past the extension lines</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸线超出延伸线的默认距离</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="637"/>
         <source>Extension line length</source>
-        <translation type="unfinished"></translation>
+        <translation>延伸线长度</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="644"/>
@@ -3240,17 +3286,19 @@ or cm, leave blank to use the current unit defined in FreeCAD.</source>
 value defines the gap between the ends of the extension lines and the measured
 points. A positive value defines the maximum length of the extension lines. Only
 used for linear dimensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>延伸线的默认长度。
+输入 0 为完整延伸线。负值定义延伸线端点与测量点之间的间隙。
+正值定义延伸线的最大长度。仅用于线性尺寸。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="676"/>
         <source>The default length of extension lines above the dimension line</source>
-        <translation type="unfinished"></translation>
+        <translation>延伸线超出尺寸线的默认长度</translation>
     </message>
     <message>
         <location filename="../ui/preferences-drafttexts.ui" line="705"/>
         <source>The default space between the dimension line and the dimension text</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸线与尺寸文字之间的默认间距</translation>
     </message>
     <message>
         <source>Arrows size</source>
@@ -3411,38 +3459,39 @@ used for linear dimensions.</source>
     <message>
         <location filename="../ui/preferences-draftvisual.ui" line="14"/>
         <source>Visual</source>
-        <translation type="unfinished"></translation>
+        <translation>视觉</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftvisual.ui" line="20"/>
         <source>SVG Patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG 图案</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftvisual.ui" line="26"/>
         <source>SVG pattern size</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG 图案大小</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftvisual.ui" line="39"/>
         <source>The default size for SVG patterns. A higher value results in a denser pattern.</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG 图案的默认大小。数值越大，图案越密集。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftvisual.ui" line="65"/>
         <source>Additional SVG pattern location</source>
-        <translation type="unfinished"></translation>
+        <translation>附加 SVG 图案位置</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftvisual.ui" line="75"/>
         <source>An optional directory with custom SVG files containing
 pattern definitions to be added to the standard patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>包含自定义 SVG 图案定义文件的可选目录，
+这些图案将添加到标准图案中</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftvisual.ui" line="92"/>
         <source>Drawing View Line Definitions</source>
-        <translation type="unfinished"></translation>
+        <translation>绘图视图线型定义</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draftvisual.ui" line="98"/>
@@ -3494,7 +3543,9 @@ pattern definitions to be added to the standard patterns</source>
     <message>
         <location filename="../ui/preferences-dwg.ui" line="41"/>
         <source>This is the method FreeCAD will use to convert DWG files to DXF. If &quot;Automatic&quot; is chosen, FreeCAD will try to find one of the following converters in the same order as they are shown here. If FreeCAD is unable to find any, you might need to choose a specific converter and indicate its path here under. Choose the &quot;dwg2dxf&quot; utility if using LibreDWG, &quot;ODAFileConverter&quot; if using the ODA file converter, or the &quot;dwg2dwg&quot; utility if using the pro version of QCAD.</source>
-        <translation>FreeCAD 用此方法将DWG文件转换为DXF。 如果选择“自动”，FreeCAD将尝试按照此处显示的相同顺序查找以下转换器之一。如果找不到任何转换器，您可能需要选择一个特定的转换器并在此处指明其路径。如果使用 LibreDWG转换器请选择“dwg2dxf”；如果使用ODA转换器请选择“ODAFileConverter”；如果使用专业版QCAD转换器请选择“dwg2dwg”。</translation>
+        <translation>FreeCAD 用此方法将DWG文件转换为DXF。 如果选择“自动”，FreeCAD将尝试按照此处显示的相同顺序查找以下转换器之一。
+如果找不到任何转换器，您可能需要选择一个特定的转换器并在此处指明其路径。如果使用 LibreDWG转换器请选择“dwg2dxf”；
+如果使用ODA转换器请选择“ODAFileConverter”；如果使用专业版QCAD转换器请选择“dwg2dwg”。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-draft.ui" line="89"/>
@@ -3505,12 +3556,12 @@ pattern definitions to be added to the standard patterns</source>
     <message>
         <location filename="../ui/preferences-dwg.ui" line="26"/>
         <source>DWG Conversion</source>
-        <translation type="unfinished"></translation>
+        <translation>DWG 转换</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dwg.ui" line="34"/>
         <source>Conversion method</source>
-        <translation type="unfinished"></translation>
+        <translation>转换方法</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dwg.ui" line="56"/>
@@ -3520,11 +3571,13 @@ pattern definitions to be added to the standard patterns</source>
     <message>
         <location filename="../ui/preferences-dwg.ui" line="61"/>
         <source>ODA Converter</source>
+        <translatorcomment>转换器名称</translatorcomment>
         <translation>ODA Converter</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dwg.ui" line="66"/>
         <source>QCAD pro</source>
+        <translatorcomment>转换器名称</translatorcomment>
         <translation>QCAD pro</translation>
     </message>
     <message>
@@ -3697,7 +3750,7 @@ Note that this can take a while!</source>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="446"/>
         <source>Join geometry</source>
-        <translation>联合几何图形</translation>
+        <translation>合并几何图形</translation>
     </message>
     <message>
         <source>Objects from the same layers will be joined into Draft Blocks,
@@ -3745,49 +3798,50 @@ as closed wires with correct width</source>
         <location filename="../ui/preferences-dxf.ui" line="26"/>
         <source>If checked, this preferences dialog will be shown each time you import or export
 a DXF file.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，每次导入或导出 DXF 文件时将显示此首选项对话框。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="30"/>
         <source>Show the importer dialog when importing a file</source>
-        <translation type="unfinished"></translation>
+        <translation>导入文件时显示导入器对话框</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="46"/>
         <source>Use the legacy Python importer. This importer is more feature-complete but slower and requires an external library.</source>
-        <translation type="unfinished"></translation>
+        <translation>使用旧版 Python 导入器。此导入器功能更完整，但速度较慢，且需要外部库。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="49"/>
         <source>Use legacy importer</source>
-        <translation type="unfinished"></translation>
+        <translation>使用旧版导入器</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="62"/>
         <source>Use the legacy Python exporter. This exporter is more feature-complete but slower and requires an external library.</source>
-        <translation type="unfinished"></translation>
+        <translation>使用旧版 Python 导出器。此导出器功能更完整，但速度较慢，且需要外部库。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="65"/>
         <source>Use legacy exporter</source>
-        <translation type="unfinished"></translation>
+        <translation>使用旧版导出器</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="81"/>
         <source>Automatic Update (Legacy Only)</source>
-        <translation type="unfinished"></translation>
+        <translation>自动更新（仅限旧版）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="87"/>
         <source>If checked, FreeCAD is allowed to download and update the Python libraries
 required by the legacy importer. This can also be done manually by installing
 the &apos;dxf_library&apos; addon from the Addon Manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，允许 FreeCAD 下载和更新旧版导入器所需的 Python 库。
+也可通过从插件管理器安装 &apos;dxf_library&apos; 插件来手动完成。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="108"/>
         <source>Import As</source>
-        <translation type="unfinished"></translation>
+        <translation>导入为</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="117"/>
@@ -3795,12 +3849,15 @@ the &apos;dxf_library&apos; addon from the Addon Manager.</source>
 reusable objects (Part Compounds) and instances become `App::Link` objects,
 maintaining the block structure. Best for full integration with the Draft
 workbench. </source>
-        <translation type="unfinished"></translation>
+        <translation>创建完全参数化的草图对象. 块定义作为可重用对象（部件组合）导入
+实例成为 App::Link 对象,
+保留块结构。最适合与草图工作台完全集成。
+. </translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="123"/>
         <source>Editable Draft objects (highest fidelity, slowest)</source>
-        <translation type="unfinished"></translation>
+        <translation>可编辑的草图对象（保真度最高，速度最慢）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="132"/>
@@ -3808,7 +3865,7 @@ workbench. </source>
         <location filename="../ui/preferences-dxf.ui" line="187"/>
         <location filename="../ui/preferences-dxf.ui" line="211"/>
         <source>DxfImportMode</source>
-        <translation type="unfinished"></translation>
+        <translation>DXF 导入模式</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="145"/>
@@ -3816,46 +3873,52 @@ workbench. </source>
 definitions are imported as reusable objects (Part Compounds) and instances
 become `App::Link` objects, maintaining the block structure. Best for
 script-based post-processing and Part workbench integration.</source>
-        <translation type="unfinished"></translation>
+        <translation>创建参数化的部件对象（如 Part::Line、Part::Circle）。
+块定义作为可重用对象（部件组合）导入，实例成为 App::Link 对象，
+保留块结构。最适合基于脚本的后处理以及与部件工作台的集成。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="151"/>
         <source>Editable Part primitives (high fidelity, slower)</source>
-        <translation type="unfinished"></translation>
+        <translation>可编辑的部件基本体（保真度高，速度较慢）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="170"/>
         <source>Creates a non-parametric shape for each DXF entity. Block definitions are
 imported as reusable objects (Part Compounds) and instances become `App::Link`
 objects, maintaining the block structure. Good for referencing and measuring.</source>
-        <translation type="unfinished"></translation>
+        <translation>为每个 DXF 实体创建非参数化形状。
+块定义作为可重用对象（部件组合）导入，实例成为 App::Link 对象，
+保留块结构。适合参考和测量。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="175"/>
         <source>Individual Part shapes (balanced, recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>单个部件形状（平衡，推荐）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="197"/>
         <source>Merges all geometry per layer into a single, non-editable shape. Block
 structures are not preserved; their geometry becomes part of the layer&apos;s
 shape. Best for importing and viewing very large files with maximum performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>将每层的所有几何合并为一个不可编辑的形状。
+不保留块结构，其几何成为图层形状的一部分。
+最适合以最高性能导入和查看超大文件。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="202"/>
         <source>Fused Part shapes (lowest fidelity, fastest)</source>
-        <translation type="unfinished"></translation>
+        <translation>融合的部件形状（保真度最低，速度最快）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="224"/>
         <source>Import Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>导入设置</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="232"/>
         <source>Global scaling factor</source>
-        <translation type="unfinished"></translation>
+        <translation>全局缩放倍数</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="252"/>
@@ -3863,94 +3926,101 @@ shape. Best for importing and viewing very large files with maximum performance.
 between the DXF file&apos;s unit and millimeters. Example: for files in
 millimeters: 1, in centimeters: 10, in meters: 1000, in inches: 25.4,
 in feet: 304.8</source>
-        <translation type="unfinished"></translation>
+        <translation>导入 DXF 文件时应用的缩放倍数。此倍数是 DXF 文件单位与毫米之间的转换系数。
+例如：文件单位为毫米：1，厘米：10，米：1000，英寸：25.4，英尺：304.8</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="288"/>
         <source>If checked, text, mtext, and dimension entities will be imported as Draft objects</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，文字和尺寸实体将作为草图对象导入</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="304"/>
         <source>If checked, point entities will be imported</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，点实体将被导入</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="307"/>
         <source>Points</source>
-        <translation type="unfinished">点</translation>
+        <translation>点</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="323"/>
         <source>If checked, entities from the paper space will also be imported. By default,
 only model space is imported</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，图纸空间中的实体也将被导入。默认仅导入模型空间</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="327"/>
         <source>Paper space objects</source>
-        <translation type="unfinished"></translation>
+        <translation>图纸空间对象</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="340"/>
         <source>If checked, anonymous blocks (whose names begin with *) will also be imported.
 These are often used for hatches and dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，匿名块（名称以 * 开头）也将被导入。
+这些通常用于填充和尺寸标注</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="344"/>
         <source>Anonymous blocks (*-blocks)</source>
-        <translation type="unfinished"></translation>
+        <translation>匿名块（*-块）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="360"/>
         <source>If checked, the boundaries of hatch objects will be imported as closed wires.
 (Legacy importer only)</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，填充对象的边界将作为闭合线导入。
+（仅限旧版导入器）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="364"/>
         <source>Hatch boundaries</source>
-        <translation type="unfinished"></translation>
+        <translation>填充边界</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="379"/>
         <source>Appearance</source>
-        <translation type="unfinished"></translation>
+        <translation>外观</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="388"/>
         <source>If checked, colors will be set as specified in the DXF file whenever
 possible. Otherwise, default FreeCAD colors are applied</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，尽可能使用 DXF 文件中指定的颜色。
+否则将应用 FreeCAD 的默认颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="392"/>
         <source>Use colors from the DXF file</source>
-        <translation type="unfinished"></translation>
+        <translation>使用 DXF 文件中的颜色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="411"/>
         <source>If checked, imported texts will get the standard Draft text size, instead of
 the size defined in the DXF document. (Legacy importer only)</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，导入的文字将使用标准草图文字大小，
+而非 DXF 文档中定义的大小。（仅限旧版导入器）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="430"/>
         <source>Advanced processing</source>
-        <translation type="unfinished"></translation>
+        <translation>高级处理</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="442"/>
         <source>If checked, the legacy importer will attempt to join coincident geometric
 objects into wires. This can be slow for large files. (Legacy importer only)</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，旧版导入器将尝试将重合的几何对象连接成线。
+对于大文件，此操作可能较慢。（仅限旧版导入器）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="462"/>
         <source>If checked, polylines that have a width property will be rendered as faces
 representing that width. (Legacy importer only)</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，具有宽度属性的多段线将渲染为表示该宽度的面。
+（仅限旧版导入器）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="466"/>
@@ -3961,18 +4031,19 @@ representing that width. (Legacy importer only)</source>
         <location filename="../ui/preferences-dxf.ui" line="482"/>
         <source>If checked, the legacy importer will attempt to create Sketcher objects
 instead of Draft or Part objects. This overrides the &apos;Import As&apos; setting</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，旧版导入器将尝试创建草图对象，
+而非草图或部件对象。此选项会覆盖“导入为”设置</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="486"/>
         <source>Create sketches</source>
-        <translation type="unfinished"></translation>
+        <translation>创建草图</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="504"/>
         <location filename="../ui/preferences-svg.ui" line="191"/>
         <source>Export Options</source>
-        <translation type="unfinished"></translation>
+        <translation>导出选项</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="512"/>
@@ -3982,33 +4053,34 @@ instead of Draft or Part objects. This overrides the &apos;Import As&apos; setti
     <message>
         <location filename="../ui/preferences-dxf.ui" line="515"/>
         <source>Treat ellipses and splines as polylines</source>
-        <translation>将椭圆及spline当作聚合线</translation>
+        <translation>将椭圆及样条线当作聚合线</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="541"/>
         <source>Maximum spline segment</source>
-        <translation type="unfinished"></translation>
+        <translation>最大样条线段数</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="551"/>
         <source>Maximum length of each of the polyline segments. &apos;0&apos; treats the whole spline as a straight segment.</source>
-        <translation type="unfinished"></translation>
+        <translation>每条多段线段的最大长度。设为 0 时，将整个样条线视为一条直线段。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="583"/>
         <source>All objects containing faces will be exported as 3D polyface meshes</source>
-        <translation type="unfinished"></translation>
+        <translation>所有包含面的对象将导出为 3D 多面网格</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="603"/>
         <source>TechDraw Views will be exported as blocks.
 This might fail for post DXF R12 templates.</source>
-        <translation type="unfinished"></translation>
+        <translation>TechDraw 视图将导出为块。
+对于 DXF R12 之后的模板，此操作可能会失败。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-dxf.ui" line="607"/>
         <source>Export TechDraw Views as blocks</source>
-        <translation type="unfinished"></translation>
+        <translation>将 TechDraw 视图导出为块</translation>
     </message>
     <message>
         <source>Max Spline Segment:</source>
@@ -4062,12 +4134,12 @@ This might fail for post DXF R12 templates.</source>
         <location filename="../ui/preferences-oca.ui" line="26"/>
         <location filename="../ui/preferences-svg.ui" line="26"/>
         <source>Import Options</source>
-        <translation type="unfinished"></translation>
+        <translation>导入选项</translation>
     </message>
     <message>
         <location filename="../ui/preferences-oca.ui" line="46"/>
         <source>Imports the areas (3D faces) too</source>
-        <translation type="unfinished"></translation>
+        <translation>同时导入区域（3D面）</translation>
     </message>
     <message>
         <source>Check this if you want the areas (3D faces) to be imported too.</source>
@@ -4117,60 +4189,62 @@ One unit in the SVG file will translate as one millimeter. </translation>
     <message>
         <location filename="../ui/preferences-svg.ui" line="47"/>
         <source>Method for importing SVG object colors</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG对象颜色的导入方法</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="60"/>
         <source>Use default style from Part/PartDesign</source>
-        <translation type="unfinished"></translation>
+        <translation>使用部件/部件设计的默认样式</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="65"/>
         <source>Use original SVG style</source>
-        <translation type="unfinished"></translation>
+        <translation>使用原始 SVG 样式</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="77"/>
         <source>If checked, no unit conversion will occur.
 One unit in the SVG file will be interpreted as one millimeter.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果选中，将不进行单位转换。
+SVG 文件中的一个单位将被解释为一毫米。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="81"/>
         <source>Disable unit scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>禁用单位缩放</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="97"/>
         <source>If face generation results in a degenerated face,
 a raw wire from the original shape is added</source>
-        <translation type="unfinished"></translation>
+        <translation>如果面生成导致退化面，则添加来自原始形状的原始线</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="101"/>
         <source>Add wires for invalid faces</source>
-        <translation type="unfinished"></translation>
+        <translation>为无效面添加线</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="117"/>
         <source>Check to cut shapes according to the even/odd SVG fill rule</source>
-        <translation type="unfinished"></translation>
+        <translation>选中可根据 SVG 奇偶填充规则切割形状</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="120"/>
         <source>Apply Cuts</source>
-        <translation type="unfinished"></translation>
+        <translation>应用切割</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="140"/>
         <source>Coordinate precision (crucial for detecting closed paths)</source>
-        <translation type="unfinished"></translation>
+        <translation>坐标精度（对检测闭合路径至关重要）</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="166"/>
         <source>The number of decimal places used in internal coordinate operations (for example 3 = 0.001).
 	The optimal value depends on the absolute size of the import. Typical values are between 1 and 5.</source>
-        <translation type="unfinished"></translation>
+        <translation>内部坐标运算中使用的小数位数
+（例如 3=0.001）。最佳值取决于导入的绝对尺寸。典型值介于 1 到 5 之间。</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="205"/>
@@ -4200,19 +4274,20 @@ a raw wire from the original shape is added</source>
     <message>
         <location filename="../ui/preferences-svg.ui" line="245"/>
         <source>Convert white line color to black</source>
-        <translation type="unfinished"></translation>
+        <translation>将白色线条转换为黑色</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="265"/>
         <source>Maximum segment length for discretized arcs</source>
-        <translation type="unfinished"></translation>
+        <translation>离散化弧的最大线段长度</translation>
     </message>
     <message>
         <location filename="../ui/preferences-svg.ui" line="288"/>
         <source>Versions of OpenCASCADE older than version 6.8 don&apos;t support arc projection.
 In this case arcs will be discretized into small line segments.
 This value is the maximum segment length.</source>
-        <translation type="unfinished"></translation>
+        <translation>低于 6.8 版本的 OpenCASCADE 不支持弧投影。
+此时，弧将被离散化为小线段。此值为最大线段长度。</translation>
     </message>
     <message>
         <source>Translate white line color to black</source>
@@ -4252,17 +4327,17 @@ This value is the maximum segment length. </source>
     <message>
         <location filename="../../draftutils/init_tools.py" line="55"/>
         <source>Arc Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>圆弧工具</translation>
     </message>
     <message>
         <location filename="../../draftutils/init_tools.py" line="64"/>
         <source>Bézier Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>贝塞尔工具</translation>
     </message>
     <message>
         <location filename="../../draftutils/init_tools.py" line="95"/>
         <source>Array Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>阵列工具</translation>
     </message>
 </context>
 <context>
