@@ -334,6 +334,36 @@ public:
      */
     virtual bool getDetailPath(const char* subname, SoFullPath* pPath, bool append, SoDetail*& det) const;
 
+    /** Extend @a pPath so that it ends at getChildRoot()
+     *
+     * @param pPath: coin path to extend. On entry it already ends with this view provider's
+     * own two nodes as produced by getDetailPath(), i.e. getRoot() followed by getModeSwitch()
+     * -- or, in the case of ViewProviderLink, the snapshot stand-ins of those two nodes.
+     * @param len: the length @a pPath had *before* those two nodes were appended.
+     *
+     * The default implementation appends getChildRoot() on top of the mode switch, which
+     * requires the child root to be the currently active mode switch child. A view provider
+     * (or a view provider extension) that parents its child root somewhere else may instead
+     * truncate @a pPath back to @a len and append its own chain of nodes, starting at
+     * getRoot().
+     *
+     * Every append must be parent-to-child adjacent: @a pPath is frequently a plain SoPath,
+     * not an SoTempPath.
+     *
+     * @return false if the child root is currently not reachable, e.g. because another
+     * display mode is active. @a pPath is then left untouched.
+     */
+    virtual bool appendChildRootPath(SoFullPath* pPath, int len) const;
+
+    /** Append getRoot(), getModeSwitch() and then the child root path to @a pPath
+     *
+     * Convenience wrapper for callers that build a path from scratch. On failure @a pPath is
+     * restored to the length it had on entry.
+     *
+     * @sa appendChildRootPath()
+     */
+    bool appendRootAndChildRootPath(SoFullPath* pPath) const;
+
     /** partial rendering setup
      *
      * @param subelements: a list of dot separated string refer to the sub element

@@ -182,6 +182,11 @@ public:
     {
         return false;
     }
+    /// @sa ViewProvider::appendChildRootPath()
+    virtual bool extensionAppendChildRootPath(SoFullPath*, int) const
+    {
+        return false;
+    }
 
     /// Called by the document when the provider goes in edit mode
     virtual bool extensionSetEdit(int ModNum){return false;}

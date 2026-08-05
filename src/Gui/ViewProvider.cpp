@@ -1085,6 +1085,46 @@ bool ViewProvider::getDetailPath(const char* subname, SoFullPath* pPath, bool ap
     return true;
 }
 
+bool ViewProvider::appendChildRootPath(SoFullPath* pPath, int len) const
+{
+    auto vector = getExtensionsDerivedFromType<Gui::ViewProviderExtension>();
+    for (Gui::ViewProviderExtension* ext : vector) {
+        if (ext->extensionAppendChildRootPath(pPath, len)) {
+            return true;
+        }
+    }
+
+    // The default contract: the child root must be the currently active child of the mode
+    // switch, which pPath already ends with. Note that 'len' is deliberately ignored here,
+    // so that ViewProviderLink -- which appends its snapshot stand-ins rather than our real
+    // root and mode switch -- keeps working unchanged.
+    auto* childRoot = getChildRoot();
+    if (!childRoot || !pcModeSwitch) {
+        return false;
+    }
+    int idx = pcModeSwitch->whichChild.getValue();
+    if (idx < 0 || idx >= pcModeSwitch->getNumChildren() || pcModeSwitch->getChild(idx) != childRoot) {
+        return false;
+    }
+    pPath->append(childRoot);
+    return true;
+}
+
+bool ViewProvider::appendRootAndChildRootPath(SoFullPath* pPath) const
+{
+    if (!pcRoot || !pcModeSwitch || pcRoot->findChild(pcModeSwitch) < 0) {
+        return false;
+    }
+    const int len = pPath->getLength();
+    pPath->append(pcRoot);
+    pPath->append(pcModeSwitch);
+    if (!appendChildRootPath(pPath, len)) {
+        pPath->truncate(len);
+        return false;
+    }
+    return true;
+}
+
 const std::string& ViewProvider::hiddenMarker()
 {
     return App::DocumentObject::hiddenMarker();

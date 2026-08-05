@@ -252,14 +252,8 @@ void View3DInventorSelection::checkGroupOnTop(const SelectionChanges& Reason)
         }
 
         auto childRoot = grpVp->getChildRoot();
-        auto modeSwitch = grpVp->getModeSwitch();
-        auto idx = modeSwitch->whichChild.getValue();
-        if (idx < 0 || idx >= modeSwitch->getNumChildren() || modeSwitch->getChild(idx) != childRoot) {
-            FC_LOG(
-                "skip " << obj->getFullName() << '.' << (subname ? subname : "")
-                        << ", hidden inside geo group"
-            );
-            return;
+        if (!childRoot) {
+            break;
         }
         if (childRoot->findChild(childVp->getRoot()) < 0) {
             FC_LOG(
@@ -274,15 +268,23 @@ void View3DInventorSelection::checkGroupOnTop(const SelectionChanges& Reason)
     SoTempPath path(10);
     path.ref();
 
+    bool reachable = true;
     for (auto it = groups.rbegin(); it != groups.rend(); ++it) {
-        auto grpVp = *it;
-        path.append(grpVp->getRoot());
-        path.append(grpVp->getModeSwitch());
-        path.append(grpVp->getChildRoot());
+        // Let each group describe how its child root is reached: the default is
+        // root -> mode switch -> child root, but a view provider may parent its child
+        // root elsewhere in its sub-graph.
+        if (!(*it)->appendRootAndChildRootPath(&path)) {
+            FC_LOG(
+                "skip " << obj->getFullName() << '.' << (subname ? subname : "")
+                        << ", hidden inside geo group"
+            );
+            reachable = false;
+            break;
+        }
     }
 
     SoDetail* det = nullptr;
-    if (vp->getDetailPath(subname, &path, true, det) && path.getLength()) {
+    if (reachable && vp->getDetailPath(subname, &path, true, det) && path.getLength()) {
         auto node = new SoFCPathAnnotation;
         node->setPath(&path);
         pcGroup->addChild(node);

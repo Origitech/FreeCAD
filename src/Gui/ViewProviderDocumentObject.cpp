@@ -758,15 +758,19 @@ bool ViewProviderDocumentObject::getElementPicked(const SoPickedPoint* pp, std::
     }
 
     auto childRoot = getChildRoot();
-    int idx;
-    if (!childRoot || (idx = pcModeSwitch->whichChild.getValue()) < 0
-        || pcModeSwitch->getChild(idx) != childRoot) {
+    if (!childRoot) {
         return ViewProvider::getElementPicked(pp, subname);
     }
 
     SoPath* path = pp->getPath();
-    idx = path->findNode(childRoot);
-    if (idx < 0 || idx + 1 >= path->getLength()) {
+    int idx = path->findNode(childRoot);
+    if (idx < 0) {
+        // The child root was not traversed for this pick: either another display mode is
+        // active, or the pick hit this object's own geometry. A picked path only contains
+        // traversed nodes, so this subsumes the mode switch check.
+        return ViewProvider::getElementPicked(pp, subname);
+    }
+    if (idx + 1 >= path->getLength()) {
         return false;
     }
     auto vp = getDocument()->getViewProvider(path->getNode(idx + 1));
@@ -829,12 +833,8 @@ bool ViewProviderDocumentObject::getDetailPath(
     if (!childRoot) {
         path->truncate(len);
     }
-    else {
-        auto idx = pcModeSwitch->whichChild.getValue();
-        if (idx < 0 || pcModeSwitch->getChild(idx) != childRoot) {
-            return false;
-        }
-        path->append(childRoot);
+    else if (!appendChildRootPath(path, len)) {
+        return false;
     }
     bool ret = false;
     if (path->getLength()) {
