@@ -21,7 +21,11 @@
  **************************************************************************************************/
 
 #include <format>
+#include <chrono>
+#include <system_error>
+#include <thread>
 #include <utility>
+#include <vector>
 #include <QDir>
 #include <QProcessEnvironment>
 #include <QStandardPaths>
@@ -570,6 +574,83 @@ bool ApplicationDirectories::usingCurrentVersionConfig(fs::path config) const {
     }
     auto version = Base::FileInfo::pathToString(config.filename());
     return version == versionStringForPath(std::get<0>(_currentVersion), std::get<1>(_currentVersion));
+}
+
+bool ApplicationDirectories::resetUserAppData() const {
+    if (_usingCustomDirectories) {
+        // The user pointed us at a directory of their own with FREECAD_USER_HOME or
+        // FREECAD_USER_DATA. findPath() does not append our subdirectories to it, so its contents
+        // are not ours to delete.
+        Base::Console().warning("Not resetting app data: custom user directories are in use\n");
+        return false;
+    }
+
+    // Empty a directory one entry at a time, using the non-throwing overload of remove_all().
+    // Calling fs::remove_all() on the directory as a whole aborts at the first entry it cannot
+    // remove -- typically the log file, still held open by the instance being restarted -- and
+    // since that file sorts before system.cfg and user.cfg, the configuration would survive the
+    // reset while the surrounding directories were deleted.
+    auto removeChildren = [](const fs::path& dir) {
+        std::vector<fs::path> failed;
+        std::error_code iterError;
+        for (const auto& entry : fs::directory_iterator(dir, iterError)) {
+            std::error_code removeError;
+            fs::remove_all(entry.path(), removeError);
+            if (removeError) {
+                failed.push_back(entry.path());
+            }
+        }
+        return failed;
+    };
+
+    std::set<fs::path> uniquePaths {_userConfig, _userAppData};
+    bool allReset = true;
+    for (auto path : uniquePaths) {
+        if (path.filename().empty()) {
+            // Handle the case where the path was constructed from a std::string with a trailing /
+            path = path.parent_path();
+        }
+        // Only ever delete a directory we recognize as one of ours. Without this an unversioned
+        // path would send remove_all at the whole vendor directory, taking every other installed
+        // version with it.
+        if (path.empty() || !isVersionedPath(path)) {
+            Base::Console().warning("Not resetting app data: {} is not a versioned path\n",
+                                    Base::FileInfo::pathToString(path));
+            allReset = false;
+            continue;
+        }
+        if (!fs::exists(path)) {
+            continue;  // Nothing to do, and findPath() already created it if it was missing
+        }
+
+        Base::Console().message("Resetting app data: clearing {}\n",
+                                Base::FileInfo::pathToString(path));
+
+        // Retry whatever is still locked by the instance being restarted. The configuration files
+        // are already gone after the first pass, so in practice this only chases the log file.
+        constexpr int maxAttempts = 30;
+        constexpr auto retryDelay = std::chrono::milliseconds(100);
+        auto failed = removeChildren(path);
+        for (int attempt = 0; !failed.empty() && attempt < maxAttempts; ++attempt) {
+            std::this_thread::sleep_for(retryDelay);
+            failed = removeChildren(path);
+        }
+        for (const auto& leftover : failed) {
+            // Not fatal: the settings are what the reset is about, and they are removed first.
+            Base::Console().warning("Could not delete {}\n",
+                                    Base::FileInfo::pathToString(leftover));
+        }
+
+        // The directory itself is kept, but make sure it exists in case something removed it.
+        std::error_code createError;
+        fs::create_directories(path, createError);
+        if (createError) {
+            Base::Console().error("Failed to recreate {}: {}\n",
+                                  Base::FileInfo::pathToString(path), createError.message());
+            allReset = false;
+        }
+    }
+    return allReset;
 }
 
 ApplicationDirectories::MigrationResult ApplicationDirectories::migrateConfig(
