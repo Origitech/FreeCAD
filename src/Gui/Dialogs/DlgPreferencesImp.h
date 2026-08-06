@@ -320,6 +320,7 @@ private:
     void applyChanges();
     void showResetOptions();
     void restoreDefaults();
+    void restoreDefaultsAndAppData();
     void restorePageDefaults(PreferencesPageItem* item);
     void restartIfRequired();
 

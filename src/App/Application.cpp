@@ -2216,6 +2216,7 @@ void parseProgramOptions(int ac, char ** av, const std::string& exe, boost::prog
     ("disable-addon", boost::program_options::value< std::vector<std::string> >()->composing(),"Disable a given addon.")
     ("single-instance", "Allow to run a single instance of the application")
     ("safe-mode", "Force enable safe mode")
+    ("reset-appdata", "Delete this version's user configuration and app data before starting")
     ("pass", boost::program_options::value< std::vector<std::string> >()->multitoken(), "Ignores the following arguments and pass them through to be used by a script")
     ;
 
@@ -2551,6 +2552,10 @@ void Application::initConfig(int argc, char ** argv)
         mConfig["SafeMode"] = "1";
     }
 
+    if (vm.contains("reset-appdata")) {
+        mConfig["ResetAppData"] = "1";
+    }
+
     // extract home paths
     _appDirs = std::make_unique<ApplicationDirectories>(mConfig);
 
@@ -2606,6 +2611,15 @@ void Application::initConfig(int argc, char ** argv)
         _pConsoleObserverStd->bLog = false;
         _pConsoleObserverStd->bWrn = false;
         _pConsoleObserverStd->bErr = false;
+    }
+
+    // Wipe the user configuration if asked to. This has to happen after the directories are
+    // resolved, but before anything opens a file inside them: LoadParameters() below is the first
+    // to do so, and the log file that follows it would keep the directory alive on Windows. The
+    // console observer is already attached, so a failure here is at least reportable -- the log
+    // file cannot help, as it lives in the directory being deleted.
+    if (mConfig.contains("ResetAppData")) {
+        _appDirs->resetUserAppData();
     }
 
     LoadParameters();
