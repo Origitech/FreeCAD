@@ -44,6 +44,7 @@
 #include <QScreen>
 #include <QScrollArea>
 #include <QScrollBar>
+#include <QSettings>
 #include <QTabWidget>
 #include <QTimer>
 #include <QToolButton>
@@ -801,6 +802,18 @@ void DlgPreferencesImp::showResetOptions()
 
     allAction->setToolTip(tr("Resets the user settings entirely"));
 
+    // Reset all, including everything stored on disk
+    QAction* allDataAction = menu.addAction(
+        tr("Reset All + App Data"),
+        this,
+        &DlgPreferencesImp::restoreDefaultsAndAppData
+    );
+
+    allDataAction->setToolTip(
+        tr("Resets the user settings entirely and deletes this version's app data, "
+           "then restarts the application")
+    );
+
     connect(&menu, &QMenu::hovered, [&menu](QAction* hover) {
         QPoint pos = menu.pos();
         const int pad = 10;
@@ -836,6 +849,60 @@ void DlgPreferencesImp::restoreDefaults()
 
         reject();
     }
+}
+
+void DlgPreferencesImp::restoreDefaultsAndAppData()
+{
+    auto appDataDir = QString::fromStdString(App::Application::getUserAppDataDir());
+
+    QMessageBox box(this);
+    box.setIcon(QMessageBox::Warning);
+    box.setWindowTitle(tr("Clear User Settings and App Data"));
+    box.setText(tr("Clear all your user settings and delete this version's app data?"));
+    box.setInformativeText(
+        tr("The folder below will be deleted, including any macros and materials stored in it. "
+           "Other installed versions are not affected.\n\n%1\n\n"
+           "The application will restart.")
+            .arg(appDataDir)
+    );
+    box.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    box.setDefaultButton(QMessageBox::No);
+
+    if (box.exec() != QMessageBox::Yes) {
+        return;
+    }
+
+    // Window geometry and state are also kept outside the app data directory, in the Qt settings
+    // scope (the registry on Windows), which carries no version component. MainWindow only prefers
+    // the user.cfg copy when it is non-empty, so a wiped directory would otherwise fall straight
+    // back to this one. Build the scope exactly as MainWindow::loadWindowSettings() does.
+    QSettings settings(
+        QString::fromStdString(App::Application::Config()["ExeVendor"]),
+        QString::fromStdString(App::Application::getExecutableName())
+    );
+    settings.clear();
+    settings.sync();  // we are about to relaunch, so don't rely on the destructor
+
+    // The restarted instance deletes the directory while this one is still shutting down, and
+    // Application::destruct() would otherwise write user.cfg straight back into it.
+    App::GetApplication().GetUserParameter().SetIgnoreSave(true);
+    App::GetApplication().GetSystemParameter().SetIgnoreSave(true);
+
+    reject();
+
+    // restart after a delay to give time to this dialog to close
+    const int ms = 1000;
+    QTimer::singleShot(ms, []() {
+        QStringList args = QApplication::arguments();
+        args.pop_front();
+        auto const resetArgument = QStringLiteral("--reset-appdata");
+        if (!args.contains(resetArgument)) {
+            args.append(resetArgument);
+        }
+        if (getMainWindow()->close()) {
+            QProcess::startDetached(QApplication::applicationFilePath(), args);
+        }
+    });
 }
 /**
  * If the dialog is currently showing and the static variable _pages changed, this function

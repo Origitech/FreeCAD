@@ -129,6 +129,18 @@ namespace App {
         /// \param config The path to check
         bool usingCurrentVersionConfig(std::filesystem::path config) const;
 
+        /// Delete and recreate the user's configuration and app data directories for the running
+        /// version, discarding user.cfg, system.cfg and everything else stored alongside them
+        /// (including that version's macros and materials).
+        ///
+        /// This must be called during startup, before anything opens a file in those directories:
+        /// on Windows the log file and the crash dump writer would otherwise keep the directory
+        /// alive. It refuses to act when custom directories are in use, and only ever deletes a
+        /// path that isVersionedPath() recognizes, so the un-versioned parent is never touched.
+        ///
+        /// \returns true if every targeted directory was removed and recreated.
+        bool resetUserAppData() const;
+
         /// Migrate a set of versionable configuration directories from the given path to a new
         /// version. The new version's directories cannot exist yet, and the old ones *must* exist.
         /// If the old paths are themselves versioned, then the new paths will be placed at the same
