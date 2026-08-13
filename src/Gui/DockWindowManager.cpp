@@ -512,6 +512,64 @@ QWidget* DockWindowManager::findRegisteredDockWindow(const char* name)
     return nullptr;
 }
 
+/**
+ * Takes over a QDockWidget that somebody else created and added to the main window, so that it
+ * takes part in everything a dock window built by @ref addDockWindow does: workbench setup,
+ * visibility persistence via @ref saveState and retranslation.
+ *
+ * This exists for dock widgets that cannot go through @ref registerDockWindow because they are a
+ * QDockWidget already rather than the content of one - a Python add-on that subclasses QDockWidget
+ * is the usual case. Passing the content widget of such a dock to registerDockWindow does not work:
+ * addDockWindow() sees that its parent is already a QDockWidget and returns early, so the dock never
+ * reaches the list of managed windows.
+ *
+ * The dock keeps its own object name, window title and features. Returns false if it is already
+ * managed or holds no widget.
+ *
+ * @note The connections made here mirror the tail of @ref addDockWindow and must be kept in step
+ * with it.
+ */
+bool DockWindowManager::adoptDockWindow(const char* name, QDockWidget* dw)
+{
+    if (!dw || d->_dockedWindows.contains(dw)) {
+        return false;
+    }
+
+    QWidget* widget = dw->widget();
+    if (!widget) {
+        return false;
+    }
+
+    connect(dw, &QObject::destroyed, this, &DockWindowManager::onDockWidgetDestroyed);
+    connect(widget, &QObject::destroyed, this, &DockWindowManager::onWidgetDestroyed);
+
+    d->_dockedWindows.push_back(dw);
+    // Also list it as registered so that findRegisteredDockWindow() reports it. setup() finds the
+    // dock through findDockWidget() below, so this is for introspection only.
+    d->_dockWindows[QString::fromUtf8(name)] = widget;
+
+    if (d->overlayManager) {
+        d->overlayManager->initDockWidget(dw);
+    }
+
+    // setup(), saveState() and loadState() look dock widgets up by this, not by object name.
+    dw->toggleViewAction()->setData(QString::fromUtf8(name));
+
+    connect(dw->toggleViewAction(), &QAction::triggered, [this, dw]() {
+        Base::ConnectionBlocker block(d->_connParam);
+        QByteArray dockName = dw->toggleViewAction()->data().toByteArray();
+        d->_hPref->SetBool(dockName.constData(), dw->isVisible());
+    });
+
+    auto cb = []() {
+        getMainWindow()->saveWindowSettings(true);
+    };
+    connect(dw, &QDockWidget::topLevelChanged, cb);
+    connect(dw, &QDockWidget::dockLocationChanged, cb);
+
+    return true;
+}
+
 /** Sets up the dock windows of the activated workbench. */
 void DockWindowManager::setup(DockWindowItems* items)
 {
