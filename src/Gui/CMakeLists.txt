@@ -1314,6 +1314,7 @@ SOURCE_GROUP("View" FILES ${View_SRCS})
 # The workbench sources
 SET(Workbench_CPP_SRCS
     DockWindowManager.cpp
+    DockWindowManagerPy.cpp
     OverlayManager.cpp
     OverlayWidgets.cpp
     MenuManager.cpp
@@ -1331,6 +1332,7 @@ SET(Workbench_CPP_SRCS
 SET(Workbench_SRCS
     ${Workbench_CPP_SRCS}
     DockWindowManager.h
+    DockWindowManagerPy.h
     OverlayManager.h
     OverlayWidgets.h
     MenuManager.h
