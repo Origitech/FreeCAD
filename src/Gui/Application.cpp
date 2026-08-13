@@ -72,6 +72,7 @@
 #include "CommandPy.h"
 #include "Control.h"
 #include "PreferencePages/DlgSettingsCacheDirectory.h"
+#include "DockWindowManagerPy.h"
 #include "DocumentPy.h"
 #include "DocumentRecovery.h"
 #include "EditorView.h"
@@ -616,6 +617,10 @@ Application::Application(bool GUIenabled)
         Py::Module(module).setAttr(std::string("Control"),
                                    Py::Object(Gui::TaskView::ControlPy::getInstance(), true));
         Gui::TaskView::TaskDialogPy::init_type();
+
+        Gui::DockWindowManagerPy::init_type();
+        Py::Module(module).setAttr(std::string("DockWindows"),
+                                   Py::Object(Gui::DockWindowManagerPy::getInstance(), true));
 
         registerUserInputEnumInPython(module);
         Base::PyRegisterEnum<SoFCPlacementIndicatorKit::Part>(module, "PlacementIndicatorParts", {

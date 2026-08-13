@@ -85,6 +85,9 @@ public:
     bool registerDockWindow(const char* name, QWidget* widget);
     QWidget* unregisterDockWindow(const char* name);
     QWidget* findRegisteredDockWindow(const char* name);
+    /// Takes over a QDockWidget that was created and added to the main window
+    /// elsewhere, so that it is managed like one built by @ref addDockWindow.
+    bool adoptDockWindow(const char* name, QDockWidget* dockWidget);
     void setup(DockWindowItems*);
 
     /// Adds a QDockWidget to the main window and sets \a widget as its widget
