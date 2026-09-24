@@ -620,6 +620,7 @@ void DlgCustomToolbarsImp::addCustomToolbar(const QString& name)
         bar->setWindowTitle(name);
         bar->setObjectName(name);
         getMainWindow()->addToolBar(bar);
+        bar->setMovable(!ToolBarManager::getInstance()->areToolBarsLocked());
     }
 }
 
