@@ -616,8 +616,12 @@ void DlgCustomToolbarsImp::addCustomToolbar(const QString& name)
     QVariant data = ui->workbenchBox->itemData(ui->workbenchBox->currentIndex(), Qt::UserRole);
     Workbench* w = WorkbenchManager::instance()->active();
     if (w && w->name() == std::string((const char*)data.toByteArray())) {
-        QToolBar* bar = getMainWindow()->addToolBar(name);
+        // Create a Gui::ToolBar so ToolBarManager::toolBars() tracks it
+        auto bar = new ToolBar(getMainWindow());
         bar->setObjectName(name);
+        bar->setWindowTitle(name);
+        getMainWindow()->addToolBar(bar);
+        bar->setMovable(!ToolBarManager::getInstance()->areToolBarsLocked());
     }
 }
 
