@@ -3757,7 +3757,7 @@ while doing a left or right click and move the mouse up or down</source>
 <context>
     <name>Command</name>
     <message>
-        <location filename="../Application.cpp" line="873"/>
+        <location filename="../Application.cpp" line="878"/>
         <source>Import</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3833,7 +3833,7 @@ while doing a left or right click and move the mouse up or down</source>
     </message>
     <message>
         <location filename="../TaskTransform.cpp" line="128"/>
-        <location filename="../TaskTransform.cpp" line="808"/>
+        <location filename="../TaskTransform.cpp" line="817"/>
         <location filename="../Transform.cpp" line="108"/>
         <location filename="../ViewProviderAnnotation.cpp" line="423"/>
         <source>Transform</source>
@@ -4132,8 +4132,8 @@ while doing a left or right click and move the mouse up or down</source>
 <context>
     <name>DlgCustomToolBoxbarsImp</name>
     <message>
-        <location filename="../Dialogs/DlgToolbarsImp.cpp" line="886"/>
-        <location filename="../Dialogs/DlgToolbarsImp.cpp" line="895"/>
+        <location filename="../Dialogs/DlgToolbarsImp.cpp" line="890"/>
+        <location filename="../Dialogs/DlgToolbarsImp.cpp" line="899"/>
         <source>Toolbox Bars</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4757,72 +4757,101 @@ Specify another directory.</source>
 <context>
     <name>DlgPreferencesImp</name>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="785"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="786"/>
         <source>Reset Page &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="788"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="789"/>
         <source>Resets the user settings for the page &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="792"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="793"/>
         <source>Reset Group &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="797"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="798"/>
         <source>Resets the user settings for the group &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="800"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="801"/>
         <source>Reset All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="802"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="803"/>
         <source>Resets the user settings entirely</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="818"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="807"/>
+        <source>Reset All + App Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="813"/>
+        <source>Resets the user settings entirely and deletes this version&apos;s app data, then restarts the application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="831"/>
         <source>Clear User Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="819"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="832"/>
         <source>Clear all your user settings?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="820"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="833"/>
         <source>All settings will be cleared.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="921"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="860"/>
+        <source>Clear User Settings and App Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="861"/>
+        <source>Clear all your user settings and delete this version&apos;s app data?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="863"/>
+        <source>The folder below will be deleted, including any macros and materials stored in it. Other installed versions are not affected.
+
+%1
+
+The application will restart.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="988"/>
         <source>Wrong parameter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="964"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="1031"/>
         <source>Restart Required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="965"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="1032"/>
         <source>Restart FreeCAD for changes to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="970"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="1037"/>
         <source>Restart Now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="971"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="1038"/>
         <source>Restart Later</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5091,22 +5120,22 @@ Specify another directory.</source>
 <context>
     <name>Gui::Application</name>
     <message>
-        <location filename="../Application.cpp" line="402"/>
+        <location filename="../Application.cpp" line="403"/>
         <source>Theme Parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="427"/>
+        <location filename="../Application.cpp" line="428"/>
         <source>Built-in Parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="436"/>
+        <location filename="../Application.cpp" line="437"/>
         <source>Theme Parameters - Fallback</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="448"/>
+        <location filename="../Application.cpp" line="449"/>
         <source>User Parameters</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12602,23 +12631,23 @@ Specify another directory?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../TaskTransform.cpp" line="407"/>
+        <location filename="../TaskTransform.cpp" line="410"/>
         <source>Pick Reference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../TaskTransform.cpp" line="408"/>
+        <location filename="../TaskTransform.cpp" line="411"/>
         <source>Move to Other Object</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../TaskTransform.cpp" line="415"/>
+        <location filename="../TaskTransform.cpp" line="418"/>
         <source>Select face, edge, or vertex…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../TaskTransform.cpp" line="416"/>
-        <location filename="../TaskTransform.cpp" line="422"/>
+        <location filename="../TaskTransform.cpp" line="419"/>
+        <location filename="../TaskTransform.cpp" line="425"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13897,58 +13926,58 @@ the region are non-opaque.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../Application.cpp" line="832"/>
-        <location filename="../Application.cpp" line="941"/>
-        <location filename="../Application.cpp" line="1028"/>
+        <location filename="../Application.cpp" line="837"/>
+        <location filename="../Application.cpp" line="946"/>
+        <location filename="../Application.cpp" line="1033"/>
         <source>Unknown filetype</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="833"/>
-        <location filename="../Application.cpp" line="942"/>
+        <location filename="../Application.cpp" line="838"/>
+        <location filename="../Application.cpp" line="947"/>
         <source>Cannot open unknown filetype: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1018"/>
+        <location filename="../Application.cpp" line="1023"/>
         <source>Export failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1029"/>
+        <location filename="../Application.cpp" line="1034"/>
         <source>Cannot save to unknown filetype: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1227"/>
+        <location filename="../Application.cpp" line="1232"/>
         <source>Recomputation required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1228"/>
+        <location filename="../Application.cpp" line="1233"/>
         <source>Some documents require recomputation for migration purposes. It is highly recommended to perform a recomputation before any modification to avoid compatibility problems.
 
 Recompute now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1253"/>
+        <location filename="../Application.cpp" line="1258"/>
         <source>Recompute error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1254"/>
+        <location filename="../Application.cpp" line="1259"/>
         <source>Failed to recompute some documents.
 Check the report view for more details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1950"/>
+        <location filename="../Application.cpp" line="1955"/>
         <source>Workbench failure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1951"/>
+        <location filename="../Application.cpp" line="1956"/>
         <source>%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13958,18 +13987,18 @@ Check the report view for more details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1267"/>
-        <location filename="../Application.cpp" line="1282"/>
+        <location filename="../Application.cpp" line="1272"/>
+        <location filename="../Application.cpp" line="1287"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1268"/>
+        <location filename="../Application.cpp" line="1273"/>
         <source>There were errors while loading the file. Some data might have been modified or not recovered at all. Look in the report view for more specific information about the objects involved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1283"/>
+        <location filename="../Application.cpp" line="1288"/>
         <source>There were serious errors while loading the file. Some data might have been modified or not recovered at all. Saving the project will most likely result in loss of data.</source>
         <translation type="unfinished"></translation>
     </message>
