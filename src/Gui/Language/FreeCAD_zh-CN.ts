@@ -4857,7 +4857,7 @@ while doing a left or right click and move the mouse up or down</source>
 <context>
     <name>Command</name>
     <message>
-        <location filename="../Application.cpp" line="873"/>
+        <location filename="../Application.cpp" line="878"/>
         <source>Import</source>
         <translation>导入</translation>
     </message>
@@ -4937,7 +4937,7 @@ while doing a left or right click and move the mouse up or down</source>
     </message>
     <message>
         <location filename="../TaskTransform.cpp" line="128"/>
-        <location filename="../TaskTransform.cpp" line="808"/>
+        <location filename="../TaskTransform.cpp" line="817"/>
         <location filename="../Transform.cpp" line="108"/>
         <location filename="../ViewProviderAnnotation.cpp" line="423"/>
         <source>Transform</source>
@@ -5248,8 +5248,8 @@ while doing a left or right click and move the mouse up or down</source>
 <context>
     <name>DlgCustomToolBoxbarsImp</name>
     <message>
-        <location filename="../Dialogs/DlgToolbarsImp.cpp" line="886"/>
-        <location filename="../Dialogs/DlgToolbarsImp.cpp" line="895"/>
+        <location filename="../Dialogs/DlgToolbarsImp.cpp" line="890"/>
+        <location filename="../Dialogs/DlgToolbarsImp.cpp" line="899"/>
         <source>Toolbox Bars</source>
         <translation>工具箱栏</translation>
     </message>
@@ -5915,72 +5915,105 @@ Specify another directory.</source>
 <context>
     <name>DlgPreferencesImp</name>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="785"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="786"/>
         <source>Reset Page &apos;%1&apos;</source>
         <translation>重置页面“%1”</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="788"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="789"/>
         <source>Resets the user settings for the page &apos;%1&apos;</source>
         <translation>重置页面“%1”的用户设置</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="792"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="793"/>
         <source>Reset Group &apos;%1&apos;</source>
         <translation>重置组“%1”</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="797"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="798"/>
         <source>Resets the user settings for the group &apos;%1&apos;</source>
         <translation>重置组“%1”的用户设置</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="800"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="801"/>
         <source>Reset All</source>
         <translation>全部重置</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="802"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="803"/>
         <source>Resets the user settings entirely</source>
         <translation>完全重置用户设置</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="818"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="807"/>
+        <source>Reset All + App Data</source>
+        <translation>全部重置 + 应用数据</translation>
+    </message>
+    <message>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="813"/>
+        <source>Resets the user settings entirely and deletes this version&apos;s app data, then restarts the application</source>
+        <translation>完全重置用户设置并删除此版本的应用数据，然后重新启动应用程序</translation>
+    </message>
+    <message>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="831"/>
         <source>Clear User Settings</source>
         <translation>清除用户设置</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="819"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="832"/>
         <source>Clear all your user settings?</source>
         <translation>是否清除所有用户设置？</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="820"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="833"/>
         <source>All settings will be cleared.</source>
         <translation>所有设置将被清除。</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="921"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="860"/>
+        <source>Clear User Settings and App Data</source>
+        <translation>清除用户设置和应用数据</translation>
+    </message>
+    <message>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="861"/>
+        <source>Clear all your user settings and delete this version&apos;s app data?</source>
+        <translation>是否清除所有用户设置并删除此版本的应用数据？</translation>
+    </message>
+    <message>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="863"/>
+        <source>The folder below will be deleted, including any macros and materials stored in it. Other installed versions are not affected.
+
+%1
+
+The application will restart.</source>
+        <translation>以下文件夹将被删除，包括其中存储的所有宏和材料。其他已安装的版本不受影响。
+
+%1
+
+应用程序将重新启动。</translation>
+    </message>
+    <message>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="988"/>
         <source>Wrong parameter</source>
         <translation>参数错误</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="964"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="1031"/>
         <source>Restart Required</source>
         <translation>需要重启</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="965"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="1032"/>
         <source>Restart FreeCAD for changes to take effect.</source>
         <translation>重启 FreeCAD 以使更改生效。</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="970"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="1037"/>
         <source>Restart Now</source>
         <translation>立即重启</translation>
     </message>
     <message>
-        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="971"/>
+        <location filename="../Dialogs/DlgPreferencesImp.cpp" line="1038"/>
         <source>Restart Later</source>
         <translation>稍后重启</translation>
     </message>
@@ -6288,22 +6321,22 @@ Specify another directory.</source>
 <context>
     <name>Gui::Application</name>
     <message>
-        <location filename="../Application.cpp" line="402"/>
+        <location filename="../Application.cpp" line="403"/>
         <source>Theme Parameters</source>
         <translation>主题参数</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="427"/>
+        <location filename="../Application.cpp" line="428"/>
         <source>Built-in Parameters</source>
         <translation>内置参数</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="436"/>
+        <location filename="../Application.cpp" line="437"/>
         <source>Theme Parameters - Fallback</source>
         <translation>主题参数 - 回退</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="448"/>
+        <location filename="../Application.cpp" line="449"/>
         <source>User Parameters</source>
         <translation>用户参数</translation>
     </message>
@@ -17283,23 +17316,23 @@ Do you want to specify another directory?</source>
         <translation>全局</translation>
     </message>
     <message>
-        <location filename="../TaskTransform.cpp" line="407"/>
+        <location filename="../TaskTransform.cpp" line="410"/>
         <source>Pick Reference</source>
         <translation>选取参考</translation>
     </message>
     <message>
-        <location filename="../TaskTransform.cpp" line="408"/>
+        <location filename="../TaskTransform.cpp" line="411"/>
         <source>Move to Other Object</source>
         <translation>移动到其他对象</translation>
     </message>
     <message>
-        <location filename="../TaskTransform.cpp" line="415"/>
+        <location filename="../TaskTransform.cpp" line="418"/>
         <source>Select face, edge, or vertex…</source>
         <translation>选择面、边或顶点...</translation>
     </message>
     <message>
-        <location filename="../TaskTransform.cpp" line="416"/>
-        <location filename="../TaskTransform.cpp" line="422"/>
+        <location filename="../TaskTransform.cpp" line="419"/>
+        <location filename="../TaskTransform.cpp" line="425"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -19006,35 +19039,35 @@ the region are non-opaque.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../Application.cpp" line="832"/>
-        <location filename="../Application.cpp" line="941"/>
-        <location filename="../Application.cpp" line="1028"/>
+        <location filename="../Application.cpp" line="837"/>
+        <location filename="../Application.cpp" line="946"/>
+        <location filename="../Application.cpp" line="1033"/>
         <source>Unknown filetype</source>
         <translation>未知文件类型</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="833"/>
-        <location filename="../Application.cpp" line="942"/>
+        <location filename="../Application.cpp" line="838"/>
+        <location filename="../Application.cpp" line="947"/>
         <source>Cannot open unknown filetype: %1</source>
         <translation>无法打开未知文件类型: %1</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1018"/>
+        <location filename="../Application.cpp" line="1023"/>
         <source>Export failed</source>
         <translation>导出失败</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1029"/>
+        <location filename="../Application.cpp" line="1034"/>
         <source>Cannot save to unknown filetype: %1</source>
         <translation>无法保存为未知的文件类型: %1</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1227"/>
+        <location filename="../Application.cpp" line="1232"/>
         <source>Recomputation required</source>
         <translation>需要重新计算</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1228"/>
+        <location filename="../Application.cpp" line="1233"/>
         <source>Some documents require recomputation for migration purposes. It is highly recommended to perform a recomputation before any modification to avoid compatibility problems.
 
 Recompute now?</source>
@@ -19042,23 +19075,23 @@ Recompute now?</source>
 是否立即重新计算？</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1253"/>
+        <location filename="../Application.cpp" line="1258"/>
         <source>Recompute error</source>
         <translation>重新计算错误</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1254"/>
+        <location filename="../Application.cpp" line="1259"/>
         <source>Failed to recompute some documents.
 Check the report view for more details.</source>
         <translation>重新计算某些文档失败。请查看报告视图获取详细信息。</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1950"/>
+        <location filename="../Application.cpp" line="1955"/>
         <source>Workbench failure</source>
         <translation>工作台故障</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1951"/>
+        <location filename="../Application.cpp" line="1956"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
@@ -19072,18 +19105,18 @@ Check the report view for more details.</source>
         <translation type="vanished">打开文档</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1267"/>
-        <location filename="../Application.cpp" line="1282"/>
+        <location filename="../Application.cpp" line="1272"/>
+        <location filename="../Application.cpp" line="1287"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1268"/>
+        <location filename="../Application.cpp" line="1273"/>
         <source>There were errors while loading the file. Some data might have been modified or not recovered at all. Look in the report view for more specific information about the objects involved.</source>
         <translation>加载文件时出错。有些数据可能已经修改或未全部恢复。在报告视图中查看有关对象的更具体信息。</translation>
     </message>
     <message>
-        <location filename="../Application.cpp" line="1283"/>
+        <location filename="../Application.cpp" line="1288"/>
         <source>There were serious errors while loading the file. Some data might have been modified or not recovered at all. Saving the project will most likely result in loss of data.</source>
         <translation>加载文件时出现严重错误。有些数据可能已被修改或根本没有恢复。 保存项目很可能导致数据丢失。</translation>
     </message>
