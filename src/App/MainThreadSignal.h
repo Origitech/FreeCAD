@@ -22,6 +22,7 @@
 #ifndef APP_MAINTHREADSIGNAL_H
 #define APP_MAINTHREADSIGNAL_H
 
+#include <FCGlobal.h>
 #include <Base/Interpreter.h>
 #include <fastsignals/signal.h>
 #include <functional>
@@ -42,7 +43,7 @@ namespace App
 // may observe while recompute can run on a worker thread. Raw
 // App::DocumentObject signals intentionally remain plain fastsignals with
 // same-thread semantics.
-class MainThreadSignalConfig
+class AppExport MainThreadSignalConfig
 {
 public:
     using IsMainThreadFn = bool (*)();  // true iff currently on GUI/main thread
@@ -77,16 +78,11 @@ public:
     }
 
 private:
-    static IsMainThreadFn& isMainThreadSlot()
-    {
-        static IsMainThreadFn fn = nullptr;
-        return fn;
-    }
-    static InvokeFn& invokeSlot()
-    {
-        static InvokeFn fn = nullptr;
-        return fn;
-    }
+    // Defined out of line in FreeCADApp: a function-local static in an inline function would
+    // give every DLL its own copy on Windows, so the hooks Gui installs would not be seen by
+    // the signals App emits.
+    static IsMainThreadFn& isMainThreadSlot();
+    static InvokeFn& invokeSlot();
 };
 
 namespace detail

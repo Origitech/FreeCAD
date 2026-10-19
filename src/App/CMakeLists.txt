@@ -323,6 +323,7 @@ SET(FreeCADApp_CPP_SRCS
     Enumeration.cpp
     IndexedName.cpp
     MappedElement.cpp
+    MainThreadSignal.cpp
     MappedName.cpp
     Material.cpp
     MaterialPyImp.cpp
