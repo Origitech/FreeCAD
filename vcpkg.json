@@ -3,15 +3,9 @@
     "version": "1.0.0",
     "dependencies": [
         "urdfdom",
-        "gtest",
         "orocos-kdl",
         "fcl",
-        "eigen3",
-        "qtwebsockets",
-        "qtserialbus",
-        "qtserialport",
-        "qtbase"
-        
+        "eigen3"
     ],
     "builtin-baseline": "cfccea93ee4893b3e428707f557a28899b09ec87",
     "overrides": [
@@ -22,22 +16,6 @@
         {
             "name": "orocos-kdl",
             "version": "1.5.1#0"
-        },
-        {
-            "name": "qtwebsockets",
-            "version": "6.8.3#0"
-        },
-        {
-            "name": "qtserialbus",
-            "version": "6.8.3#0"
-        },
-        {
-            "name": "qtserialport",
-            "version": "6.8.3#0"
-        },
-        {
-            "name": "qtbase",
-            "version": "6.8.3#0"
         }
     ]
 }
