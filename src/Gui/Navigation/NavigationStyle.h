@@ -220,6 +220,8 @@ public:
     void setZoomStep(float);
     void setZoomAtCursor(SbBool);
     SbBool isZoomAtCursor() const;
+    void setZoomLimited(SbBool);
+    SbBool isZoomLimited() const;
     void zoomIn();
     void zoomOut();
     void setRotationCenterMode(RotationCenterModes);
@@ -351,6 +353,14 @@ protected:
     void doZoom(SoCamera* camera, int wheeldelta, const SbVec2f& pos);
     void doZoom(SoCamera* camera, float logzoomfactor, const SbVec2f& pos);
     void doScale(SoCamera* camera, float factor);
+    /// The smallest height of the view (at the focal distance) the 3D view still draws exactly,
+    /// or 0 when the zoom is not limited. Coin and OpenGL compute in 32-bit floats, about 7
+    /// significant digits: with a pixel smaller than one float step at the coordinates in view,
+    /// objects that touch can be drawn apart.
+    float minimumViewHeight(const SoCamera* camera) const;
+    /// The factor that scales the height of the view, raised where zooming in would go below
+    /// minimumViewHeight(). A view already below it is not zoomed out by it.
+    float limitedZoomFactor(const SoCamera* camera, float factor) const;
     void doRotate(SoCamera* camera, float angle, const SbVec2f& pos);
     void spin(const SbVec2f& pointerpos);
     SbBool doSpin();
@@ -444,6 +454,7 @@ protected:
     SbBool invertZoom;
     SbBool zoomAtCursor;
     float zoomStep;
+    SbBool limitZoom;
     SbBool hasDragged;
     SbBool hasPanned;
     SbBool hasZoomed;

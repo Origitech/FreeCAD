@@ -491,6 +491,9 @@ void NavigationStyle::initialize()
     this->zoomStep = App::GetApplication()
                          .GetParameterGroupByPath("User parameter:BaseApp/Preferences/View")
                          ->GetFloat("ZoomStep", 0.2f);
+    this->limitZoom = App::GetApplication()
+                          .GetParameterGroupByPath("User parameter:BaseApp/Preferences/View")
+                          ->GetBool("LimitZoomToPrecision", true);
     long mode = App::GetApplication()
                     .GetParameterGroupByPath("User parameter:BaseApp/Preferences/View")
                     ->GetInt("RotationMode", 0);
@@ -992,7 +995,7 @@ void NavigationStyle::zoom(SoCamera* cam, float diffvalue)
     SbName tname = t.getName();
 
     // This will be in the range of <0, ->>.
-    auto multiplicator = float(exp(diffvalue));
+    auto multiplicator = limitedZoomFactor(cam, float(exp(diffvalue)));
 
     if (t.isDerivedFrom(SoOrthographicCamera::getClassTypeId())) {
 
@@ -1145,8 +1148,56 @@ void NavigationStyle::doZoom(SoCamera* camera, float logfactor, const SbVec2f& p
         }
     }
 }
+
+namespace
+{
+/// the height of the view at the focal distance, 0 for cameras of other kinds
+float viewHeight(const SoCamera* camera)
+{
+    if (camera->isOfType(SoOrthographicCamera::getClassTypeId())) {
+        return static_cast<const SoOrthographicCamera*>(camera)->height.getValue();
+    }
+    if (camera->isOfType(SoPerspectiveCamera::getClassTypeId())) {
+        const float angle = static_cast<const SoPerspectiveCamera*>(camera)->heightAngle.getValue();
+        return 2.0F * camera->focalDistance.getValue() * std::tan(angle / 2.0F);
+    }
+    return 0.0F;
+}
+}  // namespace
+
+float NavigationStyle::minimumViewHeight(const SoCamera* camera) const
+{
+    if (!this->limitZoom) {
+        return 0.0F;
+    }
+
+    // The coordinates in view are about those of the camera and of the focal point; a float
+    // step there is their size times the float epsilon.
+    SbVec3f direction;
+    camera->orientation.getValue().multVec(SbVec3f(0, 0, -1), direction);
+    const SbVec3f position = camera->position.getValue();
+    const SbVec3f focalPoint = position + camera->focalDistance.getValue() * direction;
+    const float magnitude = std::max(position.length(), focalPoint.length());
+
+    // The height of the camera spans the shorter side of the viewport (ADJUST_CAMERA).
+    const SbVec2s size = viewer->getSoRenderManager()->getViewportRegion().getViewportSizePixels();
+    const float pixels = std::max(1.0F, float(std::min(size[0], size[1])));
+    return pixels * magnitude * std::numeric_limits<float>::epsilon();
+}
+
+float NavigationStyle::limitedZoomFactor(const SoCamera* camera, float factor) const
+{
+    const float height = viewHeight(camera);
+    const float lowest = std::min(height, minimumViewHeight(camera));
+    if (height <= 0.0F || lowest <= 0.0F) {
+        return factor;
+    }
+    return std::max(factor, lowest / height);
+}
+
 void NavigationStyle::doScale(SoCamera* cam, float factor)
 {
+    factor = limitedZoomFactor(cam, factor);
     if (cam->getTypeId() == SoOrthographicCamera::getClassTypeId()) {
         float height = static_cast<SoOrthographicCamera*>(cam)->height.getValue() * factor;
         static_cast<SoOrthographicCamera*>(cam)->height = height;
@@ -1856,6 +1907,16 @@ void NavigationStyle::setZoomAtCursor(SbBool on)
 SbBool NavigationStyle::isZoomAtCursor() const
 {
     return this->zoomAtCursor;
+}
+
+void NavigationStyle::setZoomLimited(SbBool on)
+{
+    this->limitZoom = on;
+}
+
+SbBool NavigationStyle::isZoomLimited() const
+{
+    return this->limitZoom;
 }
 
 void NavigationStyle::setRotationCenterMode(NavigationStyle::RotationCenterModes mode)

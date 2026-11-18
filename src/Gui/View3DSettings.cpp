@@ -320,6 +320,12 @@ void View3DSettings::OnChange(ParameterGrp::SubjectType& rCaller, ParameterGrp::
             _viewer->navigationStyle()->setZoomAtCursor(on);
         }
     }
+    else if (strcmp(Reason, "LimitZoomToPrecision") == 0) {
+        bool on = rGrp.GetBool("LimitZoomToPrecision", true);
+        for (auto _viewer : _viewers) {
+            _viewer->navigationStyle()->setZoomLimited(on);
+        }
+    }
     else if (strcmp(Reason, "ZoomStep") == 0) {
         float val = rGrp.GetFloat("ZoomStep", 0.0f);
         for (auto _viewer : _viewers) {
