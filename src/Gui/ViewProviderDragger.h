@@ -133,6 +133,14 @@ protected:
      */
     virtual TaskView::TaskDialog* getTransformDialog();
 
+    /**
+     * Writes the placement that the dragger or the transform task produced. By default it sets
+     * the object's placement property. Subclasses whose placement is computed from other
+     * properties can reimplement it to write those instead, as long as the placement afterwards
+     * (getObjectPlacement()) is the given one.
+     */
+    virtual void setObjectPlacement(const Base::Placement& placement);
+
     CoinPtr<SoTransformDragger> transformDragger;
     ViewProvider* forwardedViewProvider = nullptr;
 
