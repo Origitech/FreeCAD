@@ -755,6 +755,27 @@ pixel-precise scrolling. Ordinary wheel mice keep zooming.</string>
         </property>
        </widget>
       </item>
+      <item row="10" column="0">
+       <widget class="Gui::PrefCheckBox" name="checkBoxLimitZoom">
+        <property name="toolTip">
+         <string>Zooming in stops where a pixel would be smaller than the 3D view can compute:
+about 7 significant digits of the coordinates in view.
+Closer than that, objects that touch can be drawn apart.</string>
+        </property>
+        <property name="text">
+         <string>Limit zoom to the precision of the 3D view</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <property name="prefEntry" stdset="0">
+         <cstring>LimitZoomToPrecision</cstring>
+        </property>
+        <property name="prefPath" stdset="0">
+         <cstring>View</cstring>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>

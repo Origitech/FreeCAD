@@ -350,7 +350,7 @@ void ViewProviderDragger::updatePlacementFromDragger(DraggerComponents component
         finalDraggerPlacement.setRotation(finalRotation);
     }
 
-    placement->setValue((finalDraggerPlacement * getTransformOrigin().inverse()));
+    setObjectPlacement(finalDraggerPlacement * getTransformOrigin().inverse());
     updateDraggerPosition();
 }
 
@@ -430,6 +430,13 @@ Base::Placement ViewProviderDragger::getObjectPlacement() const
     }
 
     return {};
+}
+
+void ViewProviderDragger::setObjectPlacement(const Base::Placement& placement)
+{
+    if (auto property = getObject()->getPlacementProperty()) {
+        property->setValue(placement);
+    }
 }
 
 Base::Placement ViewProviderDragger::getDraggerPlacement() const

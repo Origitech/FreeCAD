@@ -12062,6 +12062,20 @@ Mouse tilting is not disabled by this setting.</source>
         <translation>禁用触摸屏倾斜手势</translation>
     </message>
     <message>
+        <location filename="../PreferencePages/DlgSettingsNavigation.ui" line="761"/>
+        <source>Zooming in stops where a pixel would be smaller than the 3D view can compute:
+about 7 significant digits of the coordinates in view.
+Closer than that, objects that touch can be drawn apart.</source>
+        <translation>当一个像素小于 3D 视图所能计算的精度时停止放大：
+约为视图中坐标的 7 位有效数字。
+超过此限度，相互接触的对象可能显示为分开。</translation>
+    </message>
+    <message>
+        <location filename="../PreferencePages/DlgSettingsNavigation.ui" line="766"/>
+        <source>Limit zoom to the precision of the 3D view</source>
+        <translation>将缩放限制在 3D 视图的精度内</translation>
+    </message>
+    <message>
         <location filename="../PreferencePages/DlgSettingsNavigation.cpp" line="211"/>
         <location filename="../PreferencePages/DlgSettingsNavigation.cpp" line="248"/>
         <source>Isometric</source>
